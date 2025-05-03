@@ -5,10 +5,11 @@ class Personacard extends StatelessWidget {
       {super.key,
       required this.imgname,
       required this.tex1,
-      required this.tex2});
+      required this.tex2, required this.nav2});
   final String imgname;
   final String tex1;
   final String tex2;
+  final Widget nav2;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -42,7 +43,16 @@ class Personacard extends StatelessWidget {
                 backgroundColor: Color.fromRGBO(54, 113, 90, 1)),
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+                     Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return  nav2;
+          },
+        ),
+      );
+            },
             title: const Text(
               "معرفة المزيد",
               style: TextStyle(

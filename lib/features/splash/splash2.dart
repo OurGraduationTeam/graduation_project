@@ -16,7 +16,7 @@ class _Splash2State extends State<Splash2> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 2),
+      const Duration(seconds: 1),
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(

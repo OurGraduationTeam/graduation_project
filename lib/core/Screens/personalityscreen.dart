@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/widget/CustomBottomNavigationBar.dart';
 
-import 'widget/PersonalityTypeScreenbody.dart';
+import '../../widget/PersonalityTypeScreenbody.dart';
 
 
 class PersonalityTypeScreen extends StatelessWidget {
@@ -14,7 +14,7 @@ class PersonalityTypeScreen extends StatelessWidget {
       body:  PersonalityTypeScreenbody(),
 
      
-      bottomNavigationBar: CustomBottomNavigationBar(),
+      
     );
   }
 }

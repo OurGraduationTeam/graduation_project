@@ -1,6 +1,7 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:gradution_project/Disorder/DisordersType.dart';
+
+import 'package:gradution_project/personalitypattern.dart';
 import 'package:gradution_project/widget/PersonalityTypeCard.dart';
 
 class PersonalityTypeScreenbody extends StatelessWidget {
@@ -27,8 +28,7 @@ class PersonalityTypeScreenbody extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
@@ -44,6 +44,7 @@ class PersonalityTypeScreenbody extends StatelessWidget {
                     description:
                         'تعرف اكثر علي العديد من الشخصيات التي تساعدك علي فهم كل شخصية ومعرفة المزايا والعيوب ومعرفة نقاط القوة والضعف والتعمق اكثر',
                     isHighlighted: false,
+                    nav: Personalitypattern(),
                   ),
                   SizedBox(height: 50),
                   PersonalityTypeCard(
@@ -51,6 +52,7 @@ class PersonalityTypeScreenbody extends StatelessWidget {
                     description:
                         'تعرف اكثر علي العديد من الشخصيات التي تساعدك علي فهم كل شخصية ومعرفة المزايا والعيوب ومعرفة نقاط القوة والضعف والتعمق اكثر',
                     isHighlighted: true,
+                    nav: Disorderstype(),
                   ),
                 ],
               ),

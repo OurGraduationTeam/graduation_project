@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/core/Screens/homepage.dart';
 import 'package:gradution_project/widget/buildcontainer.dart';
 
 class Loginitems extends StatelessWidget {
@@ -12,7 +13,7 @@ class Loginitems extends StatelessWidget {
       color: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Center(child: Image.asset('assets/image3.png')),
           const SizedBox(
@@ -57,7 +58,11 @@ class Loginitems extends StatelessWidget {
           const SizedBox(height: 10),
           Center(
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+               
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){ return const Homepage();}));
+     
+              },
               child: const Text(
                 "الدخول كزائر",
                 style: TextStyle(

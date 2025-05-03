@@ -1,8 +1,31 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-class Splash4 extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:gradution_project/core/Screens/intro_screen.dart';
+
+class Splash4 extends StatefulWidget {
   const Splash4({super.key});
 
+  @override
+  State<Splash4> createState() => _Splash4State();
+}
+
+class _Splash4State extends State<Splash4> with SingleTickerProviderStateMixin{
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+      const Duration(seconds: 1),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return  IntroScreen();
+          },
+        ),
+      ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

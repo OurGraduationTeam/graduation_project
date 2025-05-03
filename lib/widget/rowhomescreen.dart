@@ -10,7 +10,7 @@ class Rowhomescreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children:[Item2Row(firsttext: 'نمط', secondtext: 'شخصيتك', image: 'assests/OIP2.png') , Item2Row(firsttext: 'الإضطراب الذي', secondtext: 'تعاني منه', image: 'assests/OIP1.png'), 
+      children:[Item2Row(firsttext: 'نمط', secondtext: 'شخصيتك', image: 'assets/OIP2.png') , Item2Row(firsttext: 'الإضطراب الذي', secondtext: 'تعاني منه', image: 'assets/OIP1.png'), 
       
       Item1Row()
       ],

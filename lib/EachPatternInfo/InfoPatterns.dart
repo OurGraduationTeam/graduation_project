@@ -15,32 +15,32 @@ class Infopatterns extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        padding: EdgeInsets.all(15),
-        color: Color(0Xff36715A),
+        padding: const EdgeInsets.all(15),
+        color: const Color(0Xff36715A),
         width: double.infinity,
         height: 230,
         child: Row(
           spacing: 10,
-          mainAxisAlignment: MainAxisAlignment.end,
           children: [
+            Image.asset(image),
             Expanded(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     text1,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Color(0xff5DB996),
                         backgroundColor: Colors.white,
                         fontSize: 30),
                   ),
                   Text(
                     text2,
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: const TextStyle(color: Colors.white, fontSize: 25),
                   ),
                   Text(
                     text3,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 10,
                       color: Colors.white,
                     ),
@@ -49,7 +49,6 @@ class Infopatterns extends StatelessWidget {
                 ],
               ),
             ),
-            Image.asset(image),
           ],
         ),
       ),
