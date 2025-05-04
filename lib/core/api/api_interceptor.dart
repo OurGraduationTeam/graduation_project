@@ -20,34 +20,5 @@ class ApiInterceptor extends Interceptor {
     }
     super.onRequest(options, handler);
   }
-// oraby
 
-// fouad 2222
-  // fouad
-  @override
-  void onError(DioException err, ErrorInterceptorHandler handler) async {
-    super.onError(err, handler);
-
-    log("error: ApiInterceptor.onError()");
-    if (err.response?.statusMessage == "Unable to verify token") {
-      try {
-        final refreshResponse = await dio.post(EndPoints.refreshToken);
-
-        final newAccessToken = refreshResponse.data[ApiKeys.accessToken];
-        await AppStorageHelper.setSecureData(
-            StorageKeys.accessToken.key, newAccessToken);
-
-        final opts = err.requestOptions;
-        opts.headers['Authorization'] = 'Bearer $newAccessToken';
-
-        final clonedRequest = await dio.fetch(opts);
-        return handler.resolve(clonedRequest);
-      } catch (e) {
-        await AppStorageHelper.deleteSecureData(StorageKeys.accessToken.key);
-        throw UnAuthorizedException();
-      }
-    }
-
-    // return handler.next(err);
-  }
 }

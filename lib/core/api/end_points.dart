@@ -1,10 +1,8 @@
 class EndPoints {
-  static const String baseUrl = "http://10.0.2.2:5000/api/";
+  static const String baseUrl = "https://mind-map-c9bedgandbh5ejbz.italynorth-01.azurewebsites.net/api/";
 
   // auth
-  static const String login = "auth/login";
-  static const String signup = "auth/signup";
-  static const String verifyOTP = "auth/verifyOTP";
-  static const String resendOTP = "auth/resendOTP";
-  static const String refreshToken = "auth/refreshToken";
+  static const String login = "users/Login";
+  static const String signup = "users/Register";
+ 
 }
