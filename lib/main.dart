@@ -1,20 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:gradution_project/core/Screens/Chat_Bot_Screen.dart';
-import 'package:gradution_project/core/Screens/Setting_Screen.dart';
-import 'package:gradution_project/core/Screens/intro_screen.dart';
+
 import 'package:gradution_project/core/Screens/splash1.dart';
-import 'package:gradution_project/core/Screens/loginscreen.dart';
-import 'package:gradution_project/core/Screens/homepage.dart';
-import 'package:gradution_project/personalitypattern.dart';
-import 'package:gradution_project/core/Screens/personalityscreen.dart';
-import 'package:gradution_project/widget/PersonalityTypeScreenbody.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
-// فواد البضان
+
 
   runApp(
     EasyLocalization(
@@ -26,7 +20,7 @@ void main() async {
         child: const MyApp()),
   );
 }
-//love oraby
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
