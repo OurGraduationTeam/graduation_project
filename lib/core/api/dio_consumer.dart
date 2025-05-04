@@ -6,11 +6,10 @@ import 'package:gradution_project/core/api/api_interceptor.dart';
 import 'package:gradution_project/core/api/end_points.dart';
 import 'package:gradution_project/core/errors/handle_dio_exceptions.dart';
 
-
 class DioConsumer extends ApiConsumer {
   final Dio dio;
 
-  DioConsumer({required this.dio}) {
+  DioConsumer(this.dio) {
     dio.options.baseUrl = EndPoints.baseUrl;
     dio.interceptors.add(ApiInterceptor(dio: dio));
     dio.interceptors.add(LogInterceptor(
@@ -84,6 +83,7 @@ class DioConsumer extends ApiConsumer {
     bool isFromData = false,
   }) async {
     try {
+      log("post operation, path: $path");
       final response = await dio.post(
         path,
         data: isFromData ? FormData.fromMap(data) : data,

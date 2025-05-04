@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,24 +12,28 @@ class UserCubit extends Cubit<UserState> {
   UserCubit({required this.api}) : super(UserInitial());
   final ApiConsumer api;
 
-    final TextEditingController _userNameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _userNameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   signIn() async {
     try {
-      emit(UserLoading());
-      await api.post(
-          EndPoints.login,
-          data: {"email": _emailController.text, "password": _passwordController.text});
-
+      log(emailController.text);
+      log(passwordController.text);
+      final result = await api.post(
+       EndPoints.login,
+        data: {
+          "email": emailController.text,
+          "password": passwordController.text,
+        },
+      );
+      log(result.toString());
+      log("Login successful");
       emit(UserSuccess());
     } catch (e) {
       emit(UserFailure(errorMessasage: e.toString()));
       print(e.toString());
     }
   }
-
-  
 }
