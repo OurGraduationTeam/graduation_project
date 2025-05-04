@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => UserCubit(),
+      create: (context) => UserCubit(di),
       child: Scaffold(
         appBar: AppBar(title: const Text('Login')),
         body: Padding(

@@ -16,6 +16,7 @@ packages:
       sha256: "947bfcf187f74dbc5e146c9eb9c0f10c9f8b30743e341481c1e2ed3ecc18c20c"
       url: "https://pub.dev"
     source: hosted
+<<<<<<< HEAD
     version: "2.12.0"
   bloc:
     dependency: "direct main"
@@ -25,6 +26,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "9.0.0"
+=======
+>>>>>>> c543cd5a8637985510b80c1e22786b37663ec4bc
     version: "2.11.0"
   boolean_selector:
     dependency: transitive
