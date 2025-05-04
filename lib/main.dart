@@ -2,7 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'package:gradution_project/core/Screens/splash1.dart';
+<<<<<<< HEAD
 import 'package:gradution_project/Authscreen.dart';
+=======
+import 'package:gradution_project/loginPAge.dart';
+>>>>>>> 7646351b3fe249f6f82002d3032eb32d53d9ece2
 
 
 void main() async {
@@ -35,7 +39,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
+<<<<<<< HEAD
       home:  const Splash1(),
+=======
+      home:  RegisterScreen(),
+>>>>>>> 7646351b3fe249f6f82002d3032eb32d53d9ece2
     );
   }
 }
