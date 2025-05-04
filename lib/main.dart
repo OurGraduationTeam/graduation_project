@@ -13,7 +13,8 @@ import 'package:gradution_project/widget/PersonalityTypeScreenbody.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-
+ //love you
+ 
   runApp(
     EasyLocalization(
         supportedLocales: const [Locale('en'), Locale('ar')],
