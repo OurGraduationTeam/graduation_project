@@ -12,4 +12,4 @@ class Personalitypattern extends StatelessWidget {
     );
   }
 }
-//f12
+
