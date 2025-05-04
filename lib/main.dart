@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'package:gradution_project/core/Screens/splash1.dart';
+import 'package:gradution_project/Authscreen.dart';
 
 
 void main() async {
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const Splash1(),
+      home:  const Splash1(),
     );
   }
 }
