@@ -39,11 +39,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-<<<<<<< HEAD
-      home:  const Splash1(),
-=======
+    
       home:  RegisterScreen(),
->>>>>>> 7646351b3fe249f6f82002d3032eb32d53d9ece2
     );
   }
 }
