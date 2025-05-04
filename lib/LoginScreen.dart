@@ -9,14 +9,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
     super.dispose();
   }
 
@@ -44,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: ListView(
               children: [
                 TextFormField(
-                  controller: _emailController,
+                  controller: context.read<UserCubit>().emailController,
                   decoration: const InputDecoration(labelText: 'Email'),
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
@@ -56,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 12),
                 TextFormField(
-                  controller: _passwordController,
+                  controller: context.read<UserCubit>().passwordController,
                   decoration: const InputDecoration(labelText: 'Password'),
                   obscureText: true,
                   validator: (value) {
@@ -76,8 +72,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ? null
                           : () {
                               if (_formKey.currentState!.validate()) {
-                                final email = _emailController.text;
-                                final password = _passwordController.text;
                                 context.read<UserCubit>().signIn();
                               }
                             },

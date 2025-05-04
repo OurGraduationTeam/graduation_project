@@ -1,16 +1,20 @@
+import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/LoginScreen.dart';
 
 import 'package:gradution_project/core/Screens/splash1.dart';
+import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/api/dio_consumer.dart';
+import 'package:gradution_project/core/services/setup_get_it.dart';
 import 'package:gradution_project/cubit/cubit/user_cubit.dart';
 import 'package:gradution_project/loginPAge.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  setupGetIt();
 
   runApp(
     EasyLocalization(
@@ -36,7 +40,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: BlocProvider(
-        create: (context) => UserCubit(api: DioConsumer()),
+        create: (context) => UserCubit(api: getIt<ApiConsumer>()),
         child: LoginScreen(),
       ),
     );
