@@ -8,9 +8,9 @@ import 'package:gradution_project/core/errors/handle_dio_exceptions.dart';
 
 
 class DioConsumer extends ApiConsumer {
-  final Dio dio;
+  final Dio dio =Dio();
 
-  DioConsumer({required this.dio}) {
+  DioConsumer() {
     dio.options.baseUrl = EndPoints.baseUrl;
     dio.interceptors.add(ApiInterceptor(dio: dio));
     dio.interceptors.add(LogInterceptor(

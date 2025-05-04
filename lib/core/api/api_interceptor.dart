@@ -13,12 +13,12 @@ class ApiInterceptor extends Interceptor {
   Future<void> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     options.headers['Accept-language'] = "ar";
-    final token =
-        await AppStorageHelper.getSecureData(StorageKeys.accessToken.key);
-    if (token != null) {
-      options.headers['Authorization'] = 'Bearer $token';
-    }
-    super.onRequest(options, handler);
+    // final token =
+    //   await AppStorageHelper.getSecureData(StorageKeys.accessToken.key);
+    //   if (token != null) {
+    //     options.headers['Authorization'] = 'Bearer $token';
+    //   }
+    //   super.onRequest(options, handler);
+    // }
   }
-
 }

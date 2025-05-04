@@ -1,23 +1,22 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/LoginScreen.dart';
 
 import 'package:gradution_project/core/Screens/splash1.dart';
+import 'package:gradution_project/core/api/dio_consumer.dart';
+import 'package:gradution_project/cubit/cubit/user_cubit.dart';
 import 'package:gradution_project/loginPAge.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
-
-
   runApp(
     EasyLocalization(
         supportedLocales: const [Locale('en'), Locale('ar')],
         startLocale: const Locale('ar'),
-        path:
-            'assets/translations', 
+        path: 'assets/translations',
         fallbackLocale: const Locale('ar'),
         child: const MyApp()),
   );
@@ -36,9 +35,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-    
-     
-      home:  LoginScreen(),
+      home: BlocProvider(
+        create: (context) => UserCubit(api: DioConsumer()),
+        child: LoginScreen(),
+      ),
     );
   }
 }
