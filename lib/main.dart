@@ -36,12 +36,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-<<<<<<< HEAD
     
-      home:  RegisterScreen(),
-=======
+     
       home:  LoginScreen(),
->>>>>>> b554ddb3cb4586059874415698610d9d5165a1c1
     );
   }
 }
