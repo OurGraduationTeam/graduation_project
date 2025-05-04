@@ -1,16 +1,15 @@
-import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/api/end_points.dart';
 
 part 'user_state.dart';
 
 class UserCubit extends Cubit<UserState> {
-  UserCubit(this.api, this.email, this.password) : super(UserInitial());
+  UserCubit({required this.api}) : super(UserInitial());
   final ApiConsumer api;
-  final String email;
-  final String password;
+
     final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
