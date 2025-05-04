@@ -19,7 +19,7 @@ void main() async {
         supportedLocales: const [Locale('en'), Locale('ar')],
         startLocale: const Locale('ar'),
         path:
-            'assets/translations', // <-- change the path of the translation files
+            'assets/translations', 
         fallbackLocale: const Locale('ar'),
         child: const MyApp()),
   );
