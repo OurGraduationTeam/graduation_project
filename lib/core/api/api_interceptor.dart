@@ -21,6 +21,7 @@ class ApiInterceptor extends Interceptor {
     super.onRequest(options, handler);
   }
 // fouad 2222
+  // fouad
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) async {
     super.onError(err, handler);
