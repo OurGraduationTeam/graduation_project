@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/api/end_points.dart';
 import 'package:gradution_project/core/errors/exceptions.dart';
+import 'package:gradution_project/core/storage/app_storage_helper.dart';
+import 'package:gradution_project/core/storage/storage_keys.dart';
 
 part 'user_state.dart';
 
@@ -27,6 +29,10 @@ class UserCubit extends Cubit<UserState> {
           "password": passwordController.text,
         },
       );
+
+      await AppStorageHelper.setSecureData(
+          StorageKeys.accessToken.toString(), result["token"]);
+
       log(result.toString());
       log("Login successful");
       emit(UserSuccess());
@@ -62,42 +68,38 @@ class UserCubit extends Cubit<UserState> {
   changepassword() async {
     try {
       emit(UserLoading());
-  final result = await api.post(
-    EndPoints.changepassword,
-    data: {
-      "email": emailController.text,
-      "oldPassword": passwordController.text,
-      "newPassword": passwordController.text,
-    },
-  );
-  log(result.toString());
-  emit(UserSuccess());
-} on ServerException catch (e) {
-  emit(UserFailure(errorMessasage: e.errModel.message));
-  print(e.toString());
-}
+      final result = await api.post(
+        EndPoints.changepassword,
+        data: {
+          "email": emailController.text,
+          "oldPassword": passwordController.text,
+          "newPassword": passwordController.text,
+        },
+      );
+      log(result.toString());
+      emit(UserSuccess());
+    } on ServerException catch (e) {
+      emit(UserFailure(errorMessasage: e.errModel.message));
+      print(e.toString());
+    }
   }
+
   changeUserName() async {
     emit(UserLoading());
-      try {
-  
-  final result = await api.post(
-    EndPoints.changeUserName,
-    data: {
-      "email": emailController.text,
-      "userName": _userNameController.text,
-        "newUserName": "string"
-    },
-    
-
-  );
-  log(result.toString());
-  emit(UserSuccess());
-} on ServerException catch (e) {
-  emit(UserFailure(errorMessasage: e.errModel.message));
-  print(e.toString());
-} 
+    try {
+      final result = await api.post(
+        EndPoints.changeUserName,
+        data: {
+          "email": emailController.text,
+          "userName": _userNameController.text,
+          "newUserName": "string"
+        },
+      );
+      log(result.toString());
+      emit(UserSuccess());
+    } on ServerException catch (e) {
+      emit(UserFailure(errorMessasage: e.errModel.message));
+      print(e.toString());
+    }
+  }
 }
-      
-      }
-

@@ -8,6 +8,7 @@ import 'package:gradution_project/core/Screens/splash1.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/api/dio_consumer.dart';
 import 'package:gradution_project/core/services/setup_get_it.dart';
+import 'package:gradution_project/core/storage/app_storage_helper.dart';
 import 'package:gradution_project/cubit/cubit/users/user_cubit.dart';
 import 'package:gradution_project/loginPAge.dart';
 
@@ -15,7 +16,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   setupGetIt();
-
+  await AppStorageHelper.init();
   runApp(
     EasyLocalization(
         supportedLocales: const [Locale('en'), Locale('ar')],
