@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:gradution_project/cubit/cubit/user_cubit.dart';
+import 'package:gradution_project/cubit/cubit/users/user_cubit.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

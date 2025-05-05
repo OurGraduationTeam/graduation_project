@@ -1,7 +1,4 @@
 import 'dart:developer';
-
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
@@ -18,7 +15,7 @@ class UserCubit extends Cubit<UserState> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   login() async {
     try {
       log(emailController.text);
