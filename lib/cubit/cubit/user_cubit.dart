@@ -80,4 +80,27 @@ class UserCubit extends Cubit<UserState> {
   print(e.toString());
 }
   }
+  changeUserName() async {
+    emit(UserLoading());
+      try {
+  
+  final result = await api.post(
+    EndPoints.changeUserName,
+    data: {
+      "email": emailController.text,
+      "userName": _userNameController.text,
+        "newUserName": "string"
+    },
+    
+
+  );
+  log(result.toString());
+  emit(UserSuccess());
+} on ServerException catch (e) {
+  emit(UserFailure(errorMessasage: e.errModel.message));
+  print(e.toString());
+} 
 }
+      
+      }
+

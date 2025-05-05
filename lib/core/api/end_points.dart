@@ -6,4 +6,5 @@ class EndPoints {
   static const String login = "users/Login";
   static const String signup = "users/Register";
   static const String changepassword = "users/Change Password";
+  static const String changeUserName = "users/ChangeUserName";
 }
