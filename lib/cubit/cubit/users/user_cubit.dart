@@ -27,6 +27,8 @@ class UserCubit extends Cubit<UserState> {
           "password": passwordController.text,
         },
       );
+      
+
       log(result.toString());
       log("Login successful");
       emit(UserSuccess());
