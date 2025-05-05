@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ? null
                           : () {
                               if (_formKey.currentState!.validate()) {
-                                context.read<UserCubit>().signIn();
+                                context.read<UserCubit>().register();
                               }
                             },
                       child: isLoading

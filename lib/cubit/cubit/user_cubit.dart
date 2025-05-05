@@ -17,7 +17,7 @@ class UserCubit extends Cubit<UserState> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  signIn() async {
+  login() async {
     try {
       log(emailController.text);
       log(passwordController.text);
@@ -26,6 +26,28 @@ class UserCubit extends Cubit<UserState> {
         data: {
           "email": emailController.text,
           "password": passwordController.text,
+        },
+      );
+      log(result.toString());
+      log("Login successful");
+      emit(UserSuccess());
+    } catch (e) {
+      emit(UserFailure(errorMessasage: e.toString()));
+      print(e.toString());
+    }
+  }
+  register() async {
+    try {
+      log(emailController.text);
+      log(passwordController.text);
+      final result = await api.post(
+       EndPoints.login,
+        data: {
+          "email": emailController.text,
+          "password": passwordController.text,
+          "userName": _userNameController.text,
+          "age": _ageController.text,
+            "gender" :"gender"
         },
       );
       log(result.toString());
