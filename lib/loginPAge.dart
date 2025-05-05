@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_project/cubit/cubit/users/user_cubit.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -6,30 +8,13 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  final TextEditingController _userNameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _ageController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   String _selectedGender = 'Male';
 
-  @override
-  void dispose() {
-    _userNameController.dispose();
-    _passwordController.dispose();
-    _emailController.dispose();
-    _ageController.dispose();
-    super.dispose();
-  }
-
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      print('Username: ${_userNameController.text}');
-      print('Password: ${_passwordController.text}');
-      print('Email: ${_emailController.text}');
-      print('Age: ${_ageController.text}');
-      print('Gender: $_selectedGender');
+      BlocProvider.of<UserCubit>(context).register();
     }
   }
 
@@ -44,24 +29,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: ListView(
             children: [
               TextField(
-                controller: _userNameController,
+                controller:
+                    BlocProvider.of<UserCubit>(context).userNameController,
                 decoration: const InputDecoration(labelText: 'Username'),
               ),
               const SizedBox(height: 10),
               TextField(
-                controller: _passwordController,
+                controller:
+                    BlocProvider.of<UserCubit>(context).passwordController,
                 obscureText: true,
                 decoration: const InputDecoration(labelText: 'Password'),
               ),
               const SizedBox(height: 10),
               TextField(
-                controller: _emailController,
+                controller: BlocProvider.of<UserCubit>(context).emailController,
                 keyboardType: TextInputType.emailAddress,
                 decoration: const InputDecoration(labelText: 'Email'),
               ),
               const SizedBox(height: 10),
               TextField(
-                controller: _ageController,
+                controller: BlocProvider.of<UserCubit>(context).ageController,
                 keyboardType: TextInputType.number,
                 decoration: const InputDecoration(labelText: 'Age'),
               ),

@@ -13,10 +13,10 @@ class UserCubit extends Cubit<UserState> {
   UserCubit({required this.api}) : super(UserInitial());
   final ApiConsumer api;
 
-  final TextEditingController _userNameController = TextEditingController();
+  final TextEditingController userNameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
-  final TextEditingController _ageController = TextEditingController();
+  final TextEditingController ageController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   login() async {
     try {
@@ -47,12 +47,12 @@ class UserCubit extends Cubit<UserState> {
       log(emailController.text);
       log(passwordController.text);
       final result = await api.post(
-        EndPoints.login,
+        EndPoints.signup,
         data: {
           "email": emailController.text,
           "password": passwordController.text,
-          "userName": _userNameController.text,
-          "age": _ageController.text,
+          "userName": userNameController.text,
+          "age": ageController.text,
           "gender": "gender",
         },
       );
@@ -91,7 +91,7 @@ class UserCubit extends Cubit<UserState> {
         EndPoints.changeUserName,
         data: {
           "email": emailController.text,
-          "userName": _userNameController.text,
+          "userName": userNameController.text,
           "newUserName": "string"
         },
       );
