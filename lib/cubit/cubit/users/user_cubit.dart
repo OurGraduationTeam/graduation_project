@@ -47,7 +47,7 @@ class UserCubit extends Cubit<UserState> {
           "password": passwordController.text,
           "userName": _userNameController.text,
           "age": _ageController.text,
-          "gender": "gender"
+          "gender": "gender",
         },
       );
       log(result.toString());
