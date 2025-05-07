@@ -48,9 +48,9 @@ class SettingWho extends StatelessWidget {
                               ],
                             ),
                           ),
-                        )
+                        ),
+                        
                       ]))),
-                        const CustomBottomNavigationBar(),
         ])));
   }
 }

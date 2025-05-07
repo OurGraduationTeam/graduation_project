@@ -1,5 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:gradution_project/core/settings/Setting_condition.dart';
+import 'package:gradution_project/core/settings/Setting_privacy.dart';
+import 'package:gradution_project/core/settings/setting_who.dart';
 
 class SettingListview extends StatefulWidget {
   const SettingListview({super.key});
@@ -94,21 +97,30 @@ class _SettingListviewState extends State<SettingListview> {
           const SizedBox(height: 20),
           Text("More".tr(),
               style: const TextStyle(color: Color(0xff36715A), fontSize: 20)),
-          const SizedBox(height: 10),          
+          const SizedBox(height: 10),
           ListTile(
             title: Text("About Us".tr()),
             trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const SettingWho()));
+            },
           ),
           ListTile(
-            title: const Text("Privacy Policy"),
+            title:  Text("Privacy Policy".tr()),
             trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SettingPrivacy()));
+            },
           ),
           ListTile(
             title: Text("Terms and condition".tr()),
             trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SettingCondition()));
+            },
           ),
           ListTile(
             title: Text("Log out".tr(),
