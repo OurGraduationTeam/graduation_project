@@ -18,7 +18,7 @@ class UserCubit extends Cubit<UserState> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController ageController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  login() async {
+  login({required String email, required String password}) async {
     try {
       log(emailController.text);
       log(passwordController.text);

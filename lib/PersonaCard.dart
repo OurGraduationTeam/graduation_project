@@ -5,7 +5,8 @@ class Personacard extends StatelessWidget {
       {super.key,
       required this.imgname,
       required this.tex1,
-      required this.tex2, required this.nav2});
+      required this.tex2,
+      required this.nav2});
   final String imgname;
   final String tex1;
   final String tex2;
@@ -44,14 +45,14 @@ class Personacard extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-                     Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) {
-            return  nav2;
-          },
-        ),
-      );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return nav2;
+                  },
+                ),
+              );
             },
             title: const Text(
               "معرفة المزيد",
