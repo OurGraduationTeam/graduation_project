@@ -34,7 +34,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Login successful')),
           );
-          // Navigate to next screen if needed
+          
         }
       },
       child: LoginScreenBody(formKey: _formKey, emailController: emailController, passwordController: passwordController),
