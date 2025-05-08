@@ -27,7 +27,7 @@ class LoginScreenBody extends StatelessWidget {
               key: _formKey,
               child: Column(
                 children: [
-                  // Image
+                 
                   Image.asset(
                     'assets/image 8.png',
                     height: 200,
@@ -39,7 +39,7 @@ class LoginScreenBody extends StatelessWidget {
                         TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 24),
-                  // Email field
+                
                   const Align(
                     alignment: Alignment.centerRight,
                     child: Text(
@@ -72,7 +72,7 @@ class LoginScreenBody extends StatelessWidget {
                     textAlign: TextAlign.right,
                   ),
                   const SizedBox(height: 15),
-                  // Password field
+                 
                   const Align(
                     alignment: Alignment.centerRight,
                     child: Text(
@@ -106,7 +106,7 @@ class LoginScreenBody extends StatelessWidget {
                     textAlign: TextAlign.right,
                   ),
                   const SizedBox(height: 30),
-                  // Login Button
+                 
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(

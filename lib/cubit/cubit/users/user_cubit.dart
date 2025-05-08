@@ -66,8 +66,9 @@ class UserCubit extends Cubit<UserState> {
   }
 
   changepassword() async {
+    emit(UserLoading());
     try {
-      emit(UserLoading());
+      
       final result = await api.post(
         EndPoints.changepassword,
         data: {
