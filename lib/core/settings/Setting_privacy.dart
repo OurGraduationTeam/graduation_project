@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/EachPatternInfo/TabsColumn.dart';
 import 'package:gradution_project/core/settings/Custom_Setting_Background.dart';
-import 'package:gradution_project/widget/CustomBottomNavigationBar.dart';
+import 'package:gradution_project/core/settings/InfoColumn.dart';
 
 class SettingPrivacy extends StatelessWidget {
   const SettingPrivacy({super.key});
@@ -22,35 +21,92 @@ class SettingPrivacy extends StatelessWidget {
                       color: Colors.white,
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(50))),
-                  child: const Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 50,
+                  child: ListView(children: const [
+                    SizedBox(
+                      height: 50,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Spacer(),
+                            Center(
+                                child: Text(
+                              "سياسة الخصوصية",
+                              style: TextStyle(
+                                  fontSize: 24,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                            Spacer(),
+                            Icon(Icons.arrow_forward_ios, size: 16)
+                          ],
                         ),
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Spacer(),
-                                Center(
-                                    child: const Text(
-                                  "سياسة الخصوصية",
-                                  style: TextStyle(
-                                      fontSize: 24,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                )),
-                                Spacer(),
-                                Icon(Icons.arrow_forward_ios, size: 16)
-                              ],
-                            ),
-                          ),
-                        ),
-                      ]))),
+                      ),
+                    ),
+                    Infocolumn(txt1: """آخر تحديث: 7 مايو 2025""", txt2: """
+تصف سياسة الخصوصية هذه سياساتنا وإجراءاتنا المتعلقة بجمع واستخدام والكشف عن معلوماتك عند استخدامك للخدمة، وتوضح حقوقك المتعلقة بالخصوصية وكيفية حماية القانون لك.
+نستخدم بياناتك الشخصية لتقديم الخدمة وتحسينها. باستخدامك للخدمة، فإنك توافق على جمع واستخدام المعلومات وفقًا لهذه السياسة"""),
+                    Infocolumn(txt1: """التفسير والتعريفات""", txt2: """التفسير
+تشير الكلمات التي تبدأ بحرف كبير إلى معانٍ محددة بموجب الشروط التالية، وتظل هذه المعاني كما هي سواء وردت بصيغة المفرد أو الجمع.
+
+التعريفات
+لأغراض سياسة الخصوصية هذه:
+
+- "الحساب" يعني حسابًا فريدًا يتم إنشاؤه لك للوصول إلى خدمتنا أو إلى أجزاء منها.
+- "التطبيق" يشير إلى Mind Map، برنامج البرمجيات المقدم من الشركة.
+- "الشركة" (المشار إليها بـ "نحن" أو "لنا") تشير إلى Mind Map.
+- "البلد" يشير إلى: مصر
+- "الجهاز" يعني أي جهاز يمكنه الوصول إلى الخدمة مثل الكمبيوتر أو الهاتف المحمول أو الجهاز اللوحي.
+- "البيانات الشخصية" تعني أي معلومات تتعلق بفرد يمكن تحديد هويته.
+- "الخدمة" تشير إلى التطبيق.
+- "مزود الخدمة" يعني أي شخص طبيعي أو اعتباري يعالج البيانات نيابة عن الشركة.
+- "بيانات الاستخدام" تشير إلى البيانات التي تُجمع تلقائيًا عند استخدام الخدمة.
+- "أنت" تعني الفرد أو الكيان الذي يستخدم الخدمة.
+"""),
+                    Infocolumn(
+                        txt1: """جمع واستخدام بياناتك الشخصية""", txt2: """
+أنواع البيانات التي يتم جمعها:
+
+البيانات الشخصية
+قد نطلب منك تقديم معلومات شخصية قابلة للتحديد مثل:
+- عنوان البريد الإلكتروني
+- الاسم الأول واسم العائلة
+- بيانات الاستخدام
+
+بيانات الاستخدام
+يتم جمعها تلقائيًا عند استخدام الخدمة، مثل عنوان IP، نوع المتصفح، الصفحات التي تزورها، الوقت الذي تقضيه، ومعرفات الأجهزة الفريدة.
+استخدام بياناتك الشخصية
+قد نستخدم البيانات للأغراض التالية:
+
+- لتقديم الخدمة وصيانتها
+- لإدارة الحساب
+- للاتصال بك
+- لتزويدك بالعروض والأخبار
+- لمعالجة الطلبات
+- لأغراض تحليلية وتحسين الخدمة
+
+الاحتفاظ ببياناتك
+سنحتفظ ببياناتك فقط للمدة اللازمة للأغراض الموضحة، أو للامتثال للالتزامات القانونية.
+
+نقل بياناتك
+قد يتم نقل بياناتك إلى أماكن خارج بلدك. سنقوم باتخاذ خطوات لضمان التعامل الآمن معها.
+حذف بياناتك
+يحق لك طلب حذف بياناتك، سواء من خلال التطبيق أو عبر الاتصال بنا.
+
+أمن بياناتك
+نسعى لحماية بياناتك ولكن لا توجد طريقة آمنة بنسبة 100%. نستخدم وسائل مقبولة تجاريًا لضمان الأمان.
+"""),
+                    Infocolumn(txt1: """
+خصوصية الأطفال""", txt2: """لا تستهدف الخدمة من هم دون 18 عامًا. إذا تم جمع بيانات عن طريق الخطأ، سنقوم بحذفها."""),
+                    Infocolumn(
+                        txt1: """الاتصال بنا""",
+                        txt2: """إذا كان لديك أي استفسارات، يمكنك زيارتنا على:
+https://mind-map-new.vercel.app/""")
+                  ]))),
         ])));
   }
 }
