@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/ProgressBar.dart';
 import 'package:gradution_project/QuesButton.dart';
 
 class Quesbody extends StatefulWidget {
@@ -9,8 +10,7 @@ class Quesbody extends StatefulWidget {
 }
 
 class _QuesbodyState extends State<Quesbody> {
-  double slidervalue = 1;
-
+  late double percentage = 0.0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -24,24 +24,13 @@ class _QuesbodyState extends State<Quesbody> {
             child: Column(
               children: [
                 const Text(
-                  'عدد الأسئلة 1 من 40',
+                  'عدد الأسئلة 1 من 60',
                   style: TextStyle(
                     fontSize: 26,
                     color: Colors.white,
                   ),
                 ),
-                Slider(
-                    value: slidervalue,
-                    max: 40,
-                    divisions: 40,
-                    label: slidervalue.round().toString(),
-                    thumbColor: Colors.white,
-                    activeColor: Colors.grey,
-                    onChanged: (val) {
-                      setState(() {
-                        slidervalue = val;
-                      });
-                    }),
+                Progressbar(progressvalue: percentage, width: 300, height: 15),
                 const Text(
                   'إختبار نمط الشخصية',
                   style: TextStyle(
@@ -56,7 +45,6 @@ class _QuesbodyState extends State<Quesbody> {
           padding: const EdgeInsets.only(top: 20),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
-          
             color: Colors.white,
           ),
           child: Column(
@@ -80,13 +68,16 @@ class _QuesbodyState extends State<Quesbody> {
                 txt: 'أوافق',
               ),
               const Quesbutton(
-                txt: 'إلي حد ما ',
+                txt: 'أوافق إلي حد ما ',
               ),
+              const Quesbutton(txt: 'لا أريد الرد'),
               const Quesbutton(
                 txt: ' أختلف بقوة',
               ),
               const Quesbutton(txt: 'أختلف'),
-              const Quesbutton(txt: 'لا أريد الرد'),
+              const Quesbutton(
+                txt: 'أختلف إلي حد ما ',
+              ),
               const SizedBox(
                 height: 100,
               ),
@@ -94,22 +85,15 @@ class _QuesbodyState extends State<Quesbody> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   MaterialButton(
-                    onPressed: () {},
-                    shape: RoundedRectangleBorder(
-                      
-                        borderRadius: BorderRadius.circular(25)),
-                        
-                    minWidth: 120,
-                    child: const Text(
-                      'السابق',
-                      style: TextStyle(
-                          color: Color(0xff36715A),
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        if (percentage < 1) {
+                          percentage += 0.017;
+                        } else {
+                          percentage = percentage;
+                        }
+                      });
+                    },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25)),
                     color: const Color(0xff36715A),
@@ -118,6 +102,27 @@ class _QuesbodyState extends State<Quesbody> {
                       'التالى',
                       style: TextStyle(
                           color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  MaterialButton(
+                    onPressed: () {
+                      setState(() {
+                        if (percentage != 0) {
+                          percentage -= 0.017;
+                        } else {
+                          percentage = percentage;
+                        }
+                      });
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25)),
+                    minWidth: 120,
+                    child: const Text(
+                      'السابق',
+                      style: TextStyle(
+                          color: Color(0xff36715A),
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
