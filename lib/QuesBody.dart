@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/ProgressBar.dart';
 import 'package:gradution_project/QuesButton.dart';
+import 'package:gradution_project/QuestionsList.dart';
 
 class Quesbody extends StatefulWidget {
   const Quesbody({super.key});
@@ -50,14 +51,7 @@ class _QuesbodyState extends State<Quesbody> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                '  هل من الممكن ان تكون صداقات جديدة مع اشخاص لم تعرفهم من قبل ؟',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
+              Questionslist( ),
               const SizedBox(
                 height: 50,
               ),
@@ -92,6 +86,7 @@ class _QuesbodyState extends State<Quesbody> {
                         } else {
                           percentage = percentage;
                         }
+                       
                       });
                     },
                     shape: RoundedRectangleBorder(
@@ -114,6 +109,7 @@ class _QuesbodyState extends State<Quesbody> {
                         } else {
                           percentage = percentage;
                         }
+                      
                       });
                     },
                     shape: RoundedRectangleBorder(
