@@ -12,6 +12,7 @@ class Quesbody extends StatefulWidget {
 
 class _QuesbodyState extends State<Quesbody> {
   late double percentage = 0.0;
+  late int Page_num=0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -24,9 +25,9 @@ class _QuesbodyState extends State<Quesbody> {
             alignment: Alignment.center,
             child: Column(
               children: [
-                const Text(
-                  'عدد الأسئلة 1 من 60',
-                  style: TextStyle(
+                 Text(
+                  "عدد الأسئلة ${ Page_num +1} من 60",
+                  style: const TextStyle(
                     fontSize: 26,
                     color: Colors.white,
                   ),
@@ -51,26 +52,26 @@ class _QuesbodyState extends State<Quesbody> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Questionslist( ),
+              Questionslist(Ques_num: Page_num, ),
               const SizedBox(
                 height: 50,
               ),
               const Quesbutton(
-                txt: 'أوافق بقوة',
+                txt: ' غير موافق بشدة',
               ),
               const Quesbutton(
-                txt: 'أوافق',
+                txt: 'غير موافق',
               ),
               const Quesbutton(
-                txt: 'أوافق إلي حد ما ',
+                txt: 'غير موافق إلى حد ما',
               ),
-              const Quesbutton(txt: 'لا أريد الرد'),
+              const Quesbutton(txt: 'محايد'),
               const Quesbutton(
-                txt: ' أختلف بقوة',
+                txt: 'موافق إلى حد ما',
               ),
-              const Quesbutton(txt: 'أختلف'),
+              const Quesbutton(txt: ' موافق'),
               const Quesbutton(
-                txt: 'أختلف إلي حد ما ',
+                txt: ' موافق بشدة',
               ),
               const SizedBox(
                 height: 100,
@@ -86,7 +87,12 @@ class _QuesbodyState extends State<Quesbody> {
                         } else {
                           percentage = percentage;
                         }
-                       
+                        if(Page_num<60){
+                            Page_num++;
+                           
+                        }else{
+                          Page_num=Page_num;
+                        }
                       });
                     },
                     shape: RoundedRectangleBorder(
@@ -109,7 +115,11 @@ class _QuesbodyState extends State<Quesbody> {
                         } else {
                           percentage = percentage;
                         }
-                      
+                        if(Page_num !=0 ){
+                          Page_num--;
+                        }else{
+                          Page_num=Page_num;
+                        }
                       });
                     },
                     shape: RoundedRectangleBorder(

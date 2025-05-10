@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class Questionslist extends StatelessWidget {
   Questionslist({
-    super.key,
+    super.key, required this.Ques_num,
   });
+  final int Ques_num;
   final List<String> Questions = [
     "أستمتع بالتواجد في الحفلات والمناسبات الاجتماعية الكبيرة؟",
     "أفضل العمل ضمن فريق على العمل بمفردي؟",
@@ -74,7 +75,7 @@ class Questionslist extends StatelessWidget {
         itemCount: Questions.length,
         itemBuilder: (context, index) {
           return Text(
-            Questions[index],
+            Questions[Ques_num],
             style: const TextStyle(
                 color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
