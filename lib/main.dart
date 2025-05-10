@@ -1,6 +1,7 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
@@ -12,6 +13,7 @@ import 'package:gradution_project/core/services/setup_get_it.dart';
 import 'package:gradution_project/core/storage/app_storage_helper.dart';
 import 'package:gradution_project/cubit/cubit/users/user_cubit.dart';
 import 'package:gradution_project/login_Screen.dart';
+import 'package:gradution_project/page1.dart';
 import 'package:gradution_project/regist.dart';
 
 
@@ -20,6 +22,10 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   setupGetIt();
   await AppStorageHelper.init();
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(const MyApp());
+  });
   runApp(
     EasyLocalization(
         supportedLocales: const [Locale('en'), Locale('ar')],
@@ -45,7 +51,7 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (context) => UserCubit(api: getIt<ApiConsumer>()),
-        child:  SignupScreen(),
+        child:  AccountCreationFlow(),
       ),
     );
   }
