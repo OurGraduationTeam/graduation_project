@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/core/Screens/loginscreen.dart';
+import 'package:gradution_project/login_Screen.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -64,7 +64,7 @@ class IntroScreen extends StatelessWidget {
         showDoneButton: true,
         done:MaterialButton(onPressed: (){
           Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => const Loginscreen() ));
+        context, MaterialPageRoute(builder: (context) => const LoginScreen() ));
         },shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         color:const Color.fromRGBO(54, 113, 90, 1) , 
         child: const Text('التالي',style: TextStyle(color:Color.fromRGBO(255, 255, 255, 1),fontWeight: FontWeight.bold ,fontSize: 18 ),),),
