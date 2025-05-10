@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/ProgressBar.dart';
 import 'package:gradution_project/QuesButton.dart';
 import 'package:gradution_project/QuestionsList.dart';
+import 'package:gradution_project/character/characterpattern.dart';
 
 class Quesbody extends StatefulWidget {
   const Quesbody({super.key});
@@ -90,8 +91,9 @@ class _QuesbodyState extends State<Quesbody> {
                         if(Page_num<60){
                             Page_num++;
                            
-                        }else{
-                          Page_num=Page_num;
+                        }if(Page_num==59){
+                          Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => const Characterpattern()));
                         }
                       });
                     },
