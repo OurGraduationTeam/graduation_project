@@ -48,7 +48,7 @@ class Registeritem extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,fontWeight: FontWeight.bold
-                        )),
+                        )), SizedBox(width: 5),
                     Text(
                       'انضم إلينا',
                       style: TextStyle(
