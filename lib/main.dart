@@ -16,17 +16,17 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   setupGetIt();
   await AppStorageHelper.init();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-      .then((_) {
-    runApp(const MyApp());
-  });
   runApp(
     EasyLocalization(
-        supportedLocales: const [Locale('en'), Locale('ar')],
-        startLocale: const Locale('ar'),
-        path: 'assets/translations',
-        fallbackLocale: const Locale('ar'),
-        child: const MyApp()),
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ar'),
+      ],
+      startLocale: const Locale('ar'),
+      path: 'assets/translations',
+      fallbackLocale: const Locale('ar'),
+      child: const MyApp(),
+    ),
   );
 }
 
@@ -45,7 +45,11 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (context) => UserCubit(api: getIt<ApiConsumer>()),
+<<<<<<< HEAD
         child: Characterpattern(),
+=======
+        child: SignupScreen(),
+>>>>>>> f88bdf6b8fc545b5ddfde9aef77449d970598e98
       ),
     );
   }
