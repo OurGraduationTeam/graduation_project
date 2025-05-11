@@ -88,12 +88,11 @@ class _QuesbodyState extends State<Quesbody> {
                         } else {
                           percentage = percentage;
                         }
-                        if(Page_num<60){
+                        if(Page_num<61){
                             Page_num++;
                            
-                        }if(Page_num==59){
-                          Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const Characterpattern()));
+                        }if(Page_num==60){
+                          
                         }
                       });
                     },
@@ -101,9 +100,9 @@ class _QuesbodyState extends State<Quesbody> {
                         borderRadius: BorderRadius.circular(25)),
                     color: const Color(0xff36715A),
                     minWidth: 120,
-                    child: const Text(
-                      'التالى',
-                      style: TextStyle(
+                    child: Text(
+                     Page_num==59? 'إنهاء': 'التالى',
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
