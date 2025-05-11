@@ -45,11 +45,7 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (context) => UserCubit(api: getIt<ApiConsumer>()),
-<<<<<<< HEAD
-        child: Characterpattern(),
-=======
-        child: SignupScreen(),
->>>>>>> f88bdf6b8fc545b5ddfde9aef77449d970598e98
+        child: const SignupScreen(),
       ),
     );
   }
