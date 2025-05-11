@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter (lib\\auth_switch_widget.dart)",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib\\auth_switch_widget.dart"
+        }
+    ]
+}
