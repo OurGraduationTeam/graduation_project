@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_project/character/characterpattern.dart';
 
 
 
@@ -51,7 +52,7 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (context) => UserCubit(api: getIt<ApiConsumer>()),
-        child:  AccountCreationFlow(),
+        child:  const Characterpattern(),
       ),
     );
   }

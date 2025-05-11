@@ -40,18 +40,11 @@ class SignupScreen extends StatelessWidget {
                 const CustomRegisterStepWidget(),
                 const SizedBox(height: 20),
 
-                // Social login
-                const Text(
-                  'أو سجل باستخدام',
-                  style: TextStyle(fontSize: 16),
-                ),
-                const SizedBox(height: 20),
-
                 // Bottom text
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('ليس لديك حساب؟ '),
+                    Text("لديك حساب"),
                     Text(
                       'انضم إلينا',
                       style: TextStyle(
