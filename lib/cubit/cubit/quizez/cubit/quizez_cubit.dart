@@ -10,17 +10,14 @@ part 'quizez_state.dart';
 class QuizezCubit extends Cubit<QuizezState> {
   QuizezCubit(this.api) : super(QuizezInitial());
 final ApiConsumer api;
-  postquizez(int answerNum) async {
+  postquizez(List<int> answerNum) async {
     emit(QuizezLoading());
     try {
       final result =  await api.post(
         EndPoints.question,
         data: {
           "userId": "userId",
-          "answer": [
-            answerNum 
-       
-          ]
+          "answer": answerNum
         },
       );
       

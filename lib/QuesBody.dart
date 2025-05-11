@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/ProgressBar.dart';
 import 'package:gradution_project/QuesButton.dart';
 import 'package:gradution_project/QuestionsList.dart';
+import 'package:gradution_project/answer.dart';
 import 'package:gradution_project/character/characterpattern.dart';
 
 class Quesbody extends StatefulWidget {
@@ -16,7 +17,6 @@ class Quesbody extends StatefulWidget {
 class _QuesbodyState extends State<Quesbody> {
   late double percentage = 0.0;
   late int Page_num = 0;
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -78,15 +78,15 @@ class _QuesbodyState extends State<Quesbody> {
                     height: 60,
                   ),
                   Page_num < 60
-                      ? const Column(
+                      ?  const Column(
                           children: [
-                            Quesbutton(txt: ' غير موافق بشدة'),
-                            Quesbutton(txt: 'غير موافق'),
-                            Quesbutton(txt: 'غير موافق إلى حد ما'),
-                            Quesbutton(txt: 'محايد'),
-                            Quesbutton(txt: 'موافق إلى حد ما'),
-                            Quesbutton(txt: 'موافق'),
-                            Quesbutton(txt: 'موافق بشدة'),
+                            Quesbutton(txt: ' غير موافق بشدة',questionId: 1,),
+                            Quesbutton(txt: 'غير موافق',questionId: 2,),
+                            Quesbutton(txt: 'غير موافق إلى حد ما',questionId: 3,),
+                            Quesbutton(txt: 'محايد',questionId: 4,),
+                            Quesbutton(txt: 'موافق إلى حد ما',questionId: 5,),
+                            Quesbutton(txt: 'موافق',questionId: 6,),
+                            Quesbutton(txt: 'موافق بشدة',questionId: 7,),
                           ],
                         )
                       : const SizedBox(), // إخفاء الأزرار
@@ -105,6 +105,8 @@ class _QuesbodyState extends State<Quesbody> {
                             }
                             if (Page_num < 60) {
                               Page_num++;
+                            answers.add(0);
+                            print(answers);
                             } else if (Page_num == 60) {
                               log("as");
                               Navigator.pushAndRemoveUntil(
@@ -140,6 +142,8 @@ class _QuesbodyState extends State<Quesbody> {
                             }
                             if (Page_num != 0) {
                               Page_num--;
+                              answers.removeLast();
+                              print(answers);
                             } else {
                               Page_num = Page_num;
                             }

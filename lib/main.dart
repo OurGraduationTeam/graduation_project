@@ -44,10 +44,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: BlocProvider(
-        create: (context) => UserCubit(api: getIt<ApiConsumer>()),
-        child: const SignupScreen(),
-      ),
+      home: const Personexam(),
+      // home: BlocProvider(
+      //   create: (context) => UserCubit(api: getIt<ApiConsumer>()),
+      //   child: const SignupScreen(),
+      // ),
     );
   }
 }

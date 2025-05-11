@@ -71,18 +71,21 @@ class Questionslist extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 70,
-      child: PageView.builder(
-        itemCount: Questions.length,
-        itemBuilder: (context, index) {
-          return Text(
-            Questions[Ques_num],
-            style: const TextStyle(
-                color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          );
-        },
+    return Padding(
+      padding: const EdgeInsets.all(12),
+      child: SizedBox(
+        height: 70,
+        child: PageView.builder(
+          itemCount: Questions.length,
+          itemBuilder: (context, index) {
+            return Text(
+              Questions[Ques_num],
+              style: const TextStyle(
+                  color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            );
+          },
+        ),
       ),
     );
   }
