@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_project/PersonExam.dart';
 import 'package:gradution_project/character/characterpattern.dart';
 
 import 'package:gradution_project/core/api/api_consumer.dart';
@@ -45,7 +46,11 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (context) => UserCubit(api: getIt<ApiConsumer>()),
+<<<<<<< HEAD
         child: const SignupScreen(),
+=======
+        child: Personexam(),
+>>>>>>> 55dc51cb3ac0a2c4c2b8100a76157ac81045074f
       ),
     );
   }

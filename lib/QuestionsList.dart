@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class Questionslist extends StatelessWidget {
   Questionslist({
-    super.key, required this.Ques_num,
+    super.key,
+    required this.Ques_num,
   });
   final int Ques_num;
   final List<String> Questions = [
@@ -65,7 +66,8 @@ class Questionslist extends StatelessWidget {
     "أشعر بالاستقرار العاطفي معظم الوقت؟",
     "لا أشعر بالتوتر قبل الأحداث المهمة؟",
     "ثقتي بنفسي تساعدني على تخطي التحديات؟",
-    "أستطيع التحكم في مشاعري بسهولة في المواقف الضاغطة؟","إنتهت الأسئلة"
+    "أستطيع التحكم في مشاعري بسهولة في المواقف الضاغطة؟",
+    "تم الانتهاء من الإجابة على جميع الأسئلة!",
   ];
   @override
   Widget build(BuildContext context) {
