@@ -1,16 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_project/PersonExam.dart';
+import 'package:gradution_project/core/api/api_consumer.dart';
+import 'package:gradution_project/core/services/setup_get_it.dart';
 import 'package:gradution_project/cubit/cubit/users/user_cubit.dart';
 import 'package:gradution_project/login_Screen_Body.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreen1State();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => UserCubit(
+        api: getIt<ApiConsumer>(),
+      ),
+      child: const LoginBlocConsumerBody(),
+    );
+  }
 }
 
-class _LoginScreen1State extends State<LoginScreen> {
+class LoginBlocConsumerBody extends StatefulWidget {
+  const LoginBlocConsumerBody({super.key});
+
+  @override
+  State<LoginBlocConsumerBody> createState() => _LoginBlocConsumerBody1State();
+}
+
+class _LoginBlocConsumerBody1State extends State<LoginBlocConsumerBody> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -26,7 +43,7 @@ class _LoginScreen1State extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return BlocListener<UserCubit, UserState>(
       listener: (context, state) {
-     if (state is UserFailure) {
+        if (state is UserFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(state.errorMessasage)),
           );
@@ -34,10 +51,19 @@ class _LoginScreen1State extends State<LoginScreen> {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Login successful')),
           );
-          
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Personexam(),
+            ),
+          );
         }
       },
-      child: LoginScreenBody(formKey: _formKey, emailController: emailController, passwordController: passwordController),
+      child: LoginScreenBody(
+        formKey: _formKey,
+        emailController: emailController,
+        passwordController: passwordController,
+      ),
     );
   }
 }
