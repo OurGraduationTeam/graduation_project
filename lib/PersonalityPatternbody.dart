@@ -8,10 +8,11 @@ class PersonalityPatternbody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return SafeArea(
         child: Column(children: [
       Container(
-        height: 130,
+        height: height * 0.133,
         padding: const EdgeInsets.symmetric(vertical: 20),
         alignment: Alignment.center,
         child: const Text(

@@ -11,11 +11,12 @@ class PersonalityTypeScreenbody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var Height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Column(
         children: [
           Container(
-            height: 130,
+            height: Height * 0.133,
             padding: const EdgeInsets.symmetric(vertical: 20),
             alignment: Alignment.center,
             child: const Text(
@@ -34,20 +35,21 @@ class PersonalityTypeScreenbody extends StatelessWidget {
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
               ),
               child: ListView(
+                
                 physics: const BouncingScrollPhysics(),
-                children: const [
+                children:  [
                   SizedBox(
-                    height: 155,
+                    height: Height * 0.16,
                   ),
-                  PersonalityTypeCard(
+                  const PersonalityTypeCard(
                     title: 'أنماط الشخصية',
                     description:
                         'تعرف اكثر علي العديد من الشخصيات التي تساعدك علي فهم كل شخصية ومعرفة المزايا والعيوب ومعرفة نقاط القوة والضعف والتعمق اكثر',
                     isHighlighted: false,
                     nav: Personalitypattern(),
                   ),
-                  SizedBox(height: 50),
-                  PersonalityTypeCard(
+                  const SizedBox(height: 50),
+                  const PersonalityTypeCard(
                     title: 'الاضطرابات الشخصية',
                     description:
                         'تعرف اكثر علي العديد من الشخصيات التي تساعدك علي فهم كل شخصية ومعرفة المزايا والعيوب ومعرفة نقاط القوة والضعف والتعمق اكثر',
