@@ -10,6 +10,7 @@ import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/services/setup_get_it.dart';
 import 'package:gradution_project/core/storage/app_storage_helper.dart';
 import 'package:gradution_project/cubit/cubit/users/user_cubit.dart';
+import 'package:gradution_project/login_Screen.dart';
 import 'package:gradution_project/regist.dart';
 
 void main() async {
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (context) => UserCubit(api: getIt<ApiConsumer>()),
-        child: const SignupScreen(),
+        child: const LoginScreen(),
       ),
     );
   }

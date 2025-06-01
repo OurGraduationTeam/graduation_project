@@ -1,3 +1,4 @@
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,6 +18,8 @@ class LoginScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var Height = MediaQuery.of(context).size.height;
+    log(Height.toString());
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -26,20 +29,17 @@ class LoginScreenBody extends StatelessWidget {
             child: Form(
               key: _formKey,
               child: Column(
+                spacing: Height * 0.025,
                 children: [
-                 
                   Image.asset(
                     'assets/image 8.png',
-                    height: 200,
+                    height: Height * 0.21,
                   ),
-                  const SizedBox(height: 24),
                   const Text(
                     'قم بتسجيل الدخول',
-                    style:
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 24),
-                
+              
                   const Align(
                     alignment: Alignment.centerRight,
                     child: Text(
@@ -50,11 +50,10 @@ class LoginScreenBody extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                
                   TextFormField(
                     controller: context.read<UserCubit>().emailController,
+                    obscureText: false,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'يرجى إدخال الايميل';
@@ -62,16 +61,14 @@ class LoginScreenBody extends StatelessWidget {
                       return null;
                     },
                     decoration: InputDecoration(
-                      hintText: 'Fouad@example.com',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
                       filled: true,
-                      fillColor: Colors.grey.shade200,
+                      fillColor: Colors.grey.shade100,
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  const SizedBox(height: 15),
                  
                   const Align(
                     alignment: Alignment.centerRight,
@@ -83,9 +80,7 @@ class LoginScreenBody extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                 
                   TextFormField(
                     controller: context.read<UserCubit>().passwordController,
                     obscureText: true,
@@ -96,17 +91,15 @@ class LoginScreenBody extends StatelessWidget {
                       return null;
                     },
                     decoration: InputDecoration(
-                      hintText: '********',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
                       filled: true,
-                      fillColor: Colors.grey.shade200,
+                      fillColor: Colors.grey.shade100,
                     ),
                     textAlign: TextAlign.right,
                   ),
-                  const SizedBox(height: 30),
-                 
+                  const SizedBox(height: 25),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -133,7 +126,7 @@ class LoginScreenBody extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 25),
+               
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
