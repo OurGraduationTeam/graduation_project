@@ -11,6 +11,8 @@ class Registeritem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -22,24 +24,23 @@ class Registeritem extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
-            child: Column(
+            child: Column( spacing: height * 0.02,
               children: [
                 
                 Image.asset(
                   "assets/register.png", // Replace with your image path
-                  height: 250,
+                  height: height * 0.26,width: width * 0.5,
                 ),
-                const SizedBox(height: 20),
+              
     
           
                 const Text(
                   'انشاء حساب',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                 ),
-                const SizedBox(height: 20),
+                
     
                 const CustomRegisterStepWidget(),
-                const SizedBox(height: 20),
     
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,

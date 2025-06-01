@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (context) => UserCubit(api: getIt<ApiConsumer>()),
-        child: const Personalitypattern(),
+        child: const Personal(),
       ),
     );
   }
