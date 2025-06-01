@@ -108,27 +108,30 @@ class LoginScreenBody extends StatelessWidget {
                   const SizedBox(height: 25),
                   SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          print('Email: ${emailController.text}');
-                          print('Password: ${passwordController.text}');
-                          context.read<UserCubit>().login(
-                                email: emailController.text,
-                                password: passwordController.text,
-                              );
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(54, 113, 90, 1),
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+                    child: Padding( 
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            print('Email: ${emailController.text}');
+                            print('Password: ${passwordController.text}');
+                            context.read<UserCubit>().login(
+                                  email: emailController.text,
+                                  password: passwordController.text,
+                                );
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                           backgroundColor: const Color.fromRGBO(54, 113, 90, 1),
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
-                      ),
-                      child: const Text(
-                        'تسجيل الدخول',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                        child: const Text(
+                          'تسجيل الدخول',
+                          style: TextStyle(fontSize: 16, color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
