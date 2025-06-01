@@ -19,6 +19,9 @@ class LoginScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var Height = MediaQuery.of(context).size.height;
+    var Width = MediaQuery.of(context).size.width;
+    log(Width.toString());
+
     log(Height.toString());
     return Scaffold(
       backgroundColor: Colors.white,
@@ -29,17 +32,17 @@ class LoginScreenBody extends StatelessWidget {
             child: Form(
               key: _formKey,
               child: Column(
-                spacing: Height * 0.025,
+                spacing: Height * 0.02,
                 children: [
                   Image.asset(
                     'assets/image 8.png',
-                    height: Height * 0.21,
+                    height: Height * 0.25,
+                    width: Width * 0.5,
                   ),
                   const Text(
                     'قم بتسجيل الدخول',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-              
                   const Align(
                     alignment: Alignment.centerRight,
                     child: Text(
@@ -50,26 +53,27 @@ class LoginScreenBody extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                
-                  TextFormField(
-                    controller: context.read<UserCubit>().emailController,
-                    obscureText: false,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'يرجى إدخال الايميل';
-                      }
-                      return null;
-                    },
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: TextFormField(
+                      controller: context.read<UserCubit>().emailController,
+                      obscureText: false,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'يرجى إدخال الايميل';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        filled: true,
+                        fillColor: Colors.grey.shade100,
                       ),
-                      filled: true,
-                      fillColor: Colors.grey.shade100,
+                      textAlign: TextAlign.right,
                     ),
-                    textAlign: TextAlign.right,
                   ),
-                 
                   const Align(
                     alignment: Alignment.centerRight,
                     child: Text(
@@ -80,24 +84,26 @@ class LoginScreenBody extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                 
-                  TextFormField(
-                    controller: context.read<UserCubit>().passwordController,
-                    obscureText: true,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'يرجى إدخال كلمة السر';
-                      }
-                      return null;
-                    },
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: TextFormField(
+                      controller: context.read<UserCubit>().passwordController,
+                      obscureText: true,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'يرجى إدخال كلمة السر';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        filled: true,
+                        fillColor: Colors.grey.shade100,
                       ),
-                      filled: true,
-                      fillColor: Colors.grey.shade100,
+                      textAlign: TextAlign.right,
                     ),
-                    textAlign: TextAlign.right,
                   ),
                   const SizedBox(height: 25),
                   SizedBox(
@@ -126,7 +132,6 @@ class LoginScreenBody extends StatelessWidget {
                       ),
                     ),
                   ),
-               
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
