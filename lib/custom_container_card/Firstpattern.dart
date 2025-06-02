@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:gradution_project/EachPatternInfo/ESFP.dart';
-import 'package:gradution_project/EachPatternInfo/ESTP.dart';
-import 'package:gradution_project/EachPatternInfo/ISFP.dart';
-import 'package:gradution_project/EachPatternInfo/ISTP.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ESFP.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ESTP.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ISFP.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ISTP.dart';
 import 'package:gradution_project/PersonaCard.dart';
 import 'package:gradution_project/custom_container_card/Patterns.dart';
 

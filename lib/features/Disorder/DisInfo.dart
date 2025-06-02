@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/Disorder/DisINfobody.dart';
+import 'package:gradution_project/features/Disorder/DisINfobody.dart';
 
 
 class Disinfo extends StatelessWidget {

@@ -27,13 +27,14 @@ class _TabpatternsState extends State<Tabpatterns>
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Expanded(
         child: DefaultTabController(
       length: 7,
       child: Column(
         children: [
-          const SizedBox(
-            height: 50,
+           SizedBox(
+            height: height * 0.051,
           ),
           TabBar(
             indicatorWeight: 2,

@@ -15,6 +15,8 @@ class ProgressIndicatorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Row(
@@ -31,15 +33,15 @@ class ProgressIndicatorWidget extends StatelessWidget {
                   children: [
                     Container(
                       width: 40,
-                      height: 40,
+                      height: height * 0.041,
                       decoration: BoxDecoration(
                         color: isCompleted
-                            ? Colors.green[800]
+                            ? const Color(0Xff36715A)
                             : Colors.transparent,
                         shape: BoxShape.circle,
                         border: Border.all(
                           color: isCompleted
-                              ? Colors.green[800]!
+                              ? const Color(0Xff36715A)
                               : Colors.grey[400]!,
                           width: 2,
                         ),
@@ -51,7 +53,7 @@ class ProgressIndicatorWidget extends StatelessWidget {
                       const SizedBox(),
                   ],
                 ),
-                const SizedBox(height: 8),
+                 SizedBox(height: height * 0.01),
                 Text(
                   steps[stepIndex],
                   style: const TextStyle(fontSize: 12),
@@ -63,7 +65,7 @@ class ProgressIndicatorWidget extends StatelessWidget {
               child: Container(
                 height: 4,
                 color: (index ~/ 2) < currentStep - 1
-                    ? Colors.green[800]
+                    ? const Color(0Xff36715A)
                     : Colors.grey[400],
               ),
             );

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/EachPatternInfo/InfoPatterns.dart';
-import 'package:gradution_project/EachPatternInfo/PatternsStructure.dart';
-import 'package:gradution_project/EachPatternInfo/TabPatterns.dart';
-import 'package:gradution_project/EachPatternInfo/TabsColumn.dart';
-import 'package:gradution_project/EachPatternInfo/TabsListView.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/InfoPatterns.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/PatternsStructure.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/TabPatterns.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/TabsColumn.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/TabsListView.dart';
 
 class Entp extends StatelessWidget {
   const Entp({super.key});

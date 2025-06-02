@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
-import 'package:gradution_project/Disorder/types/adhd.dart';
-import 'package:gradution_project/Disorder/types/bd.dart';
-import 'package:gradution_project/Disorder/types/gad.dart';
-import 'package:gradution_project/Disorder/types/ocd.dart';
-import 'package:gradution_project/Disorder/types/ptsd.dart';
-import 'package:gradution_project/Disorder/types/shizo.dart';
+import 'package:gradution_project/features/Disorder/types/adhd.dart';
+import 'package:gradution_project/features/Disorder/types/bd.dart';
+import 'package:gradution_project/features/Disorder/types/gad.dart';
+import 'package:gradution_project/features/Disorder/types/ocd.dart';
+import 'package:gradution_project/features/Disorder/types/ptsd.dart';
+import 'package:gradution_project/features/Disorder/types/shizo.dart';
 import 'package:gradution_project/PersonaCard.dart';
 
 class ListviewDisorded extends StatelessWidget {

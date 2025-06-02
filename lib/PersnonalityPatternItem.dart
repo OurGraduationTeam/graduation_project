@@ -16,10 +16,10 @@ class PersonalityPatternItem extends StatelessWidget {
       onTap: () {},
       child: Container(
         decoration: BoxDecoration(
-          color: isHighlighted?  Color(0Xff36715A) : Colors.white 
+          color: isHighlighted?  const Color(0Xff36715A) : Colors.white 
 ,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Color(0XffB5B5B5)),
+          border: Border.all(color: const Color(0XffB5B5B5)),
         ),
         height: 25,
         width: 100,

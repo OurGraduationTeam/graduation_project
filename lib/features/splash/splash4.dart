@@ -28,6 +28,8 @@ class _Splash4State extends State<Splash4> with SingleTickerProviderStateMixin{
   }
   @override
   Widget build(BuildContext context) {
+     var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         color: const Color(0Xff36715A),
@@ -38,8 +40,8 @@ class _Splash4State extends State<Splash4> with SingleTickerProviderStateMixin{
             Image.asset(
               'assets/logo.png',
               color: Colors.white,
-              width: 133,
-              height: 133,
+              width: width * 0.3,
+              height: height * 0.14,
             ),
             const SizedBox(width: 10),
             const Column(

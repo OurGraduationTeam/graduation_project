@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/Disorder/DisInfo.dart';
+import 'package:gradution_project/features/Disorder/DisInfo.dart';
 
 class Ocd extends StatelessWidget {
   const Ocd({super.key});

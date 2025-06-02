@@ -29,6 +29,7 @@ class _QuesbodyState extends State<Quesbody> {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return BlocListener<QuizezCubit, QuizezState>(
       listener: (context, state) {
         if (state is QuizezFailure) {
@@ -50,7 +51,7 @@ class _QuesbodyState extends State<Quesbody> {
             Container(
               color: const Color(0Xff36715A),
               padding: const EdgeInsets.only(bottom: 20),
-              height: 160,
+              height: height * 0.164,
               alignment: Alignment.center,
               child: Page_num < 60
                   ? Column(

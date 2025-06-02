@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/EachPatternInfo/ENFJ.dart';
-import 'package:gradution_project/EachPatternInfo/ENFP.dart';
-import 'package:gradution_project/EachPatternInfo/INFJ.dart';
-import 'package:gradution_project/EachPatternInfo/INFP.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ENFJ.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ENFP.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/INFJ.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/INFP.dart';
 import 'package:gradution_project/PersonaCard.dart';
 import 'package:gradution_project/custom_container_card/Patterns.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/EachPatternInfo/ENTJ.dart';
-import 'package:gradution_project/EachPatternInfo/ENTP.dart';
-import 'package:gradution_project/EachPatternInfo/INTJ.dart';
-import 'package:gradution_project/EachPatternInfo/INTP.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ENTJ.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ENTP.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/INTJ.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/INTP.dart';
 import 'package:gradution_project/PersonaCard.dart';
 import 'package:gradution_project/custom_container_card/Patterns.dart';
 

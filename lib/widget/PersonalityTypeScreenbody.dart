@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/Disorder/DisordersType.dart';
+import 'package:gradution_project/features/Disorder/DisordersType.dart';
 
 import 'package:gradution_project/personalitypattern.dart';
 import 'package:gradution_project/widget/PersonalityTypeCard.dart';

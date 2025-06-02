@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/Disorder/Disorderbody.dart';
+import 'package:gradution_project/features/Disorder/Disorderbody.dart';
 
 class Disorderstype extends StatelessWidget {
   const Disorderstype({super.key});

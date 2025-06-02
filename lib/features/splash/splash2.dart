@@ -30,9 +30,10 @@ class _Splash2State extends State<Splash2> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Container(
       color: Colors.white,
-      height: double.infinity,
+      height: height,
       child: Center(child: Image.asset('assets/rotated logo.png')),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/Disorder/DisInfo.dart';
+import 'package:gradution_project/features/Disorder/DisInfo.dart';
 
 class Shizo extends StatelessWidget {
   const Shizo({super.key});

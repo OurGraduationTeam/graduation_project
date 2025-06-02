@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:gradution_project/EachPatternInfo/ESFJ.dart';
-import 'package:gradution_project/EachPatternInfo/ESTJ.dart';
-import 'package:gradution_project/EachPatternInfo/ISFJ.dart';
-import 'package:gradution_project/EachPatternInfo/ISTJ.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ESFJ.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ESTJ.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ISFJ.dart';
+import 'package:gradution_project/features/splash/EachPatternInfo/ISTJ.dart';
 import 'package:gradution_project/PersonaCard.dart';
 import 'package:gradution_project/custom_container_card/Patterns.dart';
 

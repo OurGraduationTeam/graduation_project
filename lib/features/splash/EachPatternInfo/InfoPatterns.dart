@@ -13,12 +13,13 @@ class Infopatterns extends StatelessWidget {
   final String text3;
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Container(
         padding: const EdgeInsets.all(15),
         color: const Color(0Xff36715A),
         width: double.infinity,
-        height: 230,
+        height: height * 0.24,
         child: Row(
           spacing: 10,
           children: [

@@ -11,6 +11,7 @@ class Buildcontainar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     var height = MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap: (){
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){ return const Homepage();}));
@@ -20,7 +21,7 @@ class Buildcontainar extends StatelessWidget {
         decoration: BoxDecoration(
             color:color,
             borderRadius: BorderRadius.circular(36)),
-        height: 60,
+        height: height * 0.062,
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Row(
