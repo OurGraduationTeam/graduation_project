@@ -1,7 +1,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:gradution_project/regist.dart';
+import 'package:gradution_project/SignupScreen.dart';
+import 'package:gradution_project/login_Screen.dart';
 import 'package:gradution_project/widget/CustomRegisterStepWidget.dart';
 
 class Registeritem extends StatelessWidget {
@@ -42,24 +43,28 @@ class Registeritem extends StatelessWidget {
     
                 const CustomRegisterStepWidget(),
     
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("لديك حساب",
+                GestureDetector(onTap:() {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder:(context) => const LoginScreen(), ));
+                  } ,
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("لديك حساب",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,fontWeight: FontWeight.bold
+                          )), SizedBox(width: 5),
+                      Text(
+                        'انضم إلينا',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 18,fontWeight: FontWeight.bold
-                        )), SizedBox(width: 5),
-                    Text(
-                      'انضم إلينا',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),

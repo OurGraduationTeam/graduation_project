@@ -40,7 +40,7 @@ class _TabpatternsState extends State<Tabpatterns>
             indicatorWeight: 2,
             dividerColor: Colors.white,
             indicatorColor: const Color(0xff4A826C),
-            labelPadding: const EdgeInsets.symmetric(horizontal: 15),
+            labelPadding:  EdgeInsets.symmetric(horizontal: height*0.05),
             labelStyle: const TextStyle(
                 color: Colors.black, fontWeight: FontWeight.bold, fontSize: 17),
             isScrollable: true,

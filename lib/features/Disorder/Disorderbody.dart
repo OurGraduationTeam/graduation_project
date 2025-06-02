@@ -14,7 +14,7 @@ class Disorderbody extends StatelessWidget {
         Container(
           color: const Color(0Xff36715A),
           padding: const EdgeInsets.only(bottom: 20),
-          height: height,
+          height: height*0.26,
           alignment: Alignment.center,
           child: const Text(
             "أنواع الاضطرابات",

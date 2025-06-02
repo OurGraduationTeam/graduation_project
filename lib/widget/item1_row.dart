@@ -25,14 +25,14 @@ class Item1Row extends StatelessWidget {
                 SizedBox(
                   width: width * 0.1,
                   height: height * 0.05,
-                  child: CircularProgressIndicator(
+                  child: const CircularProgressIndicator(
                     value: 0.0,
                     strokeWidth: 4,
                     backgroundColor: Colors.white,
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
                   ),
                 ),
-                Text(
+                const Text(
                   "%00",
                   style: TextStyle(
                     fontSize: 14,
@@ -42,8 +42,8 @@ class Item1Row extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               "نسبة التناقض\nبين الإجابات",
               textAlign: TextAlign.center,
               style: TextStyle(

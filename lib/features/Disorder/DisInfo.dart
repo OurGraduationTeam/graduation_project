@@ -18,13 +18,14 @@ class Disinfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return SafeArea(
         child: Column(
       children: [
         Container(
           color: const Color(0Xff36715A),
           padding: const EdgeInsets.only(bottom: 20),
-          height: height * 0.164,
+          height: height * 0.26,
           alignment: Alignment.center,
           child: const Text(
             "أنواع الاضطرابات",
@@ -36,7 +37,7 @@ class Disinfo extends StatelessWidget {
         ),
         Expanded(
           child: Container(
-            width: double.infinity,
+            width: width,
             padding: const EdgeInsets.only(top: 20),
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
