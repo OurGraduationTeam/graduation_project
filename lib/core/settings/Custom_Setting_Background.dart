@@ -9,8 +9,9 @@ class CustomSettingBackdround extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Container(
-      height: 100,
+      height: height * 0.1,
       decoration: const BoxDecoration(
         color: Color(0xff36715A),
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
