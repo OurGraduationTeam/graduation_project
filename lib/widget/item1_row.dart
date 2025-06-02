@@ -5,23 +5,26 @@ class Item1Row extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Center(
       child: Container(
-        width: 120,
-        height: 150,
+        width: width * 0.268,
+        height: height * 0.15,
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         decoration: BoxDecoration(
           color: const Color(0xFF80B18A),
           borderRadius: BorderRadius.circular(15),
         ),
-        child: const Column(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Stack(
               alignment: Alignment.center,
               children: [
                 SizedBox(
-                  width: 50,
-                  height: 50,
+                  width: width * 0.1,
+                  height: height * 0.05,
                   child: CircularProgressIndicator(
                     value: 0.0,
                     strokeWidth: 4,

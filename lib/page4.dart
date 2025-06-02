@@ -14,9 +14,12 @@ class _GenderPageState extends State<GenderPage> {
 
   @override
   Widget build(BuildContext context) {
+         var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
+        spacing: height * 0.0123,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
@@ -24,7 +27,7 @@ class _GenderPageState extends State<GenderPage> {
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             textAlign: TextAlign.right,
           ),
-          const SizedBox(height: 20),
+       
           RadioListTile<String>(
             title: const Text('ذكر', textAlign: TextAlign.right),
             value: 'male',
@@ -63,15 +66,16 @@ class _GenderPageState extends State<GenderPage> {
               child: const Text('متابعة'),
             ),
           ),
-          const SizedBox(height: 20),
+        
           const Center(
             child: Text(
               'متابعة باستخدام',
               style: TextStyle(fontSize: 14),
             ),
           ),
-          const SizedBox(height: 10),
+     
           Row(
+            spacing: width * 0.04,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(

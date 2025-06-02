@@ -52,11 +52,13 @@ class _CustomRegisterStepWidgetState extends State<CustomRegisterStepWidget> {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Column(
+spacing: height * 0.02,
       children: [
         ProgressIndicatorWidget(currentStep: currentStep), // Progress indicator
 
-        const SizedBox(height: 30),
+       
 
         // Email label
         Align(
@@ -83,7 +85,7 @@ class _CustomRegisterStepWidgetState extends State<CustomRegisterStepWidget> {
             ),
           ),
         const SizedBox(
-          height: 50,
+       
         ),
         if (currentStep == 4)
           DropdownButtonFormField<String>(
@@ -131,23 +133,26 @@ class _CustomRegisterStepWidgetState extends State<CustomRegisterStepWidget> {
         // Continue button
         SizedBox(
           width: double.infinity,
-          child: ElevatedButton(
-            
-            onPressed: onContinuePressed,
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0Xff4A826C),
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(14),
-              ),
-            ),
-            child: const Text('متابعة',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: ElevatedButton(
+              
+              onPressed: onContinuePressed,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0Xff4A826C),
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14),
                 ),
-          ),
-        ),)
+              ),
+              child: const Text('متابعة',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+            ),
+                    ),
+          ),)
       ],
     );
   }

@@ -15,11 +15,14 @@ class _EmailPageState extends State<EmailPage> {
 
   @override
   Widget build(BuildContext context) {
+         var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Form(
         key: _formKey,
         child: Column(
+          spacing: height * 0.02,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
@@ -27,7 +30,7 @@ class _EmailPageState extends State<EmailPage> {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               textAlign: TextAlign.right,
             ),
-            const SizedBox(height: 8),
+           
             TextFormField(
               controller: _emailController,
               textAlign: TextAlign.right,
@@ -48,15 +51,15 @@ class _EmailPageState extends State<EmailPage> {
                 return null;
               },
             ),
-            const SizedBox(height: 20),
+          
             const Divider(),
-            const SizedBox(height: 20),
+         
             const Text(
               'متابعة',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               textAlign: TextAlign.right,
             ),
-            const SizedBox(height: 20),
+            
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -74,7 +77,7 @@ class _EmailPageState extends State<EmailPage> {
                 child: const Text('متابعة'),
               ),
             ),
-            const SizedBox(height: 20),
+           
             const Center(
               child: Text(
                 'متابعة باستخدام',
@@ -83,22 +86,23 @@ class _EmailPageState extends State<EmailPage> {
             ),
             const SizedBox(height: 10),
             Row(
+              spacing: width * 0.04,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  icon: Image.asset('assets/image 9.png', width: 40),
+                  icon: Image.asset('assets/image 9.png', width: width * 0.08),
                   onPressed: () {
                     // Handle Google sign in
                   },
                 ),
-                const SizedBox(width: 20),
+               
                 const Text(
                   '4 G',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+          
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

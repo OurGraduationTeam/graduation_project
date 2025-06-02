@@ -17,6 +17,8 @@ class Customcard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
@@ -33,8 +35,8 @@ class Customcard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
-                width: 80,
-                height: 80,
+                width: width * 0.16,
+                height: height * 0.08,
                 decoration: BoxDecoration(
                   color: isHighlighted ? const Color(0Xff36715A) : Colors.white,
                   shape: BoxShape.circle,
@@ -55,6 +57,7 @@ class Customcard extends StatelessWidget {
           ),
           const Spacer(),
           Column(
+            spacing: height * 0.006,
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -89,16 +92,13 @@ class Customcard extends StatelessWidget {
                   color: isHighlighted ? Colors.white : Colors.black54,
                 ),
               ),
-              const SizedBox(height: 10),
-              Container(decoration: BoxDecoration(
-                 color: isHighlighted ? Colors.white : const Color(0Xff36715A),
-                borderRadius: BorderRadius.circular(12)
-
-              ),
-                height: 24,
-                width: 150,
-               
-                
+              Container(
+                decoration: BoxDecoration(
+                    color:
+                        isHighlighted ? Colors.white : const Color(0Xff36715A),
+                    borderRadius: BorderRadius.circular(12)),
+                height: height * 0.025,
+                width: width * 0.33,
                 child: Text(
                   '  سؤال 40  في اقل من 10 دقائق ',
                   style: TextStyle(

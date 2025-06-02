@@ -17,13 +17,14 @@ class Disinfo extends StatelessWidget {
   final String img;
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return SafeArea(
         child: Column(
       children: [
         Container(
           color: const Color(0Xff36715A),
           padding: const EdgeInsets.only(bottom: 20),
-          height: 160,
+          height: height * 0.164,
           alignment: Alignment.center,
           child: const Text(
             "أنواع الاضطرابات",

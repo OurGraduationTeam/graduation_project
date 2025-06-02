@@ -35,6 +35,7 @@ class _PersonalitypatternContainerState
   }
   @override
   Widget build(BuildContext context) {
+       var height = MediaQuery.of(context).size.height;
     return Expanded(
         child: Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
@@ -46,8 +47,8 @@ class _PersonalitypatternContainerState
    length: 4,
         child: Column(
           children: [ 
-            const SizedBox(
-              height: 60,
+             SizedBox(
+              height: height * 0.06,
             ),
             TabBar(
               dividerColor: Colors.white,

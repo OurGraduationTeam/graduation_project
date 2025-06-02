@@ -19,6 +19,8 @@ class DisINfobody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -34,7 +36,7 @@ class DisINfobody extends StatelessWidget {
         ),
         Image.asset(
           img,
-          height: 250,
+          height: height * 0.26,
         ),
         const Text(
           'الوصف',
@@ -74,7 +76,7 @@ class DisINfobody extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          minWidth: 200,
+          minWidth: ,
           child: const Text(
             'اعرف أكثر',
             style: TextStyle(color: Colors.white, fontSize: 20),
@@ -85,7 +87,7 @@ class DisINfobody extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          minWidth: 200,
+          minWidth: width * 0.44,
           child: const Text(
             'رجوع',
             style: TextStyle(

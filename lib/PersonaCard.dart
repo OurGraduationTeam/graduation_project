@@ -13,6 +13,7 @@ class Personacard extends StatelessWidget {
   final Widget nav2;
   @override
   Widget build(BuildContext context) {
+       var height = MediaQuery.of(context).size.height;
     return Card(
       color: Colors.white,
       elevation: 5,
@@ -23,7 +24,7 @@ class Personacard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            height: 90,
+            height: height * 0.09,
             child: Image.asset(
               imgname,
               fit: BoxFit.cover,

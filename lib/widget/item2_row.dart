@@ -7,10 +7,12 @@ class Item2Row extends StatelessWidget {
   final String image;
   @override
   Widget build(BuildContext context) {
+     var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Center(
       child: Container(
-        width: 120,
-        height: 150,
+        width: width * 0.268,
+        height: height * 0.15,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
@@ -22,7 +24,7 @@ class Item2Row extends StatelessWidget {
              Text(
               firsttext
               ,
-              style: TextStyle(color: Colors.black, fontSize: 14),
+              style: const TextStyle(color: Colors.black, fontSize: 14),
             ),
             Text(secondtext
               
