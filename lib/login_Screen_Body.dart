@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_project/SignupScreen.dart';
+import 'package:gradution_project/core/Screens/homepage.dart';
 import 'package:gradution_project/cubit/cubit/users/user_cubit.dart';
 
 class LoginScreenBody extends StatelessWidget {
@@ -32,7 +34,7 @@ class LoginScreenBody extends StatelessWidget {
             child: Form(
               key: _formKey,
               child: Column(
-                spacing: Height * 0.02,
+                spacing: Height * 0.015,
                 children: [
                   Image.asset(
                     'assets/image 8.png',
@@ -54,7 +56,7 @@ class LoginScreenBody extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding:  EdgeInsets.symmetric(horizontal: Width*0.015),
                     child: TextFormField(
                       controller: context.read<UserCubit>().emailController,
                       obscureText: false,
@@ -85,7 +87,7 @@ class LoginScreenBody extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding:  EdgeInsets.symmetric(horizontal: Width*0.015),
                     child: TextFormField(
                       controller: context.read<UserCubit>().passwordController,
                       obscureText: true,
@@ -105,11 +107,11 @@ class LoginScreenBody extends StatelessWidget {
                       textAlign: TextAlign.right,
                     ),
                   ),
-                  const SizedBox(height: 25),
+                   SizedBox(height: Height*0.025),
                   SizedBox(
-                    width: double.infinity,
+                    width: Width,
                     child: Padding( 
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      padding:  EdgeInsets.symmetric(horizontal: Width*0.015),
                       child: ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
@@ -120,6 +122,7 @@ class LoginScreenBody extends StatelessWidget {
                                   password: passwordController.text,
                                 );
                           }
+                         
                         },
                         style: ElevatedButton.styleFrom(
                            backgroundColor: const Color.fromRGBO(54, 113, 90, 1),
@@ -135,26 +138,30 @@ class LoginScreenBody extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'ليس لديك حساب؟ ',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                  GestureDetector(onTap: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder:(context) => const SignupScreen(), ));
+                  } ,
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'ليس لديك حساب؟ ',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'انضم الينا',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                        Text(
+                          'انضم الينا',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   )
                 ],
               ),

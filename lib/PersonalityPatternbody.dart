@@ -12,7 +12,7 @@ class PersonalityPatternbody extends StatelessWidget {
     return SafeArea(
         child: Column(children: [
       Container(
-        height: height * 0.133,
+        height: height * 0.2,
         padding: const EdgeInsets.symmetric(vertical: 20),
         alignment: Alignment.center,
         child: const Text(

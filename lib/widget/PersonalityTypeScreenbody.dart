@@ -16,7 +16,7 @@ class PersonalityTypeScreenbody extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: Height * 0.133,
+            height: Height * 0.26,
             padding: const EdgeInsets.symmetric(vertical: 20),
             alignment: Alignment.center,
             child: const Text(
@@ -39,7 +39,7 @@ class PersonalityTypeScreenbody extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 children:  [
                   SizedBox(
-                    height: Height * 0.16,
+                    height: Height * 0.12,
                   ),
                   const PersonalityTypeCard(
                     title: 'أنماط الشخصية',
@@ -48,7 +48,7 @@ class PersonalityTypeScreenbody extends StatelessWidget {
                     isHighlighted: false,
                     nav: Personalitypattern(),
                   ),
-                  const SizedBox(height: 50),
+                   SizedBox(height:Height*0.077 ),
                   const PersonalityTypeCard(
                     title: 'الاضطرابات الشخصية',
                     description:

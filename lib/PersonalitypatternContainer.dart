@@ -37,58 +37,59 @@ class _PersonalitypatternContainerState
   Widget build(BuildContext context) {
        var height = MediaQuery.of(context).size.height;
     return Expanded(
-        child: Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
-      ),
-      child: DefaultTabController(
-   length: 4,
-        child: Column(
-          children: [ 
-             SizedBox(
-              height: height * 0.06,
+      child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+            decoration: const BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
             ),
-            TabBar(
-              dividerColor: Colors.white,
-              indicatorColor: const Color.fromRGBO(54, 113, 90, 2),
-              labelPadding: const EdgeInsets.all(8),
-              controller: _tabController,
-              tabs: [
-                PersonalityPatternItem(
-                  text: 'المستكشفون',
-                  isHighlighted: currentIndex == 0,
-                ),
-                PersonalityPatternItem(
-                  text: 'المنظمون',
-                  isHighlighted: currentIndex == 1,
-                ),
-                PersonalityPatternItem(
-                  text: 'الدبلوماسيون',
-                  isHighlighted: currentIndex == 2,
-                ),
-                PersonalityPatternItem(
-                  text: 'المحللون',
-                  isHighlighted: currentIndex == 3,
-                ),
-              ],
-            ),
-            Expanded(
-              child: TabBarView(
-                controller: _tabController,
-                children: const [
-                Firstpattern(),
-                Secondpattern(),
-                Thirdpattern(),
-                Fourthpattern()
-                                ],
+            child: DefaultTabController(
+         length: 4,
+      child: Column(
+        children: [ 
+           SizedBox(
+            height: height * 0.06,
+          ),
+          TabBar(
+            dividerColor: Colors.white,
+            indicatorColor: const Color.fromRGBO(54, 113, 90, 2),
+            labelPadding: const EdgeInsets.all(8),
+            controller: _tabController,
+            tabs: [
+              PersonalityPatternItem(
+                text: 'المستكشفون',
+                isHighlighted: currentIndex == 0,
               ),
+              PersonalityPatternItem(
+                text: 'المنظمون',
+                isHighlighted: currentIndex == 1,
+              ),
+              PersonalityPatternItem(
+                text: 'الدبلوماسيون',
+                isHighlighted: currentIndex == 2,
+              ),
+              PersonalityPatternItem(
+                text: 'المحللون',
+                isHighlighted: currentIndex == 3,
+              ),
+            ],
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: const [
+              Firstpattern(),
+              Secondpattern(),
+              Thirdpattern(),
+              Fourthpattern()
+                              ],
             ),
-         
-          ],
-        ),
+          ),
+       
+        ],
       ),
-    ));
+            ),
+          ),
+    );
   }
 }

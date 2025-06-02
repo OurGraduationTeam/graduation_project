@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/PersonExam.dart';
 
 class Customcard extends StatelessWidget {
   const Customcard({
@@ -35,7 +36,7 @@ class Customcard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
-                width: width * 0.16,
+                width: width * 0.12,
                 height: height * 0.08,
                 decoration: BoxDecoration(
                   color: isHighlighted ? const Color(0Xff36715A) : Colors.white,
@@ -47,11 +48,18 @@ class Customcard extends StatelessWidget {
                       width: 4),
                 ),
                 child: Center(
-                    child: Text(
-                  'ابدأ الآن',
-                  style: TextStyle(
-                      color: isHighlighted ? Colors.white : Colors.black54),
-                )),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(context, MaterialPageRoute(
+                          builder: (context) => const Personexam(),
+                        ));
+                      },
+                      child: Text(
+                                        'ابدأ الآن',
+                                        style: TextStyle(
+                        color: isHighlighted ? Colors.white : Colors.black54),
+                                      ),
+                    )),
               ),
             ],
           ),
@@ -77,7 +85,6 @@ class Customcard extends StatelessWidget {
                   color: isHighlighted ? Colors.white : Colors.black,
                 ),
               ),
-              const SizedBox(height: 4),
               Text(
                 descriptionFirstPart,
                 style: TextStyle(
@@ -100,7 +107,7 @@ class Customcard extends StatelessWidget {
                 height: height * 0.025,
                 width: width * 0.33,
                 child: Text(
-                  '  سؤال 40  في اقل من 10 دقائق ',
+                  '  سؤال 60  في اقل من 10 دقائق ',
                   style: TextStyle(
                       color: isHighlighted ? Colors.black54 : Colors.white),
                 ),
