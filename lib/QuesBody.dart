@@ -7,7 +7,7 @@ import 'package:gradution_project/QuesButton.dart';
 import 'package:gradution_project/QuestionsList.dart';
 import 'package:gradution_project/answer.dart';
 import 'package:gradution_project/character/characterpattern.dart';
-import 'package:gradution_project/cubit/cubit/quizez/cubit/quizez_cubit.dart';
+import 'package:gradution_project/cubit/quizez/cubit/quizez_cubit.dart';
 
 class Quesbody extends StatefulWidget {
   const Quesbody({super.key});
