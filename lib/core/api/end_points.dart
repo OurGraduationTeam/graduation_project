@@ -1,6 +1,5 @@
 class EndPoints {
-  static const String baseUrl =
-      "https://mind-map-c9bedgandbh5ejbz.italynorth-01.azurewebsites.net/api/";
+  static const String baseUrl = "https://mindmap-new.azurewebsites.net/api/";
 
   // auth
   static const String login = "users/Login";

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gradution_project/core/Screens/Chat_Bot_Screen.dart';
 import 'package:gradution_project/core/Screens/Setting_Screen.dart';
 import 'package:gradution_project/core/Screens/homepage.dart';
 import 'package:gradution_project/core/Screens/personalityscreen.dart';
