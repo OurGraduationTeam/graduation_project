@@ -8,4 +8,8 @@ class EndPoints {
   static const String changeUserName = "users/ChangeUserName";
   static const String question = "quiz/submit";
   static const String chat = "Chat";
+  static const String assement1 = "Assessment/Level1";
+  static const String assement2 = "Assessment/Level2";
+  static const String getassement1 = "Assessment/question/level1";
+  static  String getassement2 (int domainId) => "Assessment/question/level2$domainId";
 }

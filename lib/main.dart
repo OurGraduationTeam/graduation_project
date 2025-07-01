@@ -6,7 +6,7 @@ import 'package:gradution_project/core/Screens/splash1.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/services/setup_get_it.dart';
 import 'package:gradution_project/core/storage/app_storage_helper.dart';
-import 'package:gradution_project/cubit/cubit/users/user_cubit.dart';
+import 'package:gradution_project/cubit/users/users/user_cubit.dart';
 import 'package:gradution_project/login_Screen.dart';
 import 'package:gradution_project/personalitypattern.dart';
 import 'package:gradution_project/SignupScreen.dart';
