@@ -116,7 +116,7 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
                 color:
-                    isSendByMe ? Colors.blue.shade100 : Colors.green.shade200,
+                    isSendByMe ? Colors.white :  const Color.fromRGBO(54, 113, 90, 1),
                 borderRadius: BorderRadius.only(
                   topLeft: const Radius.circular(12),
                   topRight: const Radius.circular(12),
@@ -136,7 +136,9 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
                   const SizedBox(height: 4),
                   Text(
                     timeString,
-                    style: const TextStyle(fontSize: 11, color: Colors.black54),
+                    style:  TextStyle(fontSize: 11, color:
+                     isSendByMe ? Colors.white : Colors.black,
+                    ),
                   ),
                 ],
               ),
@@ -166,9 +168,9 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
           const SizedBox(width: 10),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            decoration: BoxDecoration(
-              color: Colors.green.shade200,
-              borderRadius: const BorderRadius.only(
+            decoration:const  BoxDecoration(
+              color:   Color.fromRGBO(54, 113, 90, 1),
+              borderRadius:  BorderRadius.only(
                 topLeft: Radius.circular(12),
                 topRight: Radius.circular(12),
                 bottomRight: Radius.circular(12),
