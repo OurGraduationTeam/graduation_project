@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/PersonExam.dart';
+import 'package:gradution_project/PersonalityExam/PersonExam.dart';
 
 class Customcard extends StatelessWidget {
   const Customcard({
