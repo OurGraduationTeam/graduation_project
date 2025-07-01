@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/answer.dart';
+import 'package:gradution_project/PersonalityExam/answer.dart';
 
 class Quesbutton extends StatelessWidget {
    const Quesbutton({super.key, required this.txt,  this.pressed=true, required this.questionId });

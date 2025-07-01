@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_project/PersonalityExam/PersonExam.dart';
 import 'package:gradution_project/chat.dart';
 import 'package:gradution_project/core/Screens/splash1.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const ChatPage()
+      home: const Personexam()
     );
   }
 }
