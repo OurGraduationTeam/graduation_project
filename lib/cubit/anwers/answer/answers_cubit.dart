@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
-import 'package:gradution_project/answer.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/api/end_points.dart';
 import 'package:gradution_project/core/errors/exceptions.dart';
@@ -25,11 +24,11 @@ class AnswersCubit extends Cubit<AnswersState> {
      
     
       );
-
-      if (response.statusCode == 200) {
+ if (response.statusCode == 200) {
         emit(AnswersSuccess(
           message: 'Answers submitted successfully',
         ));
+     
       } 
     } on ServerException catch (e) {
       emit(AnswersFailure(

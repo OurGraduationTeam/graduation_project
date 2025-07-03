@@ -11,7 +11,6 @@ import 'package:gradution_project/core/storage/app_storage_helper.dart';
 import 'package:gradution_project/cubit/users/users/user_cubit.dart';
 import 'package:gradution_project/login_Screen.dart';
 import 'package:gradution_project/personalitypattern.dart';
-import 'package:gradution_project/SignupScreen.dart';
 import 'package:gradution_project/widget/Register_item.dart';
 
 void main() async {
