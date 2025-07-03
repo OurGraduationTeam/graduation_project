@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gradution_project/ProgressBar.dart';
-import 'package:gradution_project/QuesButton.dart';
-import 'package:gradution_project/QuestionsList.dart';
-import 'package:gradution_project/answer.dart';
+import 'package:gradution_project/PersonalityExam/ProgressBar.dart';
+import 'package:gradution_project/PersonalityExam/QuesButton.dart';
+import 'package:gradution_project/PersonalityExam/QuestionsList.dart';
+import 'package:gradution_project/PersonalityExam/answer.dart';
 import 'package:gradution_project/character/characterpattern.dart';
 import 'package:gradution_project/cubit/quizez/cubit/quizez_cubit.dart';
 

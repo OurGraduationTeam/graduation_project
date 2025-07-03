@@ -1,9 +1,15 @@
 
 import 'package:flutter/material.dart';
+import 'package:gradution_project/progress.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/services/setup_get_it.dart';
+<<<<<<< HEAD
 import 'package:gradution_project/cubit/users/users/user_cubit.dart';
 import 'package:gradution_project/progress.dart';
+=======
+import 'package:gradution_project/cubit/cubit/users/user_cubit.dart';
+
+>>>>>>> cd6c6a68d130a219575069f8678c3f651f45eef2
 
 class CustomRegisterStepWidget extends StatefulWidget {
   const CustomRegisterStepWidget({super.key});

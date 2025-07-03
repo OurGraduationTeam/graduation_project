@@ -35,9 +35,10 @@ class _ChatPageState extends State<ChatPage> {
         api: getIt<ApiConsumer>(),
       ),
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text("Chat "),
-          backgroundColor: Colors.grey.shade200,
+          backgroundColor: Colors.white,
           centerTitle: true,
         ),
         body: const ChatBotBlocConsumerBody(),
@@ -94,7 +95,7 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
     super.dispose();
   }
 
-  Widget _buildMessage(ChatMessage message) {
+  Widget buildMessage(ChatMessage message) {
     final timeString = DateFormat('hh:mm a').format(message.timestamp);
 
     final bool isSendByMe = message.isSendByMe;
@@ -116,7 +117,7 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
                 color:
-                    isSendByMe ? Colors.blue.shade100 : Colors.green.shade200,
+                    isSendByMe ?   const Color.fromRGBO(54, 113, 90, 1):Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: const Radius.circular(12),
                   topRight: const Radius.circular(12),
@@ -131,12 +132,13 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
                 children: [
                   Text(
                     message.text,
-                    style: const TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16,color: Colors.white),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     timeString,
-                    style: const TextStyle(fontSize: 11, color: Colors.black54),
+                    style: const TextStyle(fontSize: 11, color: Colors.white,
+                    ),
                   ),
                 ],
               ),
@@ -153,7 +155,8 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
     );
   }
 
-  Widget _buildLoadingMessage() {
+  Widget buildLoadingMessage(bool  isSendByMe) {
+      
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
       child: Row(
@@ -166,9 +169,10 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
           const SizedBox(width: 10),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            decoration: BoxDecoration(
-              color: Colors.green.shade200,
-              borderRadius: const BorderRadius.only(
+            decoration:BoxDecoration(
+              color:    isSendByMe ?   const Color.fromRGBO(54, 113, 90, 1):Colors.white,
+              border: Border.all(color: Colors.black),
+              borderRadius:  const BorderRadius.only(
                 topLeft: Radius.circular(12),
                 topRight: Radius.circular(12),
                 bottomRight: Radius.circular(12),
@@ -176,7 +180,7 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
             ),
             child: const Text(
               "لحظة من فضلك، أجهز الإجابة...",
-              style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: Colors.black),
             ),
           ),
         ],
@@ -213,9 +217,9 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
                   : _messages.length,
               itemBuilder: (_, index) {
                 if (index < _messages.length) {
-                  return _buildMessage(_messages[index]);
+                  return buildMessage(_messages[index]);
                 } else {
-                  return _buildLoadingMessage();
+                  return buildLoadingMessage(false);
                 }
               },
             ),
@@ -231,7 +235,9 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
                     onSubmitted: (_) => _sendMessage(),
                     decoration: const InputDecoration(
                       hintText: "Type a message...",
+                      
                       border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
                     ),
@@ -241,7 +247,7 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
                 IconButton(
                   onPressed: _sendMessage,
                   icon: const Icon(Icons.send),
-                  color: Colors.blue,
+                  color:const Color.fromRGBO(54, 113, 90, 1),
                 ),
               ],
             ),
