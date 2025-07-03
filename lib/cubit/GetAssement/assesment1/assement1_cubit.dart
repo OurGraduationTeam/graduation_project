@@ -6,6 +6,7 @@ import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/api/end_points.dart';
 import 'package:gradution_project/core/errors/exceptions.dart';
 import 'package:gradution_project/core/models/GetAssement1.dart';
+import 'package:gradution_project/core/models/answer.dart';
 
 
 part 'assement1_state.dart';
@@ -13,6 +14,7 @@ part 'assement1_state.dart';
 class Assement1Cubit extends Cubit<Assement1State> {
   Assement1Cubit({required this.api}) : super(Assement1Initial());
 final ApiConsumer api;
+
 
 
 
@@ -37,6 +39,29 @@ final ApiConsumer api;
     } on ServerException catch (e) {
       emit(Assement1Failure(errorMessage: e.errModel.message));
     }
+  }
+  
+  Future<void> sendAssement1( {required request}) async {
+   emit(Assement1Loading());
+
+    try {
+      
+      final response = await api.post(
+        EndPoints.assement1,
+        data: jsonEncode(request.toJson()),
+     
+    
+      );
+ if (response.statusCode == 200) {
+        emit(Assement1Success(questions: response.body as List<Question>));
+     
+      } 
+    } on ServerException catch (e) {
+      emit(Assement1Failure(
+        errorMessage:e.errModel.message  ,
+      ));
+    }
+
   }
 }
 

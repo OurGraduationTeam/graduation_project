@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_project/core/models/answer.dart';
 import 'package:gradution_project/cubit/GetAssement/assesment1/assement1_cubit.dart';
 
 import 'QuestionButtonDis.dart';
@@ -16,6 +17,8 @@ class Disorderexambody extends StatefulWidget {
 
 class _DisorderexambodyState extends State<Disorderexambody> {
   int currentIndex = 1;
+  int domainId = 1; 
+  List<Answer> selectedAnswers = [];// Replace with the actual domain ID you want to use
 
   @override
   void initState() {
@@ -110,6 +113,11 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                             setState(() {
                               currentIndex++;
                             });
+                            context.read<Assement1Cubit>().sendAssement1(
+                              request: SubmitRequest(
+                                domainId: domainId, answers: selectedAnswers,
+                              ),
+                            );
                           },
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25),
