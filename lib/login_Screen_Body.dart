@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/SignupScreen.dart';
 import 'package:gradution_project/core/Screens/homepage.dart';
-import 'package:gradution_project/cubit/cubit/users/user_cubit.dart';
+import 'package:gradution_project/cubit/users/users/user_cubit.dart';
 
 class LoginScreenBody extends StatelessWidget {
   const LoginScreenBody({

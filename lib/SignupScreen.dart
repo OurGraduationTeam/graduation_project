@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/services/setup_get_it.dart';
-import 'package:gradution_project/cubit/cubit/users/user_cubit.dart';
+import 'package:gradution_project/cubit/users/users/user_cubit.dart';
+import 'package:gradution_project/progress.dart';
 import 'package:gradution_project/widget/Register_item.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -9,7 +11,10 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Registeritem();
+    return BlocProvider(
+      create: (context) => UserCubit(api:getIt<ApiConsumer>() )..register(),
+      child: const Registeritem(),
+    );
   }
 
   Widget buildStepCircle(bool isActive, String label) {
