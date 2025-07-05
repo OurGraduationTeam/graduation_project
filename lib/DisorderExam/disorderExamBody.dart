@@ -17,8 +17,9 @@ class Disorderexambody extends StatefulWidget {
 
 class _DisorderexambodyState extends State<Disorderexambody> {
   int currentIndex = 1;
-  int domainId = 1; 
-  List<Answer> selectedAnswers = [];// Replace with the actual domain ID you want to use
+  int domainId = 1;
+  List<Answer> selectedAnswers =
+      []; // Replace with the actual domain ID you want to use
 
   @override
   void initState() {
@@ -81,7 +82,8 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                   child: Container(
                     padding: const EdgeInsets.only(top: 20),
                     decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(50)),
                       color: Colors.white,
                     ),
                     child: Column(
@@ -99,10 +101,28 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                         ),
                         const SizedBox(height: 50),
 
-                        // Dynamic Options
-                        ...question.assement1List.map((opt) => Questionbuttondis(txt: opt.toString(), onPressed: () {
-                          context.read<Assement1Cubit>().fetchAssement();
-                        })),
+                        ...question.assement1List
+                            .map((opt) => Questionbuttondis(
+                                txt: opt.toString(),
+                                onPressed: () {
+                                  context
+                                      .read<Assement1Cubit>()
+                                      .fetchAssement();
+                                  setState(() {
+                                    if (selectedAnswers.any((answer) =>
+                                        answer.toString() == opt.toString())) {
+                                      selectedAnswers.removeWhere((answer) =>
+                                          answer.toString() == opt.toString());
+                                    } else {
+                                      selectedAnswers.add(Answer(
+                                          text: opt.toString(),
+                                          questionId: question.id,
+                                          score: 0,
+                                          domainId: domainId,
+                                          answer: opt));
+                                    }
+                                  });
+                                })),
 
                         const SizedBox(height: 60),
 
@@ -114,10 +134,11 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                               currentIndex++;
                             });
                             context.read<Assement1Cubit>().sendAssement1(
-                              request: SubmitRequest(
-                                domainId: domainId, answers: selectedAnswers,
-                              ),
-                            );
+                                  request: SubmitRequest(
+                                    domainId: domainId,
+                                    answers: selectedAnswers,
+                                  ),
+                                );
                           },
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25),

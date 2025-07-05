@@ -4,7 +4,7 @@ class Answer {
   final int questionId;
   final int score;
 
-  Answer({required this.questionId, required this.score, required Assement1 answer});
+  Answer({required this.questionId, required this.score, required Assement1 answer, required String text, required int domainId});
 
   Map<String, dynamic> toJson() => {
         'questionId': questionId,
