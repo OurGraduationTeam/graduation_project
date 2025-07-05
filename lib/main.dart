@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/DisorderExam/disorderExam.dart';
+import 'package:gradution_project/DisorderExam2/disorderExam2.dart';
 import 'package:gradution_project/PersonalityExam/PersonExam.dart';
 import 'package:gradution_project/chat.dart';
 import 'package:gradution_project/core/Screens/splash1.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const Disorderexam()
+      home: const Disorderexam2()
     );
   }
 }

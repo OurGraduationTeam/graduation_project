@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/core/models/answer.dart';
-import 'package:gradution_project/cubit/GetAssement/assesment1/assement1_cubit.dart';
+import 'package:gradution_project/cubit/Assement/assesment1/assement1_cubit.dart';
 
 import 'QuestionButtonDis.dart';
 import 'progressBar2.dart';

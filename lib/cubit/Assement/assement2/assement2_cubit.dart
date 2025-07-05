@@ -11,7 +11,7 @@ import 'package:meta/meta.dart';
 part 'assement2_state.dart';
 
 class Assement2Cubit extends Cubit<Assement2State> {
-  Assement2Cubit(this.api) : super(Assement2Initial());
+  Assement2Cubit(  {required this. api}) : super(Assement2Initial());
   final ApiConsumer api;
 
   Future<void> fetchAssement({required int domainId}) async {
@@ -29,7 +29,7 @@ class Assement2Cubit extends Cubit<Assement2State> {
       emit(Assement2Failure(errorMessage: e.errModel.message));
     }
   }
-  Future<void> sendAssement2(SubmitRequest request) async {
+  Future<void> sendAssement2( {required request}) async {
     emit(Assement2Loading());
 
     try {
