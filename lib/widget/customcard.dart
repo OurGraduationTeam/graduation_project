@@ -29,44 +29,11 @@ class Customcard extends StatelessWidget {
         border: Border.all(color: Colors.black, width: 1),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Container(
-                width: width * 0.12,
-                height: height * 0.08,
-                decoration: BoxDecoration(
-                  color: isHighlighted ? const Color(0Xff36715A) : Colors.white,
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                      color: isHighlighted
-                          ? Colors.white
-                          : const Color(0Xff36715A),
-                      width: 4),
-                ),
-                child: Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(
-                          builder: (context) => const Personexam(),
-                        ));
-                      },
-                      child: Text(
-                                        'ابدأ الآن',
-                                        style: TextStyle(
-                        color: isHighlighted ? Colors.white : Colors.black54),
-                                      ),
-                    )),
-              ),
-            ],
-          ),
-          const Spacer(),
-          Column(
             spacing: height * 0.006,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
@@ -111,6 +78,41 @@ class Customcard extends StatelessWidget {
                   style: TextStyle(
                       color: isHighlighted ? Colors.black54 : Colors.white),
                 ),
+              ),
+            ],
+          ),
+          const Spacer(),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: width * 0.12,
+                height: height * 0.08,
+                decoration: BoxDecoration(
+                  color: isHighlighted ? const Color(0Xff36715A) : Colors.white,
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                      color: isHighlighted
+                          ? Colors.white
+                          : const Color(0Xff36715A),
+                      width: 4),
+                ),
+                child: Center(
+                    child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Personexam(),
+                        ));
+                  },
+                  child: Text(
+                    'ابدأ الآن',
+                    style: TextStyle(
+                        color: isHighlighted ? Colors.white : Colors.black54),
+                  ),
+                )),
               ),
             ],
           ),
