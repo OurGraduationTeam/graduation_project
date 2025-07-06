@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 
-class Containerforcharachter extends StatelessWidget {
-  const Containerforcharachter({
+class ContainerForCharachter extends StatelessWidget {
+  const ContainerForCharachter({
     super.key,
+    required this.personalityType,
   });
+
+  final String personalityType;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          border: Border.all(color: Colors.black, width: 1)),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(color: Colors.black, width: 1),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -23,13 +27,9 @@ class Containerforcharachter extends StatelessWidget {
               style: TextStyle(fontSize: 32, color: Colors.black),
             ),
           ),
-          const Text(
-            'مهندس',
-            style: TextStyle(fontSize: 32, color: Color(0Xff55D4A2)),
-          ),
-          const Text(
-            'INTJ',
-            style: TextStyle(fontSize: 32, color: Color(0Xff4A826C)),
+          Text(
+            personalityType,
+            style: const TextStyle(fontSize: 32, color: Color(0Xff4A826C)),
           ),
           Image.asset(
             'assets/Rectangle 3104.png',

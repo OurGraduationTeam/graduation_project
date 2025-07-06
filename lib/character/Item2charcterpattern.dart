@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Item2characterpattern extends StatelessWidget {
-  const Item2characterpattern({
+class Item2CharacterPattern extends StatelessWidget {
+  const Item2CharacterPattern({
     super.key,
-    required this.progress, required this.color,
+    required this.description,
+    required this.progress,
+    required this.color,
   });
 
+  final String description;
   final double progress;
   final Color color;
 
@@ -18,14 +21,18 @@ class Item2characterpattern extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-          const SizedBox(height: 12,),
-            Align(alignment: Alignment.bottomRight,
+            const SizedBox(
+              height: 12,
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
               child: Text(
                 "%$progress مفتح بنسبة",
                 style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
             ),
             const SizedBox(height: 10),
@@ -52,8 +59,8 @@ class Item2characterpattern extends StatelessWidget {
                   },
                 ),
                 Positioned(
-                  left: (progress / 100) * MediaQuery.of(context).size.width -
-                      40, // Adjusting the slider position
+                  left:
+                      (progress / 100) * MediaQuery.of(context).size.width - 40,
                   child: CircleAvatar(
                     radius: 6,
                     backgroundColor: Colors.white,
@@ -67,14 +74,16 @@ class Item2characterpattern extends StatelessWidget {
                 ),
               ],
             ),
-
-              const Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                    "انطوائي", // Arabic text (Introvert)
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                description,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
+            ),
           ],
         ),
       ),

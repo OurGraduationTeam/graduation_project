@@ -100,28 +100,33 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                         ),
                         const SizedBox(height: 50),
 
-                        ...question.assement1List
-                            .map((opt) => Questionbuttondis(
-                                txt: opt.toString(),
-                                onPressed: () {
-                                  context
-                                      .read<Assement1Cubit>()
-                                      .fetchAssement();
-                                  setState(() {
-                                    if (selectedAnswers.any((answer) =>
-                                        answer.toString() == opt.toString())) {
-                                      selectedAnswers.removeWhere((answer) =>
-                                          answer.toString() == opt.toString());
-                                    } else {
-                                      selectedAnswers.add(Answer(
-                                          text: opt.toString(),
-                                          questionId: question.id,
-                                          score: 0,
-                                          domainId: domainId,
-                                          answer: opt));
-                                    }
-                                  });
-                                })),
+                        ...question.assement1List.map(
+                          (opt) => Questionbuttondis(
+                            txt: opt.description,
+                            onPressed: () {
+                              context.read<Assement1Cubit>().fetchAssement();
+                              setState(
+                                () {
+                                  if (selectedAnswers.any((answer) =>
+                                      answer.toString() == opt.toString())) {
+                                    selectedAnswers.removeWhere((answer) =>
+                                        answer.toString() == opt.toString());
+                                  } else {
+                                    selectedAnswers.add(
+                                      Answer(
+                                        text: opt.toString(),
+                                        questionId: question.id,
+                                        score: 0,
+                                        domainId: domainId,
+                                        answer: opt,
+                                      ),
+                                    );
+                                  }
+                                },
+                              );
+                            },
+                          ),
+                        ),
 
                         const SizedBox(height: 60),
 

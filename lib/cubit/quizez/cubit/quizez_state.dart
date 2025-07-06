@@ -7,11 +7,13 @@ final class QuizezInitial extends QuizezState {}
 final class QuizezLoading extends QuizezState {}
 
 final class QuizezSuccess extends QuizezState {
-  final List<QuestionModel> quizez;
-  QuizezSuccess({required this.quizez});
+  final PersonalityResultModel personalityResultModel;
+  QuizezSuccess({
+    required this.personalityResultModel,
+  });
 }
 
 final class QuizezFailure extends QuizezState {
-  final String errorMessasag;
-  QuizezFailure({required this.errorMessasag});
+  final String errorMessage;
+  QuizezFailure({required this.errorMessage});
 }

@@ -1,8 +1,10 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/DisorderExam/disorderExam.dart';
 import 'package:gradution_project/PersonalityExam/PersonExam.dart';
+import 'package:gradution_project/character/characterpattern.dart';
 import 'package:gradution_project/chat.dart';
 import 'package:gradution_project/core/Screens/splash1.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
@@ -18,6 +20,7 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   setupGetIt();
   await AppStorageHelper.init();
+
   runApp(
     EasyLocalization(
       supportedLocales: const [
@@ -27,7 +30,9 @@ void main() async {
       startLocale: const Locale('ar'),
       path: 'assets/translations',
       fallbackLocale: const Locale('ar'),
-      child: const MyApp(),
+      child: DevicePreview(
+        builder: (context) => const MyApp(),
+      ),
     ),
   );
 }
@@ -37,15 +42,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
-      home: const DisorderExam()
-    );
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          useMaterial3: true,
+        ),
+        home: const Personexam());
   }
 }
