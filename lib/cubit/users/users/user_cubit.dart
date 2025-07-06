@@ -60,7 +60,7 @@ class UserCubit extends Cubit<UserState> {
         },
       );
       log(result.toString());
-      log("Login successful");
+      log("Register successful");
       emit(UserSuccess());
     } catch (e) {
       emit(UserFailure(errorMessasage: e.toString()));
