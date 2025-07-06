@@ -13,7 +13,7 @@ class HomepageItems extends StatelessWidget {
       child:SingleChildScrollView(
         child: Column(spacing: height*0.015,
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               height: height*0.035,
