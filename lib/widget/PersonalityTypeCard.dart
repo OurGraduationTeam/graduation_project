@@ -46,7 +46,7 @@ class PersonalityTypeCard extends StatelessWidget {
             Icon(Icons.arrow_back_ios_new, color:  isHighlighted ?    Colors.white :const Color(0XFF36715A)  , size: 18),
             Expanded(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                    mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(

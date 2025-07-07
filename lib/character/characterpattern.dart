@@ -1,47 +1,108 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/character/Item2charcterpattern.dart';
 import 'package:gradution_project/character/containerforcharacter.dart';
+import 'package:gradution_project/core/models/personality_result_model.dart';
 
-class Characterpattern extends StatelessWidget {
-  const Characterpattern({super.key});
+class CharacterPattern extends StatefulWidget {
+  const CharacterPattern({
+    super.key,
+    required this.personalityResultModel,
+  });
+
+  final PersonalityResultModel personalityResultModel;
+
+  @override
+  State<CharacterPattern> createState() => _CharacterPatternState();
+}
+
+class _CharacterPatternState extends State<CharacterPattern> {
+  Color _getColorForTrait(String key) {
+    switch (key) {
+      case "الانفتاح/الانطوائيه":
+        return const Color(0Xff90D0B7);
+      case "الفهم/الحدس":
+        return const Color(0XffDACC2D);
+      case "التفكير/الاحساس":
+        return const Color(0XffC8F15A);
+      case "الحكم علي الاشخاص/الإدراك":
+        return const Color(0XffE3A3E9);
+      case "حازم/مضطرب":
+        return const Color(0XffE38F8F);
+      default:
+        return Colors.grey;
+    }
+  }
+
+  final orderedKeys = [
+    "الانفتاح/الانطوائيه",
+    "الفهم/الحدس",
+    "التفكير/الاحساس",
+    "الحكم علي الاشخاص/الإدراك",
+    "حازم/مضطرب",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
             padding: const EdgeInsets.all(24),
-            child: Column(children: [
-              const Containerforcharachter(),
-              const Padding(
-                padding: EdgeInsets.only(top: 8, right: 8),
-                child: Align(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ContainerForCharachter(
+                  personalityType:
+                      widget.personalityResultModel.personalityType,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 8, right: 8),
+                  child: Align(
                     alignment: Alignment.centerRight,
                     child: Text(
                       'سمات الشخصية',
                       style: TextStyle(
-                          fontSize: 32,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
-                    )),
-              ), const SizedBox(height: 18,),
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
+                        fontSize: 32,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 18),
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: Colors.black, width: 1)),
-                child: const Column(children: [
-                  Item2characterpattern(
-                    progress: 62,
-                    color: Color(0Xff90D0B7),
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 1,
+                    ),
                   ),
-                  Item2characterpattern(progress: 48, color: Color(0XffDACC2D)),
-
-                  Item2characterpattern(progress: 48, color: Color(0XffC8F15A)),
-                  Item2characterpattern(progress: 33, color: Color(0XffE3A3E9)),
-                  Item2characterpattern(progress: 66, color: Color(0XffE38F8F))
-                ]),
-              )
-            ])));
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: 16), // prevent overflow inside
+                    child: Column(
+                      children: widget
+                          .personalityResultModel.traitPercentages.entries
+                          .map(
+                        (entry) {
+                          return Item2CharacterPattern(
+                            description: entry.key,
+                            progress: entry.value.toDouble(),
+                            color: _getColorForTrait(entry.key),
+                          );
+                        },
+                      ).toList(),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/api/end_points.dart';
 import 'package:gradution_project/core/errors/exceptions.dart';
+import 'package:gradution_project/core/models/personality_result_model.dart';
 import 'package:gradution_project/core/models/questionmodel.dart';
 import 'package:gradution_project/core/storage/app_storage_helper.dart';
 import 'package:gradution_project/core/storage/storage_keys.dart';
@@ -43,9 +44,15 @@ class QuizezCubit extends Cubit<QuizezState> {
       );
 
       log("result from submit the answers: ${result.toString()}");
+      final PersonalityResultModel personalityResultModel =
+          PersonalityResultModel.fromJson(result);
+
+      emit(QuizezSuccess(
+        personalityResultModel: personalityResultModel,
+      ));
     } on ServerException catch (e) {
       log(e.toString());
-      emit(QuizezFailure(errorMessasag: e.errModel.message));
+      emit(QuizezFailure(errorMessage: e.errModel.message));
     }
   }
 }
