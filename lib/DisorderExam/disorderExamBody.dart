@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/core/models/answer.dart';
+import 'package:gradution_project/core/storage/app_storage_helper.dart';
+import 'package:gradution_project/core/storage/storage_keys.dart';
 import 'package:gradution_project/cubit/Assement/assesment1/assement1_cubit.dart';
 
 import 'QuestionButtonDis.dart';
@@ -16,10 +18,10 @@ class Disorderexambody extends StatefulWidget {
 }
 
 class _DisorderexambodyState extends State<Disorderexambody> {
-  int currentIndex = 1;
+  int currentIndex = 0;
   int domainId = 1;
   List<Answer> selectedAnswers = [];
- 
+  int? selectedScore;
 
   @override
   void initState() {
@@ -29,8 +31,8 @@ class _DisorderexambodyState extends State<Disorderexambody> {
 
   @override
   Widget build(BuildContext context) {
-     var height= MediaQuery.of(context).size.height;
-     log( 'Height of the screen: $height');
+    var height = MediaQuery.of(context).size.height;
+    log('Height of the screen: $height');
     return SafeArea(
       child: BlocBuilder<Assement1Cubit, Assement1State>(
         builder: (context, state) {
@@ -44,29 +46,36 @@ class _DisorderexambodyState extends State<Disorderexambody> {
           }
 
           if (state is Assement1Success) {
-            final question = state.questions[currentIndex - 1];
-
+            final question = state.questions[currentIndex];
             return Column(
               children: [
                 // Top Header with Progress Bar
                 Container(
                   color: const Color(0xff36715A),
                   padding: const EdgeInsets.only(bottom: 20),
-                  height: height * 0.23,
+                  height: height * 0.2,
                   alignment: Alignment.center,
                   child: Column(
                     children: [
                       Text(
-                        'عدد الأسئلة $currentIndex من 60',
+                        'عدد الأسئلة ${currentIndex + 1} من ${state.questions.length} ',
                         style: const TextStyle(
                           fontSize: 26,
                           color: Colors.white,
                         ),
                       ),
+                      const SizedBox(
+                        height: 12,
+                      ),
                       Progressbar2(
-                        progressvalue: currentIndex / 60,
+                        progressValue:
+                            ((currentIndex + 1) / state.questions.length)
+                                .clamp(0.0, 1.0),
                         width: MediaQuery.of(context).size.width * 0.8,
                         height: 15,
+                      ),
+                      const SizedBox(
+                        height: 30,
                       ),
                       const Text(
                         'اختبار الاضطرابات',
@@ -100,65 +109,81 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                             fontSize: 25,
                             fontWeight: FontWeight.bold,
                           ),
+                          maxLines: 5,
+                          overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: MediaQuery.of(context).size.height * 0.052),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.052),
 
                         ...question.assement1List.map(
                           (opt) => Questionbuttondis(
                             txt: opt.description,
+                            pressed: selectedScore == opt.score,
                             onPressed: () {
-                              context.read<Assement1Cubit>().fetchAssement();
                               setState(
                                 () {
-                                  if (selectedAnswers.any((answer) =>
-                                      answer.toString() == opt.toString())) {
-                                    selectedAnswers.removeWhere((answer) =>
-                                        answer.toString() == opt.toString());
-                                  } else {
-                                    selectedAnswers.add(
-                                      Answer(
-                                        text: opt.toString(),
-                                        questionId: question.id,
-                                        score: 0,
-                                        domainId: domainId,
-                                        answer: opt,
-                                      ),
-                                    );
-                                  }
+                                  selectedScore = opt.score;
                                 },
                               );
                             },
                           ),
                         ),
 
-                         SizedBox(height: MediaQuery.of(context).size.height * 0.052),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.052),
 
                         // Next Button
                         MaterialButton(
                           onPressed: () {
-                            context.read<Assement1Cubit>().fetchAssement();
-                            if (currentIndex < 60) {
-                              setState(() {
-                                currentIndex++;
-                              });
-                            }
-                            context.read<Assement1Cubit>().sendAssement1(
-                                  request: SubmitRequest(
-                                    domainId: domainId,
-                                    answers: selectedAnswers,
+                            if (selectedScore != null) {
+                              if (currentIndex < state.questions.length - 1) {
+                                setState(() {
+                                  currentIndex++;
+                                });
+
+                                selectedAnswers.add(
+                                  Answer(
+                                    questionId: question.id,
+                                    score: selectedScore!,
                                   ),
                                 );
+
+                                selectedScore = null;
+                              } else {
+                                if (selectedAnswers.length <
+                                    state.questions.length) {
+                                  selectedAnswers.add(
+                                    Answer(
+                                      questionId: question.id,
+                                      score: selectedScore!,
+                                    ),
+                                  );
+                                }
+                                log("answers: $selectedAnswers");
+                                log("answers.length: ${selectedAnswers.length}");
+                                // context.read<Assement1Cubit>().sendAssement1(
+                                //       request: SubmitRequest(
+                                //         domainId: domainId,
+                                //         answers: selectedAnswers,
+                                //       ),
+                                //     );
+                              }
+                            }
                           },
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25),
                           ),
-                          color: const Color(0xff36715A),
+                          color: selectedScore != null
+                              ? const Color(0xff36715A)
+                              : Colors.grey,
                           minWidth: 160,
                           height: 50,
-                          child: const Text(
-                            'التالي',
-                            style: TextStyle(
+                          child: Text(
+                            currentIndex < state.questions.length - 1
+                                ? 'التالي'
+                                : 'انهاء',
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.bold,

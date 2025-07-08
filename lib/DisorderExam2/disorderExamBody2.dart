@@ -1,8 +1,11 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gradution_project/DisorderExam2/QuestionButtonDis2.dart';
-import 'package:gradution_project/DisorderExam2/progressBar3.dart';
+import 'package:gradution_project/DisorderExam/QuestionButtonDis.dart';
+import 'package:gradution_project/DisorderExam/progressBar2.dart';
+import 'package:gradution_project/core/models/answer.dart';
 import 'package:gradution_project/cubit/Assement/assement2/assement2_cubit.dart';
+
 
 class Disorderexambody2 extends StatefulWidget {
   const Disorderexambody2({super.key});
@@ -12,60 +15,75 @@ class Disorderexambody2 extends StatefulWidget {
 }
 
 class _Disorderexambody2State extends State<Disorderexambody2> {
-  late double percentage = 0.0;
   int currentIndex = 0;
-  List selectedAnswers = [];
+  int domainId = 1;
+  List<Answer> selectedAnswers = [];
+  int? selectedScore;
 
   @override
   void initState() {
     super.initState();
-    context.read<Assement2Cubit>().fetchAssement(domainId: 1);
-  }
-
-  void selectAnswer(int value) {
-    setState(() {
-      if (selectedAnswers.length <= currentIndex) {
-        selectedAnswers.length = currentIndex + 1;
-      }
-      selectedAnswers[currentIndex] = value;
-    });
+    context.read<Assement2Cubit>().fetchAssement(
+          domainId: 0,
+        );
   }
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+
     return SafeArea(
       child: BlocBuilder<Assement2Cubit, Assement2State>(
         builder: (context, state) {
           if (state is Assement2Loading) {
             return const Center(child: CircularProgressIndicator());
-          } else if (state is Assement2Failure) {
-            return Center(child: Text('حدث خطأ: ${state.errorMessage}'));
-          } else if (state is Assement2Success) {
+          }
+
+          if (state is Assement2Failure) {
+            return Center(child: Text(state.errorMessage));
+          }
+
+          if (state is Assement2Success) {
             final question = state.questions[currentIndex];
 
             return Column(
               children: [
+                // Header with ProgressBar
                 Container(
-                  color: const Color(0Xff36715A),
+                  color: const Color(0xff36715A),
                   padding: const EdgeInsets.only(bottom: 20),
-                  height: MediaQuery.of(context).size.height * 0.23,
+                  height: height * 0.2,
                   alignment: Alignment.center,
                   child: Column(
                     children: [
                       Text(
-                        'عدد الأسئلة ${currentIndex + 1} من ${state.questions.length}',
-                        style:
-                            const TextStyle(fontSize: 26, color: Colors.white),
+                        'عدد الأسئلة ${currentIndex + 1} من ${state.questions.length} ',
+                        style: const TextStyle(
+                          fontSize: 26,
+                          color: Colors.white,
+                        ),
                       ),
-                      Progressbar3(
-                          progressvalue: percentage, width: 300, height: 15),
+                      const SizedBox(height: 12),
+                      Progressbar2(
+                        progressValue:
+                            ((currentIndex + 1) / state.questions.length)
+                                .clamp(0.0, 1.0),
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        height: 15,
+                      ),
+                      const SizedBox(height: 30),
                       const Text(
-                        'إختبار الإضطرابات',
-                        style: TextStyle(fontSize: 26, color: Colors.white),
+                        'اختبار الاضطرابات',
+                        style: TextStyle(
+                          fontSize: 26,
+                          color: Colors.white,
+                        ),
                       ),
                     ],
                   ),
                 ),
+
+                // Question Body
                 Expanded(
                   child: Container(
                     width: MediaQuery.of(context).size.width,
@@ -78,80 +96,95 @@ class _Disorderexambody2State extends State<Disorderexambody2> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        // Question Text
                         Text(
                           question.text,
                           style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
+                            color: Colors.black,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 5,
+                          overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.center,
                         ),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.052),
-                        ...List.generate(5, (index) {
-                          final options = [
-                            'أبداً',
-                            'نادراً',
-                            'أحياناً',
-                            'غالباً',
-                            'دائماً'
-                          ];
-                          return Questionbuttondis2(
-                            txt: options[index],
-                            isSelected: selectedAnswers.length > currentIndex &&
-                                selectedAnswers[currentIndex] == index,
-                            onTap: () => selectAnswer(index),
-                          );
-                        }),
-                        const SizedBox(height: 100),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            MaterialButton(
-                              onPressed: () {
+                        SizedBox(height: height * 0.052),
+
+                        // Options
+                        ...question.assement1List.map(
+                          (opt) => Questionbuttondis(
+                            txt: opt.description,
+                            pressed: selectedScore == opt.score,
+                            onPressed: () {
+                              setState(() {
+                                selectedScore = opt.score;
+                              });
+                            },
+                          ),
+                        ),
+
+                        SizedBox(height: height * 0.052),
+
+                        // Next / Finish Button
+                        MaterialButton(
+                          onPressed: () {
+                            if (selectedScore != null) {
+                              if (currentIndex < state.questions.length - 1) {
                                 setState(() {
-                                  if (percentage < 1 &&
-                                      currentIndex <
-                                          state.questions.length - 1) {
-                                    currentIndex++;
-                                    percentage += 1 / state.questions.length;
-                                  }
+                                  currentIndex++;
                                 });
-                              },
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25)),
-                              color: const Color(0xff36715A),
-                              minWidth: 120,
-                              child: const Text(
-                                'التالى',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
+
+                                selectedAnswers.add(
+                                  Answer(
+                                    questionId: question.id,
+                                    score: selectedScore!,
+                                  ),
+                                );
+
+                                selectedScore = null;
+                              } else {
+                                if (selectedAnswers.length <
+                                    state.questions.length) {
+                                  selectedAnswers.add(
+                                    Answer(
+                                      questionId: question.id,
+                                      score: selectedScore!,
+                                    ),
+                                  );
+                                }
+
+                                log("answers: $selectedAnswers");
+                                log("answers.length: ${selectedAnswers.length}");
+
+                                // Send final result
+                                // context.read<Assement2Cubit>().sendAssement2(
+                                //   request: SubmitRequest(
+                                //     domainId: domainId,
+                                //     answers: selectedAnswers,
+                                //   ),
+                                // );
+                              }
+                            }
+                          },
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          color: selectedScore != null
+                              ? const Color(0xff36715A)
+                              : Colors.grey,
+                          minWidth: 160,
+                          height: 50,
+                          child: Text(
+                            currentIndex < state.questions.length - 1
+                                ? 'التالي'
+                                : 'انهاء',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
                             ),
-                            MaterialButton(
-                              onPressed: () {
-                                setState(() {
-                                  if (percentage > 0 && currentIndex > 0) {
-                                    currentIndex--;
-                                    percentage -= 1 / state.questions.length;
-                                  }
-                                });
-                              },
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25)),
-                              minWidth: 120,
-                              child: const Text(
-                                'السابق',
-                                style: TextStyle(
-                                    color: Color(0xff36715A),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
-                        )
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -160,7 +193,7 @@ class _Disorderexambody2State extends State<Disorderexambody2> {
             );
           }
 
-          return const SizedBox();
+          return const Center(child: Text("جارٍ تحميل السؤال..."));
         },
       ),
     );

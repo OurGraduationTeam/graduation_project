@@ -9,14 +9,14 @@ import 'package:gradution_project/cubit/Assement/assement2/assement2_cubit.dart'
 
 
 
-class Disorderexam2 extends StatefulWidget {
-  const Disorderexam2({super.key});
+class DisorderExam2 extends StatefulWidget {
+  const DisorderExam2({super.key});
 
   @override
-  State<Disorderexam2> createState() => _Disorderexam2State();
+  State<DisorderExam2> createState() => _DisorderExam2State();
 }
 
-class _Disorderexam2State extends State<Disorderexam2> {
+class _DisorderExam2State extends State<DisorderExam2> {
   @override
   Widget build(BuildContext context) {
     return  MultiBlocProvider(

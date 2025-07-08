@@ -1,40 +1,58 @@
 import 'package:flutter/material.dart';
 
 class Progressbar2 extends StatelessWidget {
-  const Progressbar2({super.key, required this.progressvalue, required this.width, required this.height});
-final double progressvalue ;
-final double width;
-final double height;
+  const Progressbar2({
+    super.key,
+    required this.progressValue,
+    required this.width,
+    required this.height,
+    this.backgroundColor = const Color(0xFFBDBDBD),
+    this.progressColor = Colors.white,
+    this.textColor = Colors.black,
+    this.borderRadius = 10.0,
+    this.duration = const Duration(milliseconds: 300),
+  });
+
+  final double progressValue; // لازم تكون بين 0.0 و 1.0
+  final double width;
+  final double height;
+  final Color backgroundColor;
+  final Color progressColor;
+  final Color textColor;
+  final double borderRadius;
+  final Duration duration;
+
   @override
   Widget build(BuildContext context) {
+    final clampedProgress = progressValue.clamp(0.0, 1.0);
+
     return Container(
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: Colors.grey[400],
-        borderRadius: BorderRadius.circular(10),
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: Stack(
         children: [
-          Container(
-            width: width*progressvalue,
+          AnimatedContainer(
+            duration: duration,
+            width: width * clampedProgress,
             height: height,
             decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
+              color: progressColor,
+              borderRadius: BorderRadius.circular(borderRadius),
             ),
           ),
-          Align(
-            alignment: Alignment.center,
+          Center(
             child: Text(
-              '${(progressvalue*100).toInt()}%',
-              style: const TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold
+              '${(clampedProgress * 100).toInt()}%',
+              style: TextStyle(
+                color: textColor,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          )
-
+          ),
         ],
       ),
     );

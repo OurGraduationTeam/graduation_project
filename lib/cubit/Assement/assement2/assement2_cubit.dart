@@ -12,7 +12,7 @@ import 'package:meta/meta.dart';
 part 'assement2_state.dart';
 
 class Assement2Cubit extends Cubit<Assement2State> {
-  Assement2Cubit(  {required this. api}) : super(Assement2Initial());
+  Assement2Cubit({required this.api}) : super(Assement2Initial());
   final ApiConsumer api;
 
   Future<void> fetchAssement({required int domainId}) async {
@@ -22,15 +22,27 @@ class Assement2Cubit extends Cubit<Assement2State> {
       final response = await api.get(
         EndPoints.getassement2(domainId),
       );
-      log("response in cubit2: $response");
-      final data = response['data'] as List;
-      final List<Question> questions = data
-          .map((e) => Question.fromJson(e as Map<String, dynamic>))
-          .toList();
+      late final List<Question> questions;
+
+      if (response is Map<String, dynamic> && response['data'] is List) {
+        final list = response['data'] as List;
+        questions = list
+            .map((e) => Question.fromJson(e as Map<String, dynamic>))
+            .toList();
+      } else if (response is List) {
+        questions = response
+            .map((e) => Question.fromJson(e as Map<String, dynamic>))
+            .toList();
+      } else {
+        throw Exception("Unexpected response format");
+      }
 
       emit(Assement2Success(questions: questions));
     } on ServerException catch (e) {
       emit(Assement2Failure(errorMessage: e.errModel.message));
+    } catch (e) {
+      log("❌ Error: $e");
+      emit(Assement2Failure(errorMessage: "خطأ غير متوقع: $e"));
     }
   }
 

@@ -4,7 +4,7 @@ class Questionbuttondis extends StatelessWidget {
   const Questionbuttondis({
     super.key,
     required this.txt,
-    this.pressed = true,
+    this.pressed = false,
     this.onPressed,
   });
   final String txt;
@@ -17,12 +17,12 @@ class Questionbuttondis extends StatelessWidget {
       child: MaterialButton(
         onPressed: onPressed,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        color: pressed ? Colors.white : Color(0xff36715A),
+        color: pressed ? const Color(0xff36715A) : Colors.white,
         minWidth: 300,
         child: Text(
           txt,
           style: TextStyle(
-            color: pressed ? Colors.black : Colors.white,
+            color: pressed ? Colors.white : Colors.black,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),

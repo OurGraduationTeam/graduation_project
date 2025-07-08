@@ -1,10 +1,12 @@
-import 'package:gradution_project/core/models/GetAssement1.dart';
 
 class Answer {
   final int questionId;
   final int score;
 
-  Answer({required this.questionId, required this.score, required Assement1 answer, required String text, required int domainId});
+  Answer({
+    required this.questionId,
+    required this.score,
+  });
 
   Map<String, dynamic> toJson() => {
         'questionId': questionId,

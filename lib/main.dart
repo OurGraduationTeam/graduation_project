@@ -2,6 +2,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gradution_project/DisorderExam/disorderExam.dart';
+import 'package:gradution_project/DisorderExam2/disorderExam2.dart';
 
 import 'package:gradution_project/core/services/setup_get_it.dart';
 import 'package:gradution_project/core/storage/app_storage_helper.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const DisorderExam()
+      home: const DisorderExam2()
     );
   }
 }
