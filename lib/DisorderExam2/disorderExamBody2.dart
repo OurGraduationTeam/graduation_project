@@ -4,7 +4,6 @@ import 'package:gradution_project/DisorderExam2/QuestionButtonDis2.dart';
 import 'package:gradution_project/DisorderExam2/progressBar3.dart';
 import 'package:gradution_project/cubit/Assement/assement2/assement2_cubit.dart';
 
-
 class Disorderexambody2 extends StatefulWidget {
   const Disorderexambody2({super.key});
 
@@ -49,15 +48,17 @@ class _Disorderexambody2State extends State<Disorderexambody2> {
                 Container(
                   color: const Color(0Xff36715A),
                   padding: const EdgeInsets.only(bottom: 20),
-                  height: 160,
+                  height: MediaQuery.of(context).size.height * 0.23,
                   alignment: Alignment.center,
                   child: Column(
                     children: [
                       Text(
                         'عدد الأسئلة ${currentIndex + 1} من ${state.questions.length}',
-                        style: const TextStyle(fontSize: 26, color: Colors.white),
+                        style:
+                            const TextStyle(fontSize: 26, color: Colors.white),
                       ),
-                      Progressbar3(progressvalue: percentage, width: 300, height: 15),
+                      Progressbar3(
+                          progressvalue: percentage, width: 300, height: 15),
                       const Text(
                         'إختبار الإضطرابات',
                         style: TextStyle(fontSize: 26, color: Colors.white),
@@ -67,9 +68,11 @@ class _Disorderexambody2State extends State<Disorderexambody2> {
                 ),
                 Expanded(
                   child: Container(
+                    width: MediaQuery.of(context).size.width,
                     padding: const EdgeInsets.only(top: 20),
                     decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(50)),
                       color: Colors.white,
                     ),
                     child: Column(
@@ -83,9 +86,16 @@ class _Disorderexambody2State extends State<Disorderexambody2> {
                               fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                         ),
-                        const SizedBox(height: 50),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.052),
                         ...List.generate(5, (index) {
-                          final options = ['أبداً', 'نادراً', 'أحياناً', 'غالباً', 'دائماً'];
+                          final options = [
+                            'أبداً',
+                            'نادراً',
+                            'أحياناً',
+                            'غالباً',
+                            'دائماً'
+                          ];
                           return Questionbuttondis2(
                             txt: options[index],
                             isSelected: selectedAnswers.length > currentIndex &&
@@ -100,7 +110,9 @@ class _Disorderexambody2State extends State<Disorderexambody2> {
                             MaterialButton(
                               onPressed: () {
                                 setState(() {
-                                  if (percentage < 1 && currentIndex < state.questions.length - 1) {
+                                  if (percentage < 1 &&
+                                      currentIndex <
+                                          state.questions.length - 1) {
                                     currentIndex++;
                                     percentage += 1 / state.questions.length;
                                   }

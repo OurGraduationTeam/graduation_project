@@ -24,7 +24,7 @@ class _Disorderexam2State extends State<Disorderexam2> {
         BlocProvider(
           create: (context) => Assement2Cubit(api:  getIt<ApiConsumer>())..fetchAssement(domainId: 1),
         ),
-        BlocProvider(create: (context) => Assement2Cubit(api: getIt<ApiConsumer>())..sendAssement2(request: SubmitRequest(answers: [], domainId: 1))),
+        BlocProvider(create: (context) => Assement2Cubit(api: getIt<ApiConsumer>())..sendAssement2( request:  SubmitRequest(answers: [], domainId: 1), )),
       ],
       child: const Scaffold(
         backgroundColor:Color(0Xff36715A), 

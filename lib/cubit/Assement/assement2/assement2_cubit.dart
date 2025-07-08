@@ -33,12 +33,8 @@ class Assement2Cubit extends Cubit<Assement2State> {
       emit(Assement2Failure(errorMessage: e.errModel.message));
     }
   }
-<<<<<<< HEAD:lib/cubit/Assement/assement2/assement2_cubit.dart
-  Future<void> sendAssement2( {required request}) async {
-=======
 
-  Future<void> sendAssement2(SubmitRequest request) async {
->>>>>>> 559d68dcbb518cfc4c63c0af24cae82cb3d82ed0:lib/cubit/GetAssement/assement2/assement2_cubit.dart
+  Future<void> sendAssement2({required SubmitRequest request}) async {
     emit(Assement2Loading());
 
     try {
