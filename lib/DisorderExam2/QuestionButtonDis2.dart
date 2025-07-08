@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Questionbuttondis2 extends StatelessWidget {
- const Questionbuttondis2({super.key, required this.txt,  this.pressed=true});
+ const Questionbuttondis2({super.key, required this.txt,  this.pressed=true, required void Function() onTap, required bool isSelected});
 final String txt;
 final bool pressed;
   @override

@@ -4,7 +4,7 @@ import 'package:gradution_project/DisorderExam/disorderExamBody.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/models/answer.dart';
 import 'package:gradution_project/core/services/setup_get_it.dart';
-import 'package:gradution_project/cubit/GetAssement/assesment1/assement1_cubit.dart';
+import 'package:gradution_project/cubit/Assement/assesment1/assement1_cubit.dart';
 
 class DisorderExam extends StatefulWidget {
   const DisorderExam({super.key});

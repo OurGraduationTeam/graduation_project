@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/core/models/answer.dart';
-import 'package:gradution_project/cubit/GetAssement/assesment1/assement1_cubit.dart';
+import 'package:gradution_project/cubit/Assement/assesment1/assement1_cubit.dart';
 
 import 'QuestionButtonDis.dart';
 import 'progressBar2.dart';
@@ -19,6 +19,7 @@ class _DisorderexambodyState extends State<Disorderexambody> {
   int currentIndex = 1;
   int domainId = 1;
   List<Answer> selectedAnswers = [];
+ 
 
   @override
   void initState() {
@@ -28,6 +29,8 @@ class _DisorderexambodyState extends State<Disorderexambody> {
 
   @override
   Widget build(BuildContext context) {
+     var height= MediaQuery.of(context).size.height;
+     log( 'Height of the screen: $height');
     return SafeArea(
       child: BlocBuilder<Assement1Cubit, Assement1State>(
         builder: (context, state) {
@@ -49,7 +52,7 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                 Container(
                   color: const Color(0xff36715A),
                   padding: const EdgeInsets.only(bottom: 20),
-                  height: 160,
+                  height: height * 0.23,
                   alignment: Alignment.center,
                   child: Column(
                     children: [
@@ -62,7 +65,7 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                       ),
                       Progressbar2(
                         progressvalue: currentIndex / 60,
-                        width: 300,
+                        width: MediaQuery.of(context).size.width * 0.8,
                         height: 15,
                       ),
                       const Text(
@@ -79,6 +82,7 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                 // Question Body
                 Expanded(
                   child: Container(
+                    width: MediaQuery.of(context).size.width,
                     padding: const EdgeInsets.only(top: 20),
                     decoration: const BoxDecoration(
                       borderRadius:
@@ -98,7 +102,7 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        const SizedBox(height: 50),
+                        SizedBox(height: MediaQuery.of(context).size.height * 0.052),
 
                         ...question.assement1List.map(
                           (opt) => Questionbuttondis(
@@ -128,7 +132,7 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                           ),
                         ),
 
-                        const SizedBox(height: 60),
+                         SizedBox(height: MediaQuery.of(context).size.height * 0.052),
 
                         // Next Button
                         MaterialButton(
