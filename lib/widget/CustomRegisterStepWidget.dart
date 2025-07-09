@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gradution_project/cubit/users/users/user_cubit.dart';
+import 'package:gradution_project/login_Screen.dart';
 import 'package:gradution_project/progress.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/services/setup_get_it.dart';
@@ -45,6 +46,12 @@ class _CustomRegisterStepWidgetState extends State<CustomRegisterStepWidget> {
   void onContinuePressed() {
     if (currentStep == steps.length - 1) {
       userCubit.register();
+ Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const LoginScreen(),
+      ),
+    );
+
     } else {
       setState(() {
         currentStep++;
