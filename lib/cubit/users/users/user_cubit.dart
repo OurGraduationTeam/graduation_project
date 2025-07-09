@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/api/end_points.dart';
 import 'package:gradution_project/core/errors/exceptions.dart';
+import 'package:gradution_project/core/services/save_current_user_id.dart';
 import 'package:gradution_project/core/storage/app_storage_helper.dart';
 import 'package:gradution_project/core/storage/storage_keys.dart';
 
@@ -36,6 +37,7 @@ class UserCubit extends Cubit<UserState> {
       await AppStorageHelper.setSecureData(
           StorageKeys.accessToken.toString(), result["token"]);
 
+      await saveCurrentUserId();
       log(result.toString());
       log("Login successful");
       emit(UserSuccess());

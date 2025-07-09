@@ -1,10 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gradution_project/core/settings/Custom_Setting_Background.dart';
 import 'package:gradution_project/core/settings/Setting_Person.dart';
 import 'package:gradution_project/core/settings/Setting_listview.dart';
-import 'package:gradution_project/widget/CustomBottomNavigationBar.dart';
-
 class SettingsScreenbody extends StatelessWidget {
   const SettingsScreenbody({super.key});
 

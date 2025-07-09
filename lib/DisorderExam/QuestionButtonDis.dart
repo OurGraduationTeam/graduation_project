@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Questionbuttondis extends StatelessWidget {
-  const Questionbuttondis({
+class QuestionButtonDis extends StatelessWidget {
+  const QuestionButtonDis({
     super.key,
     required this.txt,
     this.pressed = false,

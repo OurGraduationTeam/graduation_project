@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:gradution_project/features/splash/splash3.dart';
-import 'package:gradution_project/features/splash/splash4.dart';
 
 class Splash2 extends StatefulWidget {
   const Splash2({super.key});

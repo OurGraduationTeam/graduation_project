@@ -2,24 +2,23 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_project/DisorderExam2/disorderExam2.dart';
 import 'package:gradution_project/core/models/answer.dart';
-import 'package:gradution_project/core/storage/app_storage_helper.dart';
-import 'package:gradution_project/core/storage/storage_keys.dart';
+import 'package:gradution_project/core/services/get_current_user_id.dart';
 import 'package:gradution_project/cubit/Assement/assesment1/assement1_cubit.dart';
 
 import 'QuestionButtonDis.dart';
 import 'progressBar2.dart';
 
-class Disorderexambody extends StatefulWidget {
-  const Disorderexambody({super.key});
+class DisorderExamBody extends StatefulWidget {
+  const DisorderExamBody({super.key});
 
   @override
-  State<Disorderexambody> createState() => _DisorderexambodyState();
+  State<DisorderExamBody> createState() => _DisorderExamBodyState();
 }
 
-class _DisorderexambodyState extends State<Disorderexambody> {
+class _DisorderExamBodyState extends State<DisorderExamBody> {
   int currentIndex = 0;
-  int domainId = 1;
   List<Answer> selectedAnswers = [];
   int? selectedScore;
 
@@ -34,10 +33,22 @@ class _DisorderexambodyState extends State<Disorderexambody> {
     var height = MediaQuery.of(context).size.height;
     log('Height of the screen: $height');
     return SafeArea(
-      child: BlocBuilder<Assement1Cubit, Assement1State>(
+      child: BlocConsumer<Assement1Cubit, Assement1State>(
+        listener: (context, state) {
+          if (state is SendAssement1Success) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DisorderExam2(
+                  depressionResultModel: state.depressionResultModel,
+                ),
+              ),
+            );
+          }
+        },
         builder: (context, state) {
           log(state.toString());
-          if (state is Assement1Loading) {
+          if (state is Assement1Loading || state is SendAssement1Loading) {
             return const Center(child: CircularProgressIndicator());
           }
 
@@ -45,11 +56,14 @@ class _DisorderexambodyState extends State<Disorderexambody> {
             return Center(child: Text(state.errorMessage));
           }
 
+          if (state is SendAssement1Failure) {
+            return Center(child: Text(state.errorMessage));
+          }
+
           if (state is Assement1Success) {
             final question = state.questions[currentIndex];
             return Column(
               children: [
-                // Top Header with Progress Bar
                 Container(
                   color: const Color(0xff36715A),
                   padding: const EdgeInsets.only(bottom: 20),
@@ -67,7 +81,7 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                       const SizedBox(
                         height: 12,
                       ),
-                      Progressbar2(
+                      ProgressBar2(
                         progressValue:
                             ((currentIndex + 1) / state.questions.length)
                                 .clamp(0.0, 1.0),
@@ -117,7 +131,7 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                             height: MediaQuery.of(context).size.height * 0.052),
 
                         ...question.assement1List.map(
-                          (opt) => Questionbuttondis(
+                          (opt) => QuestionButtonDis(
                             txt: opt.description,
                             pressed: selectedScore == opt.score,
                             onPressed: () {
@@ -162,12 +176,12 @@ class _DisorderexambodyState extends State<Disorderexambody> {
                                 }
                                 log("answers: $selectedAnswers");
                                 log("answers.length: ${selectedAnswers.length}");
-                                // context.read<Assement1Cubit>().sendAssement1(
-                                //       request: SubmitRequest(
-                                //         domainId: domainId,
-                                //         answers: selectedAnswers,
-                                //       ),
-                                //     );
+                                context.read<Assement1Cubit>().sendAssement1(
+                                      request: SubmitRequest(
+                                        answers: selectedAnswers,
+                                        userId: getCurrentUserId(),
+                                      ),
+                                    );
                               }
                             }
                           },

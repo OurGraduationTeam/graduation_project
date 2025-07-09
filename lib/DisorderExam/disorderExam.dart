@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/DisorderExam/disorderExamBody.dart';
 import 'package:gradution_project/core/api/api_consumer.dart';
-import 'package:gradution_project/core/models/answer.dart';
 import 'package:gradution_project/core/services/setup_get_it.dart';
 import 'package:gradution_project/cubit/Assement/assesment1/assement1_cubit.dart';
 
@@ -20,22 +19,19 @@ class _DisorderExamState extends State<DisorderExam> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) =>
-              Assement1Cubit(api: getIt<ApiConsumer>()),
+          create: (context) => Assement1Cubit(
+            api: getIt<ApiConsumer>(),
+          ),
         ),
         BlocProvider(
-          create: (context) => Assement1Cubit(api: getIt<ApiConsumer>())
-            // ..sendAssement1(
-            //   request: SubmitRequest(
-            //     answers: [],
-            //     domainId: domainId,
-            //   ),
-            // ),
+          create: (context) => Assement1Cubit(
+            api: getIt<ApiConsumer>(),
+          ),
         ),
       ],
       child: const Scaffold(
         backgroundColor: Color(0Xff36715A),
-        body: Disorderexambody(),
+        body: DisorderExamBody(),
       ),
     );
   }

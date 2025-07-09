@@ -1,13 +1,9 @@
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gradution_project/DisorderExam/disorderExam.dart';
-import 'package:gradution_project/DisorderExam2/disorderExam2.dart';
-import 'package:gradution_project/SignupScreen.dart';
 
 import 'package:gradution_project/core/services/setup_get_it.dart';
 import 'package:gradution_project/core/storage/app_storage_helper.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,15 +13,14 @@ void main() async {
 
   runApp(
     EasyLocalization(
-      supportedLocales: const [
-        Locale('en'),
-        Locale('ar'),
-      ],
-      startLocale: const Locale('ar'),
-      path: 'assets/translations',
-      fallbackLocale: const Locale('ar'),
-      child: const MyApp()
-    ),
+        supportedLocales: const [
+          Locale('en'),
+          Locale('ar'),
+        ],
+        startLocale: const Locale('ar'),
+        path: 'assets/translations',
+        fallbackLocale: const Locale('ar'),
+        child: const MyApp()),
   );
 }
 
@@ -34,15 +29,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
-      home: const SignupScreen()
-    );
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          useMaterial3: true,
+        ),
+        home: const DisorderExam());
   }
 }

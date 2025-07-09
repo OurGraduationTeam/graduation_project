@@ -1,4 +1,3 @@
-
 class Answer {
   final int questionId;
   final int score;
@@ -15,12 +14,14 @@ class Answer {
 }
 
 class SubmitRequest {
-  final int domainId;
+  final int userId;
+  final int? domainId;
   final List<Answer> answers;
 
-  SubmitRequest({required this.domainId, required this.answers});
+  SubmitRequest({required this.userId, this.domainId, required this.answers});
 
   Map<String, dynamic> toJson() => {
+        'userId': userId,
         'domainId': domainId,
         'answers': answers.map((a) => a.toJson()).toList(),
       };

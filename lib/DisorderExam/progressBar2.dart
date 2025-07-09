@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Progressbar2 extends StatelessWidget {
-  const Progressbar2({
+class ProgressBar2 extends StatelessWidget {
+  const ProgressBar2({
     super.key,
     required this.progressValue,
     required this.width,

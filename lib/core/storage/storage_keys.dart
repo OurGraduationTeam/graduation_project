@@ -1,5 +1,6 @@
 enum StorageKeys {
   accessToken,
+  currentUserId,
 }
 
 extension StorageKeysExt on StorageKeys {

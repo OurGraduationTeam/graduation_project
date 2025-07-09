@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/SignupScreen.dart';
-import 'package:gradution_project/core/Screens/homepage.dart';
 import 'package:gradution_project/cubit/users/users/user_cubit.dart';
 
 class LoginScreenBody extends StatelessWidget {
@@ -56,7 +55,7 @@ class LoginScreenBody extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: Width*0.015),
+                    padding: EdgeInsets.symmetric(horizontal: Width * 0.015),
                     child: TextFormField(
                       controller: context.read<UserCubit>().emailController,
                       obscureText: false,
@@ -87,7 +86,7 @@ class LoginScreenBody extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: Width*0.015),
+                    padding: EdgeInsets.symmetric(horizontal: Width * 0.015),
                     child: TextFormField(
                       controller: context.read<UserCubit>().passwordController,
                       obscureText: true,
@@ -107,11 +106,11 @@ class LoginScreenBody extends StatelessWidget {
                       textAlign: TextAlign.right,
                     ),
                   ),
-                   SizedBox(height: Height*0.025),
+                  SizedBox(height: Height * 0.025),
                   SizedBox(
                     width: Width,
-                    child: Padding( 
-                      padding:  EdgeInsets.symmetric(horizontal: Width*0.015),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: Width * 0.015),
                       child: ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
@@ -122,10 +121,9 @@ class LoginScreenBody extends StatelessWidget {
                                   password: passwordController.text,
                                 );
                           }
-                         
                         },
                         style: ElevatedButton.styleFrom(
-                           backgroundColor: const Color.fromRGBO(54, 113, 90, 1),
+                          backgroundColor: const Color.fromRGBO(54, 113, 90, 1),
                           padding: const EdgeInsets.symmetric(vertical: 14),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
@@ -138,9 +136,14 @@ class LoginScreenBody extends StatelessWidget {
                       ),
                     ),
                   ),
-                  GestureDetector(onTap: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder:(context) => const SignupScreen(), ));
-                  } ,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignupScreen(),
+                          ));
+                    },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

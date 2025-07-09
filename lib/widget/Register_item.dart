@@ -1,7 +1,4 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:gradution_project/SignupScreen.dart';
 import 'package:gradution_project/login_Screen.dart';
 import 'package:gradution_project/widget/CustomRegisterStepWidget.dart';
 
@@ -25,35 +22,35 @@ class Registeritem extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SingleChildScrollView(
-            child: Column( spacing: height * 0.02,
+            child: Column(
+              spacing: height * 0.02,
               children: [
-                
                 Image.asset(
                   "assets/register.png", // Replace with your image path
-                  height: height * 0.26,width: width * 0.5,
+                  height: height * 0.26, width: width * 0.5,
                 ),
-              
-    
-          
                 const Text(
                   'انشاء حساب',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                 ),
-                
-    
                 const CustomRegisterStepWidget(),
-    
-                GestureDetector(onTap:() {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder:(context) => const LoginScreen(), ));
-                  } ,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ));
+                  },
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("لديك حساب",
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,fontWeight: FontWeight.bold
-                          )), SizedBox(width: 5),
+                              color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold)),
+                      SizedBox(width: 5),
                       Text(
                         'انضم إلينا',
                         style: TextStyle(

@@ -5,7 +5,6 @@ import 'package:gradution_project/core/api/api_consumer.dart';
 import 'package:gradution_project/core/api/end_points.dart';
 import 'package:gradution_project/core/errors/exceptions.dart';
 import 'package:gradution_project/core/models/personality_result_model.dart';
-import 'package:gradution_project/core/models/questionmodel.dart';
 import 'package:gradution_project/core/storage/app_storage_helper.dart';
 import 'package:gradution_project/core/storage/storage_keys.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/core/settings/Custom_Setting_Background.dart';
 import 'package:gradution_project/core/settings/InfoColumn.dart';
-import 'package:gradution_project/widget/CustomBottomNavigationBar.dart';
 
 class SettingWho extends StatelessWidget {
   const SettingWho({super.key});

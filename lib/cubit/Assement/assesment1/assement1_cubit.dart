@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,6 +6,7 @@ import 'package:gradution_project/core/api/end_points.dart';
 import 'package:gradution_project/core/errors/exceptions.dart';
 import 'package:gradution_project/core/models/GetAssement1.dart';
 import 'package:gradution_project/core/models/answer.dart';
+import 'package:gradution_project/core/models/depression_result_model.dart';
 
 part 'assement1_state.dart';
 
@@ -43,17 +43,20 @@ class Assement1Cubit extends Cubit<Assement1State> {
     }
   }
 
-  Future<void> sendAssement1({required request}) async {
-    emit(Assement1Loading());
+  Future<void> sendAssement1({required SubmitRequest request}) async {
+    emit(SendAssement1Loading());
 
     try {
       final response = await api.post(
         EndPoints.assement1,
-        data: jsonEncode(request.toJson()),
+        data: request.toJson(),
       );
-      emit(Assement1Success(questions: response as List<Question>));
+      log("send assenment data: $response");
+      emit(SendAssement1Success(
+        depressionResultModel: DepressionResultModel.fromJson(response),
+      ));
     } on ServerException catch (e) {
-      emit(Assement1Failure(
+      emit(SendAssement1Failure(
         errorMessage: e.errModel.message,
       ));
     }

@@ -4,19 +4,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/DisorderExam/QuestionButtonDis.dart';
 import 'package:gradution_project/DisorderExam/progressBar2.dart';
 import 'package:gradution_project/core/models/answer.dart';
+import 'package:gradution_project/core/models/depression_result_model.dart';
 import 'package:gradution_project/cubit/Assement/assement2/assement2_cubit.dart';
 
+class DisorderExamBody2 extends StatefulWidget {
+  const DisorderExamBody2({
+    super.key,
+    required this.depressionResultModel,
+  });
 
-class Disorderexambody2 extends StatefulWidget {
-  const Disorderexambody2({super.key});
-
+  final DepressionResultModel depressionResultModel;
   @override
-  State<Disorderexambody2> createState() => _Disorderexambody2State();
+  State<DisorderExamBody2> createState() => _DisorderExamBody2State();
 }
 
-class _Disorderexambody2State extends State<Disorderexambody2> {
+class _DisorderExamBody2State extends State<DisorderExamBody2> {
   int currentIndex = 0;
-  int domainId = 1;
   List<Answer> selectedAnswers = [];
   int? selectedScore;
 
@@ -24,7 +27,7 @@ class _Disorderexambody2State extends State<Disorderexambody2> {
   void initState() {
     super.initState();
     context.read<Assement2Cubit>().fetchAssement(
-          domainId: 0,
+          domainId: widget.depressionResultModel.recommendedLevel2DomainId ?? 0,
         );
   }
 
@@ -64,7 +67,7 @@ class _Disorderexambody2State extends State<Disorderexambody2> {
                         ),
                       ),
                       const SizedBox(height: 12),
-                      Progressbar2(
+                      ProgressBar2(
                         progressValue:
                             ((currentIndex + 1) / state.questions.length)
                                 .clamp(0.0, 1.0),
@@ -112,7 +115,7 @@ class _Disorderexambody2State extends State<Disorderexambody2> {
 
                         // Options
                         ...question.assement1List.map(
-                          (opt) => Questionbuttondis(
+                          (opt) => QuestionButtonDis(
                             txt: opt.description,
                             pressed: selectedScore == opt.score,
                             onPressed: () {
