@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/DisorderExam/disorder_exam.dart';
 import 'package:gradution_project/View/services/setup_get_it.dart';
-import 'package:gradution_project/ex.dart';
 import 'package:gradution_project/model/models/storage/app_storage_helper.dart';
 
 void main() async {
@@ -28,14 +28,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          useMaterial3: true,
-        ),
-        home: const Ex());
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        useMaterial3: true,
+      ),
+      home: const DisorderExam(),
+    );
   }
 }

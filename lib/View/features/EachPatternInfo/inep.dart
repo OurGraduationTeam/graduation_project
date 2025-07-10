@@ -3,7 +3,7 @@ import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.da
 import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/Tabs_List_View.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Infp extends StatelessWidget {
   const Infp({super.key});
