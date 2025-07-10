@@ -46,7 +46,7 @@ class PersonalityTypeScreenbody extends StatelessWidget {
                     description:
                         'تعرف اكثر علي العديد من الشخصيات التي تساعدك علي فهم كل شخصية ومعرفة المزايا والعيوب ومعرفة نقاط القوة والضعف والتعمق اكثر',
                     isHighlighted: false,
-                    nav: Personalitypattern(),
+                    nav: PersonalityPattern(),
                   ),
                    SizedBox(height:height*0.077 ),
                   const PersonalityTypeCard(

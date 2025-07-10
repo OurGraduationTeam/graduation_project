@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,11 +18,9 @@ class LoginScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var Height = MediaQuery.of(context).size.height;
-    var Width = MediaQuery.of(context).size.width;
-    log(Width.toString());
-
-    log(Height.toString());
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+  
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -33,12 +30,12 @@ class LoginScreenBody extends StatelessWidget {
             child: Form(
               key: _formKey,
               child: Column(
-                spacing: Height * 0.015,
+                spacing: height * 0.015,
                 children: [
                   Image.asset(
                     'assets/image 8.png',
-                    height: Height * 0.25,
-                    width: Width * 0.5,
+                    height: height * 0.25,
+                    width: width * 0.5,
                   ),
                   const Text(
                     'قم بتسجيل الدخول',
@@ -55,7 +52,7 @@ class LoginScreenBody extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: Width * 0.015),
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.015),
                     child: TextFormField(
                       controller: context.read<UserCubit>().emailController,
                       obscureText: false,
@@ -86,7 +83,7 @@ class LoginScreenBody extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: Width * 0.015),
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.015),
                     child: TextFormField(
                       controller: context.read<UserCubit>().passwordController,
                       obscureText: true,
@@ -106,11 +103,11 @@ class LoginScreenBody extends StatelessWidget {
                       textAlign: TextAlign.right,
                     ),
                   ),
-                  SizedBox(height: Height * 0.025),
+                  SizedBox(height: height * 0.025),
                   SizedBox(
-                    width: Width,
+                    width: width,
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: Width * 0.015),
+                      padding: EdgeInsets.symmetric(horizontal: width * 0.015),
                       child: ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
