@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'personality_pattern_body.dart';
+import 'package:gradution_project/View/widget/personality_pattern_body.dart';
 
-class Personalitypattern extends StatelessWidget {
-  const Personalitypattern({super.key});
+class PersonalityPattern extends StatelessWidget {
+  const PersonalityPattern({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color(0Xff36715A),
-      body: PersonalityPatternbody(),
+      body: PersonalityPatternBody(),
     );
   }
 }

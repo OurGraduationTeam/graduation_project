@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'Personality_pattern_Container.dart';
+import 'package:gradution_project/View/widget/Personalitypattern_container.dart';
 
-class PersonalityPatternbody extends StatelessWidget {
-  const PersonalityPatternbody({
+class PersonalityPatternBody extends StatelessWidget {
+  const PersonalityPatternBody({
     super.key,
   });
 
