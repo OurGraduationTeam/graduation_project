@@ -132,7 +132,7 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
                 children: [
                   Text(
                     message.text,
-                    style: const TextStyle(fontSize: 16,color: Colors.white),
+                    style:  TextStyle(fontSize: 16,color:isSendByMe?Colors.white: Colors.black ),
                   ),
                   const SizedBox(height: 4),
                   Text(

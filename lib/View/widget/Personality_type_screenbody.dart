@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/Disorder/disorder_Type.dart';
-
 import 'package:gradution_project/View/widget/personality_pattern.dart';
 import 'package:gradution_project/View/widget/personality_type_card.dart';
 
@@ -46,7 +45,7 @@ class PersonalityTypeScreenbody extends StatelessWidget {
                     description:
                         'تعرف اكثر علي العديد من الشخصيات التي تساعدك علي فهم كل شخصية ومعرفة المزايا والعيوب ومعرفة نقاط القوة والضعف والتعمق اكثر',
                     isHighlighted: false,
-                    nav: Personalitypattern(),
+                    nav: PersonalityPattern(),
                   ),
                    SizedBox(height:height*0.077 ),
                   const PersonalityTypeCard(
