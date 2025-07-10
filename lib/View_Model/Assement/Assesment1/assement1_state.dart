@@ -1,7 +1,7 @@
 
 import 'package:flutter/foundation.dart';
-import 'package:gradution_project/model/models/Getassement2.dart';
 import 'package:gradution_project/model/models/depression_result_model.dart';
+import 'package:gradution_project/model/models/get_assement1.dart';
 
 @immutable
 sealed class Assement1State {}

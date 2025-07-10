@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/View/Screens/Home_Page.dart';
+import 'package:gradution_project/View/Screens/homepage.dart';
 
 class Buildcontainar extends StatelessWidget {
   const Buildcontainar({
-    super.key, required this.color, required this.image, required this.text,
+    super.key,
+    required this.color,
+    required this.image,
+    required this.text,
   });
   final Color color;
   final String image;
@@ -11,16 +14,18 @@ class Buildcontainar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     var height = MediaQuery.of(context).size.height;
+    var height = MediaQuery.of(context).size.height;
     return GestureDetector(
-      onTap: (){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){ return const Homepage();}));
+      onTap: () {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) {
+          return const Homepage();
+        }));
       },
       child: Container(
-        margin: const EdgeInsets.only(left: 32,right: 32,top: 24),
+        margin: const EdgeInsets.only(left: 32, right: 32, top: 24),
         decoration: BoxDecoration(
-            color:color,
-            borderRadius: BorderRadius.circular(36)),
+            color: color, borderRadius: BorderRadius.circular(36)),
         height: height * 0.062,
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -32,7 +37,7 @@ class Buildcontainar extends StatelessWidget {
                   child: Center(
                 child: Text(
                   text,
-                  style:const TextStyle(
+                  style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),

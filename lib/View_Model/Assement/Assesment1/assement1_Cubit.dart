@@ -1,12 +1,12 @@
 import 'dart:developer';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/View_Model/Assement/assesment1/assement1_state.dart';
-import 'package:gradution_project/model/models/Getassement2.dart';
 import 'package:gradution_project/model/models/api/api_consumer.dart';
 import 'package:gradution_project/model/models/api/end_points.dart';
 import 'package:gradution_project/model/models/errors/exceptions.dart';
 import 'package:gradution_project/model/models/answer.dart';
 import 'package:gradution_project/model/models/depression_result_model.dart';
+import 'package:gradution_project/model/models/get_assement1.dart';
 
 
 class Assement1Cubit extends Cubit<Assement1State> {

@@ -1,17 +1,13 @@
-import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/View_Model/Assement/Assement2/assement2_state.dart';
-import 'package:gradution_project/model/models/Getassement2.dart';
 import 'package:gradution_project/model/models/answer.dart';
 import 'package:gradution_project/model/models/api/api_consumer.dart';
 import 'package:gradution_project/model/models/api/end_points.dart';
+import 'package:gradution_project/model/models/depression_result_model.dart';
 import 'package:gradution_project/model/models/errors/exceptions.dart';
-
-
-
-
+import 'package:gradution_project/model/models/get_assement1.dart';
 
 class Assement2Cubit extends Cubit<Assement2State> {
   Assement2Cubit({required this.api}) : super(Assement2Initial());
@@ -54,10 +50,12 @@ class Assement2Cubit extends Cubit<Assement2State> {
     try {
       final response = await api.post(
         EndPoints.assement2,
-        data: jsonEncode(request.toJson()),
+        data: request.toJson(),
       );
-
-      emit(Assement2Success(questions: response as List<Question>));
+      log("send assenment data: $response");
+      emit(SendAssement2Success(
+        depressionResultModel: DepressionResultModel.fromJson(response),
+      ));
     } on ServerException catch (e) {
       emit(Assement2Failure(
         errorMessage: e.errModel.message,

@@ -23,11 +23,6 @@ class _DisorderExamState extends State<DisorderExam> {
             api: getIt<ApiConsumer>(),
           ),
         ),
-        BlocProvider(
-          create: (context) => Assement1Cubit(
-            api: getIt<ApiConsumer>(),
-          ),
-        ),
       ],
       child: const Scaffold(
         backgroundColor: Color(0Xff36715A),

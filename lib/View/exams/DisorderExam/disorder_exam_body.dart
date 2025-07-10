@@ -1,17 +1,16 @@
+
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gradution_project/View/Screens/Home_Page.dart';
-import 'package:gradution_project/View/exams/DisorderExam/Progress_Bar2.dart';
-import 'package:gradution_project/View/exams/DisorderExam/Question_Button_Dis.dart';
-import 'package:gradution_project/View/exams/DisorderExam2/Disorder_Exam2.dart';
-import 'package:gradution_project/View_Model/Assement/assesment1/assement1_state.dart';
-
-import 'package:gradution_project/model/models/answer.dart';
+import 'package:gradution_project/View/exams/DisorderExam/progress_bar2.dart';
+import 'package:gradution_project/View/exams/DisorderExam/question_button_dis.dart';
+import 'package:gradution_project/View/exams/DisorderExam2/disorder_exam2.dart';
 import 'package:gradution_project/View/services/get_current_user_id.dart';
 import 'package:gradution_project/View_Model/Assement/assesment1/Assement1_Cubit.dart';
-
+import 'package:gradution_project/View_Model/Assement/assesment1/assement1_state.dart';
+import 'package:gradution_project/model/models/answer.dart';
+import 'package:gradution_project/show_result_exam_screen.dart';
 
 class DisorderExamBody extends StatefulWidget {
   const DisorderExamBody({super.key});
@@ -39,7 +38,7 @@ class _DisorderExamBodyState extends State<DisorderExamBody> {
       child: BlocConsumer<Assement1Cubit, Assement1State>(
         listener: (context, state) {
           if (state is SendAssement1Success) {
-            if (state.depressionResultModel.domainName != null) {
+            if (state.depressionResultModel.recommendedLevel2DomainId != null) {
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -51,7 +50,11 @@ class _DisorderExamBodyState extends State<DisorderExamBody> {
             } else {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Homepage()),
+                MaterialPageRoute(
+                  builder: (context) => ShowResultExamScreen(
+                    depressionResultModel: state.depressionResultModel,
+                  ),
+                ),
               );
             }
           }
@@ -136,7 +139,7 @@ class _DisorderExamBodyState extends State<DisorderExamBody> {
                         ),
                         SizedBox(
                             height: MediaQuery.of(context).size.height * 0.052),
-                        ...question.assement2List.map(
+                        ...question.assement1List.map(
                           (opt) => QuestionButtonDis(
                             txt: opt.description,
                             pressed: selectedScore == opt.score,

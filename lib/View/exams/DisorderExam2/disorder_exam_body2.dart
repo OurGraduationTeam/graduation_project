@@ -1,14 +1,15 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/View/exams/DisorderExam/Progress_Bar2.dart';
 import 'package:gradution_project/View/exams/DisorderExam/Question_Button_Dis.dart';
+import 'package:gradution_project/View/services/get_current_user_id.dart';
 import 'package:gradution_project/View_Model/Assement/Assement2/assement2_state.dart';
 import 'package:gradution_project/View_Model/Assement/assement2/assement2_cubit.dart';
+import 'package:gradution_project/show_result_exam_screen.dart';
 import 'package:gradution_project/model/models/answer.dart';
 import 'package:gradution_project/model/models/depression_result_model.dart';
 import 'dart:developer';
+
 class DisorderExamBody2 extends StatefulWidget {
   const DisorderExamBody2({
     super.key,
@@ -38,7 +39,19 @@ class _DisorderExamBody2State extends State<DisorderExamBody2> {
     var height = MediaQuery.of(context).size.height;
 
     return SafeArea(
-      child: BlocBuilder<Assement2Cubit, Assement2State>(
+      child: BlocConsumer<Assement2Cubit, Assement2State>(
+        listener: (context, state) {
+          if (state is SendAssement2Success) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ShowResultExamScreen(
+                  depressionResultModel: state.depressionResultModel,
+                ),
+              ),
+            );
+          }
+        },
         builder: (context, state) {
           if (state is Assement2Loading) {
             return const Center(child: CircularProgressIndicator());
@@ -110,7 +123,7 @@ class _DisorderExamBody2State extends State<DisorderExamBody2> {
                           textAlign: TextAlign.center,
                         ),
                         SizedBox(height: height * 0.052),
-                        ...question.assement2List.map(
+                        ...question.assement1List.map(
                           (opt) => QuestionButtonDis(
                             txt: opt.description,
                             pressed: selectedScore == opt.score,
@@ -152,13 +165,13 @@ class _DisorderExamBody2State extends State<DisorderExamBody2> {
                                 log("answers: $selectedAnswers");
                                 log("answers.length: ${selectedAnswers.length}");
 
-                                // Send final result
-                                // context.read<Assement2Cubit>().sendAssement2(
-                                //   request: SubmitRequest(
-                                //     domainId: domainId,
-                                //     answers: selectedAnswers,
-                                //   ),
-                                // );
+                                context.read<Assement2Cubit>().sendAssement2(
+                                  request: SubmitRequest(
+                                    userId: getCurrentUserId(),
+                                    domainId: widget.depressionResultModel.recommendedLevel2DomainId,
+                                    answers: selectedAnswers,
+                                  ),
+                                );
                               }
                             }
                           },
