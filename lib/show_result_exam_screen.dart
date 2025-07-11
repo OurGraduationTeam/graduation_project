@@ -108,7 +108,7 @@ final DepressionResultModel? depressionResultModel;
                 depressionResultModel?.potentialDisorder ?? 'لا يوجد اضطراب محتمل',
                 style: const TextStyle(
                   fontSize: 18,
-                  color: ,
+                  color:Color(0Xff36715A) ,
                   fontWeight: FontWeight.bold,
                 ),
               ),
