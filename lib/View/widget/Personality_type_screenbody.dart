@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/Disorder/disorder_Type.dart';
-
 import 'package:gradution_project/View/widget/personality_pattern.dart';
 import 'package:gradution_project/View/widget/personality_type_card.dart';
 
