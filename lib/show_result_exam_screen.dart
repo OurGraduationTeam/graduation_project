@@ -17,42 +17,42 @@ class ShowResultExamScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         title: const Text(
           'نتيجة اختبار الاضطرابات',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold,color:   Color(0Xff36715A)),
         ),
         centerTitle: true,
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body:  Padding(
+        padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             spacing: 5,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'أنت تعاني من هذا الاضطراب بدرجة',
-                style: TextStyle(
-                    fontSize: 18,
+              ( depressionResultModel.score).toString() ,
+                style: const TextStyle(
+                    fontSize: 20,
                     color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 12),
               Text(
-                'متوسطة',
-                style: TextStyle(
+                depressionResultModel.domainName,
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
               ),
-              SizedBox(height: 50),
-              ShowExam1Result(
+              const SizedBox(height: 50),
+              const ShowExam1Result(
                 description: description,
                 symptoms: symptoms,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              GoToHomePageButton(),
+              const GoToHomePageButton(),
             ],
           ),
         ),
@@ -65,9 +65,9 @@ class ShowExam1Result extends StatelessWidget {
   const ShowExam1Result({
     super.key,
     required this.description,
-    required this.symptoms,
+    required this.symptoms, this.depressionResultModel,
   });
-
+final DepressionResultModel? depressionResultModel;
   final String description;
   final String symptoms;
 
@@ -92,20 +92,20 @@ class ShowExam1Result extends StatelessWidget {
           spacing: 10,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
+             Center(
               child: Text(
-                'اضطراب القلق العام',
-                style: TextStyle(
+                depressionResultModel?.potentialDisorder ?? 'لا توجد اضطرابات محتملة',
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             const SizedBox(height: 20),
-            const Center(
+             Center(
               child: Text(
-                'الوصف',
-                style: TextStyle(
+                depressionResultModel?.recommendation ?? 'لا توجد توصيات'   ,
+                style: const TextStyle(
                   fontSize: 18,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -118,33 +118,13 @@ class ShowExam1Result extends StatelessWidget {
               style: const TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
-            const Center(
-              child: Text(
-                'الأعراض',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const SizedBox(height: 8),
+            
             Text(
               symptoms,
               style: const TextStyle(fontSize: 16),
             ),
-            const SizedBox(height: 20),
-            const SizedBox(height: 12),
-            const Center(
-              child: Text(
-                'يرجى التوجه الى طبيب أو مختص نفسي',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          ],
+            const SizedBox(height: 30),
+          ]
         ),
       ),
     );

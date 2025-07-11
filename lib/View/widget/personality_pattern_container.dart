@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/custom_container_card/Fourth_Pattern.dart';
+import 'package:gradution_project/View/custom_container_card/Third_Pattern.dart';
 import 'package:gradution_project/View/custom_container_card/first_pattern.dart';
 import 'package:gradution_project/View/custom_container_card/second_pattern.dart';
-import 'package:gradution_project/View/custom_container_card/third_Pattern.dart';
 import 'package:gradution_project/View/widget/persnonalitypatternitem.dart';
 
 class PersonalityPatternContainer extends StatefulWidget {
