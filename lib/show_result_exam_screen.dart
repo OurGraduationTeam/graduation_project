@@ -17,11 +17,12 @@ class ShowResultExamScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         title: const Text(
           'نتيجة اختبار الاضطرابات',
-          style: TextStyle(fontWeight: FontWeight.bold,color:   Color(0Xff36715A)),
+          style:
+              TextStyle(fontWeight: FontWeight.bold, color: Color(0Xff36715A)),
         ),
         centerTitle: true,
       ),
-      body:  Padding(
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
@@ -29,7 +30,7 @@ class ShowResultExamScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-              ( depressionResultModel.score).toString() ,
+                (depressionResultModel.score).toString(),
                 style: const TextStyle(
                     fontSize: 20,
                     color: Colors.black,
@@ -65,9 +66,10 @@ class ShowExam1Result extends StatelessWidget {
   const ShowExam1Result({
     super.key,
     required this.description,
-    required this.symptoms, this.depressionResultModel,
+    required this.symptoms,
+    this.depressionResultModel,
   });
-final DepressionResultModel? depressionResultModel;
+  final DepressionResultModel? depressionResultModel;
   final String description;
   final String symptoms;
 
@@ -89,43 +91,42 @@ final DepressionResultModel? depressionResultModel;
           horizontal: 32,
         ),
         child: Column(
-          spacing: 10,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-             Center(
-              child: Text(
-                depressionResultModel?.potentialDisorder ?? 'لا توجد اضطرابات محتملة',
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+            spacing: 10,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Text(
+                  depressionResultModel?.potentialDisorder ??
+                      'لا توجد اضطرابات محتملة',
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-             Center(
-              child: Text(
-                depressionResultModel?.recommendation ?? 'لا توجد توصيات'   ,
-                style: const TextStyle(
-                  fontSize: 18,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
+              const SizedBox(height: 20),
+              Center(
+                child: Text(
+                  depressionResultModel?.recommendation ?? 'لا توجد توصيات',
+                  style: const TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              description,
-              style: const TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 20),
-            
-            Text(
-              symptoms,
-              style: const TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 30),
-          ]
-        ),
+              const SizedBox(height: 15),
+              Text(
+                description,
+                style: const TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                symptoms,
+                style: const TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 30),
+            ]),
       ),
     );
   }
