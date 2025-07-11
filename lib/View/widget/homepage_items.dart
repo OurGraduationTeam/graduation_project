@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/DisorderExam/disorder_exam.dart';
+import 'package:gradution_project/View/exams/PersonalityExam/personexam.dart';
 import 'package:gradution_project/View/widget/custom_card.dart';
 import 'package:gradution_project/View/widget/rowhomescreen.dart';
 
@@ -23,20 +25,38 @@ class HomepageItems extends StatelessWidget {
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
             const Text("fady ibraheem", style: TextStyle(fontSize: 18)),
             SizedBox(height: height * 0.025),
-            const Customcard(
-              titleFirstPart: 'اختيار',
-              titleSecondPart: ' نمط الشخصيه',
-              descriptionFirstPart: 'اكتشف الأن شخصيتك الفريد من',
-              descriptionSecondPart: ' خلال هذا الاختبار',
-              isHighlighted: false,
+            GestureDetector(
+              child: const Customcard(
+                titleFirstPart: 'اختيار',
+                titleSecondPart: ' نمط الشخصيه',
+                descriptionFirstPart: 'اكتشف الأن شخصيتك الفريد من',
+                descriptionSecondPart: ' خلال هذا الاختبار',
+                isHighlighted: false,
+              ),
+              onTap: () {
+                   Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Personexam(),
+                        ));
+              },
             ),
-            const Customcard(
-              titleFirstPart: 'اختبار ',
-              titleSecondPart: 'الأضطرابات النفسية',
-              descriptionFirstPart:
-                  'اكتشف الأن اذا كنت تعاني من احدي الاضطربات ',
-              isHighlighted: true,
-              descriptionSecondPart: 'النفسية مثل الإكتئاب والقلق المفرط وغيره',
+            GestureDetector(
+              child: const Customcard(
+                titleFirstPart: 'اختبار ',
+                titleSecondPart: 'الأضطرابات النفسية',
+                descriptionFirstPart:
+                    'اكتشف الأن اذا كنت تعاني من احدي الاضطربات ',
+                isHighlighted: true,
+                descriptionSecondPart: 'النفسية مثل الإكتئاب والقلق المفرط وغيره',
+              ),
+              onTap: () {
+                   Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DisorderExam(),
+                        ));
+              },
             ),
             const Padding(
               padding: EdgeInsets.only(left: 12, top: 12, bottom: 12),

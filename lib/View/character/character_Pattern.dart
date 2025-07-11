@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/Screens/homepage.dart';
 import 'package:gradution_project/View/character/Container_For_Character.dart';
 import 'package:gradution_project/View/character/item2_charcter_pattern.dart';
 import 'package:gradution_project/model/models/personality_result_model.dart';
@@ -9,7 +10,7 @@ class CharacterPattern extends StatefulWidget {
     required this.personalityResultModel,
   });
 
-  final PersonalityResultModel personalityResultModel;
+  final PersonalityResultModel   personalityResultModel;
 
   @override
   State<CharacterPattern> createState() => _CharacterPatternState();
@@ -50,25 +51,14 @@ class _CharacterPatternState extends State<CharacterPattern> {
             padding: const EdgeInsets.all(24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: [const SizedBox(height: 15,),
+                 const CharacterPatternButton(),
+                 const SizedBox(height: 15,),
                 ContainerForCharachter(
                   personalityType:
                       widget.personalityResultModel.personalityType,
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 8, right: 8),
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      'سمات الشخصية',
-                      style: TextStyle(
-                        fontSize: 32,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
+              
                 const SizedBox(height: 18),
                 Container(
                   width: double.infinity,
@@ -102,6 +92,34 @@ class _CharacterPatternState extends State<CharacterPattern> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+class CharacterPatternButton extends StatelessWidget {
+  const CharacterPatternButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 4),
+      child: Row(
+        children: [
+           IconButton(onPressed: (){
+               Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Homepage(),
+                          ));
+          }, icon: const Icon(Icons.arrow_back)),
+           const Spacer(),
+          const Text("سمات الشخصية",style: TextStyle(
+            color: Colors.black,fontSize: 26,fontWeight: FontWeight.bold
+          ),),
+          const Spacer()
+         
+         
+        ],
       ),
     );
   }

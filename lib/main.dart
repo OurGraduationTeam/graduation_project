@@ -1,7 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/DisorderExam/disorder_exam.dart';
+import 'package:gradution_project/View/Screens/personality_screen.dart';
 import 'package:gradution_project/View/Screens/splash1.dart';
+import 'package:gradution_project/View/exams/PersonalityExam/personexam.dart';
 import 'package:gradution_project/View/services/setup_get_it.dart';
 import 'package:gradution_project/model/models/storage/app_storage_helper.dart';
 
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const DisorderExam(),
+      home: const Personexam(),
     );
   }
 }

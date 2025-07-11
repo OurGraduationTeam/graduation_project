@@ -101,11 +101,7 @@ class Customcard extends StatelessWidget {
                 child: Center(
                     child: GestureDetector(
                   onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Personexam(),
-                        ));
+                 
                   },
                   child: Text(
                     'ابدأ الآن',
