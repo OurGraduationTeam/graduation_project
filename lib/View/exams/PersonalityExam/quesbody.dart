@@ -97,7 +97,7 @@ class _QuesbodyState extends State<Quesbody> {
                 ),
                 Expanded(
                   child: Container(
-                    padding: const EdgeInsets.only(top: 20),
+                    padding: const EdgeInsets.only(top: 10),
                     decoration: const BoxDecoration(
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(50)),
@@ -111,7 +111,7 @@ class _QuesbodyState extends State<Quesbody> {
                           Ques_num: Page_num,
                         ),
                         const SizedBox(
-                          height: 60,
+                          height: 30,
                         ),
                         Page_num < 60
                             ? const Column(
@@ -227,7 +227,7 @@ class _QuesbodyState extends State<Quesbody> {
                           ],
                         ),
                         const SizedBox(
-                          height: 40,
+                          height: 20,
                         ),
                       ],
                     ),
