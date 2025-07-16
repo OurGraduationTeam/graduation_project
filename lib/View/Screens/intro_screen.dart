@@ -16,7 +16,7 @@ class IntroScreen extends StatelessWidget {
           titleTextStyle:
               TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold)),
       image: Center(
-        child: Image.asset('assets/1.png'),
+        child: Image.asset('assets/images/1.png'),
       ),
     ),
     PageViewModel(
@@ -28,12 +28,12 @@ class IntroScreen extends StatelessWidget {
               TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold)),
               
       image: Center(
-        child: Image.asset('assets/2.png'),
+        child: Image.asset('assets/images/2.png'),
       ),
     ),
     PageViewModel(
        image: Center(
-        child: Image.asset('assets/3.png'),
+        child: Image.asset('assets/images/3.png'),
       ),
       title: "استكشف\nMind Map",
       body: "  Mind Map قم بتسجيل الدخول الأن لإستكشاف \nو التعرف على نمط شخصيتك الان",

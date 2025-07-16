@@ -11,7 +11,7 @@ class Ocd extends StatelessWidget {
       body: Disinfo(
           tx1: "اضطراب الوسواس القهري",
       tx2:"Obsessive-Compulsive Disorder - OCD",
-      img: 'assets/ocd2.png',
+      img: 'assets/images/ocd2.png',
       tx3: "وجود أفكار متكررة (وساوس) وسلوكيات قهرية \nلتخفيف القلق الناتج عنها",
       tx4: "غسل اليدين بشكل مفرط، التحقق المتكرر من الأشياء\n أو ترتيب الأشياء بطريقة معينة",
    

@@ -26,7 +26,7 @@ class Registeritem extends StatelessWidget {
               spacing: height * 0.02,
               children: [
                 Image.asset(
-                  "assets/register.png", 
+                  "assets/images/register.png", 
                   height: height * 0.26, width: width * 0.5,
                 ),
                 const Text(

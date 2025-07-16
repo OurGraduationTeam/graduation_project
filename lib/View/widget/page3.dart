@@ -90,7 +90,7 @@ class _EmailPageState extends State<EmailPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  icon: Image.asset('assets/image 9.png', width: width * 0.08),
+                  icon: Image.asset('assets/images/image 9.png', width: width * 0.08),
                   onPressed: () {
                     // Handle Google sign in
                   },

@@ -164,7 +164,7 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           const CircleAvatar(
-            backgroundImage: AssetImage("assets/chatbot.png"),
+            backgroundImage: AssetImage("assets/images/chatbot.png"),
           ),
           const SizedBox(width: 10),
           Container(
@@ -195,7 +195,7 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
         if (state is ChatbotSuccessState) {
           ChatMessage chatResponseMessage = ChatMessage(
             text: state.botResponse,
-            avatarUrl: "assets/chatbot.png",
+            avatarUrl: "assets/images/chatbot.png",
             timestamp: DateTime.now(),
             isSendByMe: false,
           );

@@ -79,7 +79,7 @@ class _GenderPageState extends State<GenderPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                icon: Image.asset('assets/image 9.png', width: 40),
+                icon: Image.asset('assets/images/image 9.png', width: 40),
                 onPressed: () {
                   // Handle Google sign in
                 },

@@ -78,7 +78,7 @@ class _NamePageState extends State<NamePage> {
               spacing: width * 0.04,
               children: [
                 IconButton(
-                  icon: Image.asset('assets/image 9.png', width: width * 0.08),
+                  icon: Image.asset('assets/images/image 9.png', width: width * 0.08),
                   onPressed: () {
                     // Handle Google sign in
                   },

@@ -32,7 +32,7 @@ class ContainerForCharachter extends StatelessWidget {
             style: const TextStyle(fontSize: 32, color: Color(0Xff4A826C)),
           ),
           Image.asset(
-            'assets/Rectangle 3104.png',
+            'assets/images/Rectangle 3104.png',
             height: 200,
           ),
           Padding(

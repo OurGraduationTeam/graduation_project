@@ -11,7 +11,7 @@ class Adhd extends StatelessWidget {
       body:  Disinfo(
       tx1:"اضطراب فرط الحركة ونقص الانتباه",
       tx2:"Attention-Deficit/Hyperactivity Disorder - ADHD",
-      img: 'assets/adhd2.png',
+      img: 'assets/images/adhd2.png',
       tx3:"اضطراب عصبي يتميز بصعوبة في الانتباه\n فرط النشاط، والاندفاعية",
       tx4:"صعوبة التركيز، التشتت، وفرط الحركة",
            )

@@ -33,7 +33,7 @@ class LoginScreenBody extends StatelessWidget {
                 spacing: height * 0.015,
                 children: [
                   Image.asset(
-                    'assets/image 8.png',
+                    'assets/images/image 8.png',
                     height: height * 0.25,
                     width: width * 0.5,
                   ),

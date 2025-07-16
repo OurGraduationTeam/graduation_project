@@ -33,7 +33,7 @@ class _Splash2State extends State<Splash2> with SingleTickerProviderStateMixin {
     return Container(
       color: Colors.white,
       height: height,
-      child: Center(child: Image.asset('assets/rotated logo.png')),
+      child: Center(child: Image.asset('assets/images/rotated logo.png')),
     );
   }
 }

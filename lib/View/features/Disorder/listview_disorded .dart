@@ -25,12 +25,12 @@ class ListviewDisorded extends StatelessWidget {
             children: [
               Expanded(
                   child: Personacard(
-                      imgname: 'assets/adhd.png',
+                      imgname: 'assets/images/adhd.png',
                       tex1: ' اضطراب فرط الحركه',
                       tex2: 'ADHD', nav2:Adhd(),)),
               Expanded(
                   child: Personacard(
-                      imgname: 'assets/ptsd.png',
+                      imgname: 'assets/images/ptsd.png',
                       tex1: 'اضطراب ما بعد الصدمة',
                       tex2: 'PTSD', nav2: Ptsd(),)),
             ],
@@ -43,12 +43,12 @@ class ListviewDisorded extends StatelessWidget {
             children: [
               Expanded(
                   child: Personacard(
-                      imgname: 'assets/bd.png',
+                      imgname: 'assets/images/bd.png',
                       tex1: 'اضطراب ثنائي القطب',
                       tex2: 'BD', nav2: Bd(),)),
               Expanded(
                   child: Personacard(
-                      imgname: 'assets/Schizophrenia.png',
+                      imgname: 'assets/images/Schizophrenia.png',
                       tex1: 'الفصام',
                       tex2: 'Schizophrenia', nav2: Shizo(),)),
             ],
@@ -61,12 +61,12 @@ class ListviewDisorded extends StatelessWidget {
             children: [
               Expanded(
                   child: Personacard(
-                      imgname: 'assets/ocd.png',
+                      imgname: 'assets/images/ocd.png',
                       tex1: 'اضطراب الوسواس القهري',
                       tex2: 'OCD', nav2: Ocd(),)),
               Expanded(
                   child: Personacard(
-                      imgname: 'assets/gad.png',
+                      imgname: 'assets/images/gad.png',
                       tex1: 'اضطراب القلق العام ',
                       tex2: 'GAD', nav2: Gad(),)),
             ],

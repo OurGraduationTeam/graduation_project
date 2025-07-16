@@ -38,7 +38,7 @@ class _Splash4State extends State<Splash4> with SingleTickerProviderStateMixin{
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/logo.png',
+              'assets/images/logo.png',
               color: Colors.white,
               width: width * 0.3,
               height: height * 0.14,
