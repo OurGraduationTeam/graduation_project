@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Personacard extends StatelessWidget {
-  const Personacard(
+class PersonaCard extends StatelessWidget {
+  const PersonaCard(
       {super.key,
       required this.imgname,
       required this.tex1,

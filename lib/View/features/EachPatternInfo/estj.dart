@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Estj extends StatelessWidget {
@@ -10,14 +10,14 @@ class Estj extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'ESTJ',
           text2: 'تنفيذي',
           text3:
               '''شخصيات التنفيذيين ممثلة للتقاليد والنظام، وذلك بإعمال فهمهم لما هو الصواب والخطأ والمقبول اجتماعيا للم شمل الأُسَر والمجتمعات معًا. وهم يحتضنون قيم الصدق والتفاني والكرامة، ويقدرهم الناس لنصائحهم وتوجيهاتهم الواضحة، وهم يقودون بسعادة الطريق على المسارات الصعبة. ولاعتزاز شخصيات التنفيذيين بقدرتها على التقريب بين الناس، فهي شخصيات غالبًا ما تأخذ أدوار منظمي المجتمع، وتعمل جاهدةً لجلب الجميع معًا في الاحتفال بالأحداث المحلية العزيزة، أو دفاعًا عن القيم التقليدية التي تجمع الأسر والمجتمعات معًا.''',
           image: 'assets/estj2.png'),
-      Tabpatterns(tabchilds: [
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

@@ -8,7 +8,7 @@ class Shizo extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color(0Xff36715A),
-      body: Disinfo(
+      body: DisInfo(
          tx1:"الفصام",
       tx2:"Schizophrenia",
       img: 'assets/Schizophrenia2.png',

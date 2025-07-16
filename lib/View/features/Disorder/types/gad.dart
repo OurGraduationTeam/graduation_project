@@ -8,7 +8,7 @@ class Gad extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor:Color(0Xff36715A), 
-      body: Disinfo(
+      body: DisInfo(
             tx1: "اضطراب القلق العام",
       tx2: 'Generalized Anxiety Disorder - GAD',
       img: 'assets/gad2.png',

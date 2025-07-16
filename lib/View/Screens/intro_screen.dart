@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/Screens/signup_screen.dart';
-import 'package:gradution_project/View/widget/loginscreen.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class IntroScreen extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Intp extends StatelessWidget {
@@ -10,15 +10,15 @@ class Intp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
         text1: 'INTP',
         text2: 'منطقي',
         text3:
             '''الأشخاص الذين يتمتعون بنوع الشخصية INTP (المنطقيون) يفخرون بوجهة نظرهم الفريدة وذكائهم القوي. لا يستطيعون إلا أن يتأملوا في أسرار الكون – وهذا قد يفسر لماذا كان بعض من أكثر الفلاسفة والعلماء تأثيرًا في التاريخ من INTP. يميل الأشخاص الذين يتمتعون بهذا النوع من الشخصية إلى تفضيل الوحدة، حيث يمكنهم بسهولة الانغماس في أفكارهم عندما يُتركون بمفردهم. كما أنهم مبدعون ومخترعون للغاية، ولا يخافون من التعبير عن طرق تفكيرهم الجديدة أو التميز عن الجماهير.''',
         image: 'assets/intp2.png',
       ),
-      Tabpatterns(tabchilds: [
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

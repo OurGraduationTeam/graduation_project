@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Entj extends StatelessWidget {
@@ -10,14 +10,14 @@ class Entj extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
         text1: 'ENTJ',
         text2: 'قائد',
         text3: '''هؤلاء الأشخاص قادة بالفطرة. الأشخاص الذين يتمتعون بهذا النوع من الشخصية يجسدون الكاريزما والثقة والسلطة، ويستطيعون توجيه الحشود معًاً وراء هدف مشترك. ولكن خلافًاً لنظرائهم من المركزين على المبادئ، فإن شخصيات القادة تمتاز بمستوى قاسٍ من العقلانية، مستخدمين ما لديهم من دوافع شخصية وتصميم وعقول حادة لتحقيق النهاية التي وضعوها لأنفسهم مهما كانت.''',
         image: 'assets/entj2.png',
       ),
-      Tabpatterns(tabchilds: [
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(text1: 'عادات مكان العمل',
            text2: '''بالنسبة للأشخاص من نوع شخصية ENTJ (القادة)، مكان العمل هو بيئتهم الطبيعية. تُقدَّر كفاءتهم وقدرتهم على التواصل الواضح، ويُعجَب بقيادتهم، كما أن قدرتهم على إنجاز الأمور لا تضاهى. ومع ذلك، هناك مواقف تكون أكثر ملاءمة لهذه الشخصيات الجريئة من غيرها، حيث يفضلون التمتع بالحرية لإنجاز أعمالهم بالطريقة التي يجدونها منطقية دون أن يتم التدخل في التفاصيل الدقيقة.

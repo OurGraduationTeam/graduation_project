@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Isfp extends StatelessWidget {
@@ -10,14 +10,14 @@ class Isfp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'ISFP',
           text2: 'مغامر',
           text3:
               '''أنواع شخصية المغامر هي من الفنانين الحقيقيين، ولكن ليس بالضرورة بالمعنى التقليدي ممن يرسمون لوحات أشجار صغيرة سعيدة. وذلك على الرغم من أنهم قادرون تمامًا على فعل هذا في كثير من الأحيان. وبدلاً من ذلك، يستخدم هذا النوع من الشخصية الجماليات والتصميم والتقاليد الاجتماعية غير المألوفة. وتستمتع شخصية المغامر بقلب التوقعات التقليدية بتجاربها في الجمال والسلوك – فهم يحبون الخروج عن المألوف و"التفكير خارج الصندوق".''',
           image: 'assets/isfp2.png'),
-      Tabpatterns(tabchilds: [
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

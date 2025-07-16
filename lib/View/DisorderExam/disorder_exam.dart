@@ -13,7 +13,7 @@ class DisorderExam extends StatefulWidget {
 }
 
 class _DisorderExamState extends State<DisorderExam> {
-  final int domainId = 1; // Replace with the actual domain ID you want to use
+  final int domainId = 1;
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

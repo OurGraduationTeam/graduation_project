@@ -20,7 +20,7 @@ class Quesbody extends StatefulWidget {
 
 class _QuesbodyState extends State<Quesbody> {
   late double percentage = 0.0;
-  late int Page_num = 0;
+  late int pagenum = 0;
   late QuizezCubit quizezCubit;
 
   @override
@@ -60,17 +60,17 @@ class _QuesbodyState extends State<Quesbody> {
                   padding: const EdgeInsets.only(bottom: 20),
                   height: height * 0.164,
                   alignment: Alignment.center,
-                  child: Page_num < 60
+                  child: pagenum < 60
                       ? Column(
                           children: [
                             Text(
-                              "عدد الأسئلة ${Page_num + 1} من 60",
+                              "عدد الأسئلة ${pagenum + 1} من 60",
                               style: const TextStyle(
                                 fontSize: 26,
                                 color: Colors.white,
                               ),
                             ),
-                            Progressbar(
+                            ProgressBar(
                                 progressvalue: percentage,
                                 width: 300,
                                 height: 15),
@@ -106,41 +106,41 @@ class _QuesbodyState extends State<Quesbody> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        if (Page_num == 60) const Spacer(),
+                        if (pagenum == 60) const Spacer(),
                         Questionslist(
-                          Ques_num: Page_num,
+                          quesnum: pagenum,
                         ),
                         const SizedBox(
                           height: 30,
                         ),
-                        Page_num < 60
+                        pagenum < 60
                             ? const Column(
                                 children: [
-                                  Quesbutton(
+                                  QuesButton(
                                     txt: ' غير موافق بشدة',
                                     questionId: 1,
                                   ),
-                                  Quesbutton(
+                                  QuesButton(
                                     txt: 'غير موافق',
                                     questionId: 2,
                                   ),
-                                  Quesbutton(
+                                  QuesButton(
                                     txt: 'غير موافق إلى حد ما',
                                     questionId: 3,
                                   ),
-                                  Quesbutton(
+                                  QuesButton(
                                     txt: 'محايد',
                                     questionId: 4,
                                   ),
-                                  Quesbutton(
+                                  QuesButton(
                                     txt: 'موافق إلى حد ما',
                                     questionId: 5,
                                   ),
-                                  Quesbutton(
+                                  QuesButton(
                                     txt: 'موافق',
                                     questionId: 6,
                                   ),
-                                  Quesbutton(
+                                  QuesButton(
                                     txt: 'موافق بشدة',
                                     questionId: 7,
                                   ),
@@ -163,12 +163,12 @@ class _QuesbodyState extends State<Quesbody> {
                                     percentage = percentage;
                                   });
                                 }
-                                if (Page_num < 60) {
+                                if (pagenum < 60) {
                                   setState(() {
-                                    Page_num++;
+                                    pagenum++;
                                     answers.add(1);
                                   });
-                                } else if (Page_num == 60) {
+                                } else if (pagenum == 60) {
                                   log("post the quiz ");
                                   log("length of the answers list: ${answers.length}");
                                   if (answers.length > 60) {
@@ -186,7 +186,7 @@ class _QuesbodyState extends State<Quesbody> {
                               color: const Color(0xff36715A),
                               minWidth: 120,
                               child: Text(
-                                Page_num == 60 ? 'إنهاء' : 'التالى',
+                                pagenum == 60 ? 'إنهاء' : 'التالى',
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
@@ -202,12 +202,11 @@ class _QuesbodyState extends State<Quesbody> {
                                   } else {
                                     percentage = percentage;
                                   }
-                                  if (Page_num != 0) {
-                                    Page_num--;
+                                  if (pagenum != 0) {
+                                    pagenum--;
                                     answers.removeLast();
-                                    print(answers);
                                   } else {
-                                    Page_num = Page_num;
+                                    pagenum = pagenum;
                                   }
                                 });
                               },

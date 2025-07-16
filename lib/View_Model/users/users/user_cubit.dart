@@ -9,7 +9,6 @@ import 'package:gradution_project/View/services/save_current_user_id.dart';
 import 'package:gradution_project/model/models/storage/app_storage_helper.dart';
 import 'package:gradution_project/model/models/storage/storage_keys.dart';
 
-
 class UserCubit extends Cubit<UserState> {
   UserCubit({required this.api}) : super(UserInitial());
   final ApiConsumer api;
@@ -43,7 +42,7 @@ class UserCubit extends Cubit<UserState> {
       emit(UserSuccess());
     } on ServerException catch (e) {
       emit(UserFailure(errorMessasage: e.errModel.message));
-      print(e.toString());
+      log("Login failed: ${e.errModel.message}");
     }
   }
 
@@ -66,7 +65,7 @@ class UserCubit extends Cubit<UserState> {
       emit(UserSuccess());
     } catch (e) {
       emit(UserFailure(errorMessasage: e.toString()));
-      print(e.toString());
+      log("Register failed: $e");
     }
   }
 
@@ -85,7 +84,7 @@ class UserCubit extends Cubit<UserState> {
       emit(UserSuccess());
     } on ServerException catch (e) {
       emit(UserFailure(errorMessasage: e.errModel.message));
-      print(e.toString());
+     log(e.errModel.message);
     }
   }
 
@@ -104,7 +103,7 @@ class UserCubit extends Cubit<UserState> {
       emit(UserSuccess());
     } on ServerException catch (e) {
       emit(UserFailure(errorMessasage: e.errModel.message));
-      print(e.toString());
+     log("Change username failed: ${e.errModel.message}");
     }
   }
 }

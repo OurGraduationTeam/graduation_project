@@ -1,12 +1,13 @@
+
 import 'package:flutter/material.dart';
 
 class Questionslist extends StatelessWidget {
   Questionslist({
     super.key,
-    required this.Ques_num,
+    required this.quesnum,
   });
-  final int Ques_num;
-  final List<String> Questions = [
+  final int quesnum;
+  final List<String> questions = [
     "أستمتع بالتواجد في الحفلات والمناسبات الاجتماعية الكبيرة؟",
     "أفضل العمل ضمن فريق على العمل بمفردي؟",
     "يمكنني التحدث بسهولة مع أشخاص جدد في المواقف الاجتماعية؟",
@@ -76,10 +77,10 @@ class Questionslist extends StatelessWidget {
       child: SizedBox(
         height: 70,
         child: PageView.builder(
-          itemCount: Questions.length,
+          itemCount: questions.length,
           itemBuilder: (context, index) {
             return Text(
-              Questions[Ques_num],
+              questions[quesnum],
               style: const TextStyle(
                   color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,

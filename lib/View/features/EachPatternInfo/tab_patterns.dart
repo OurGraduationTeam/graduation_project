@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Tabpatterns extends StatefulWidget {
-  const Tabpatterns({super.key, required this.tabchilds});
+class TabPatterns extends StatefulWidget {
+  const TabPatterns({super.key, required this.tabchilds});
   final List<Widget> tabchilds;
   @override
-  State<Tabpatterns> createState() => _TabpatternsState();
+  State<TabPatterns> createState() => _TabpatternsState();
 }
 
-class _TabpatternsState extends State<Tabpatterns>
+class _TabpatternsState extends State<TabPatterns>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   int currentIndex = 0;

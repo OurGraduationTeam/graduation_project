@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Esfj extends StatelessWidget {
@@ -10,14 +10,14 @@ class Esfj extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'ESFJ',
           text2: 'قنصل',
           text3:
               '''باعتبارك من فئة القنصل (ESFJ)، فأنت القلب الدافئ واليد الثابتة التي تحافظ على سير دوائرك الاجتماعية ومكان عملك وعائلتك بسلاسة. إن اهتمامك الحقيقي بالآخرين، إلى جانب طبيعتك العملية، يجعلك جانب دعم في أي مجتمع. كما أنه لديك قدرة فائقة على استشعار احتياجات الآخرين ودافع قوي لتلبية هذه الاحتياجات. إنك تضع أولوية مصالح من حولك قبل نفسك غالباً.''',
           image: 'assets/Esfj2.png'),
-      Tabpatterns(tabchilds: [
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

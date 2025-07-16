@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Entp extends StatelessWidget {
@@ -10,14 +10,14 @@ class Entp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'ENTP',
           text2: 'محاور',
           text3:
               '''نوع شخصية المناقش كمحامي الشيطان في أشد صوره قساوة، يزدهر بتمزيق الأشرطة الرابطة للحجج والمعتقدات كل ممزق والإلقاء بها في مهب الريح ليراها الجميع. وخلافًا للشخصيات الأكثر عزمًا وتصميماً، فالمناقشون لا يسلكون هذا المنهج سعيًا منهم لتحقيق بعض الأغراض الأعمق أو الأهداف الاستراتيجية، بل للمتعة لا أكثر ولا أقل. ولا أحد يحب عملية السجال العقلي أكثر من المناقش''',
           image: 'assets/entp2.png'),
-      Tabpatterns(tabchilds: [
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

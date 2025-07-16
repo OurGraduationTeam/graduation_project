@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Enfp extends StatelessWidget {
@@ -10,14 +10,14 @@ class Enfp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'ENFP',
           text2: 'مناضل',
           text3:
               '''شخصية المناضل هي بحق روح حرة. وهي غالباً ما تكون روح أي حفلة تشارك فيها، ولكنها أقل اهتماماً بالإثارة والمتعة اللحظية المحضة بل تهتم بالتمتع بالصلات الاجتماعية والعاطفية التي يقومون بها مع الآخرين. وهي شخصية ساحرة مستقلة حيوية ورحيمة، والمتمتعين بها يشكلون 7٪ من البشر، ولذا ستلاحظهم بالتأكيد في أي تجمع بشري''',
           image: 'assets/enfp2.png'),
-      Tabpatterns(tabchilds: [
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

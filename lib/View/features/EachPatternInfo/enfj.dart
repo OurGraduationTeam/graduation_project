@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Enfj extends StatelessWidget {
@@ -10,14 +10,14 @@ class Enfj extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'ENFJ',
           text2: 'بطل',
           text3:
               '''شخصيات ENFJ هم قادة بالفطرة، مفعمون بالعاطفة والكاريزما. وهم يشكلون حوالي اثنين في المئة من البشر، وهم في كثير من الأحيان يعملون بالسياسة أو مدربين أو معلمين، يتواصلون مع الآخرين ويلهمونهم لتحقيق وفعل الخير في العالم. بالثقة الطبيعية لديهم التي تولد النفوذ، فإن شخصيات ENFJ تتمتع بقدر كبير من الفخر والفرح عند توجيه الآخرين للعمل معاً لتحسين أنفسهم ومجتمعهم.''',
           image: 'assets/enfj2.png'),
-      Tabpatterns(tabchilds: [
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

@@ -8,7 +8,7 @@ class Ocd extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color(0Xff36715A),
-      body: Disinfo(
+      body: DisInfo(
           tx1: "اضطراب الوسواس القهري",
       tx2:"Obsessive-Compulsive Disorder - OCD",
       img: 'assets/ocd2.png',

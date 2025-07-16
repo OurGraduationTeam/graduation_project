@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/View/exams/PersonalityExam/personexam.dart';
 
-class Customcard extends StatelessWidget {
-  const Customcard({
+class CustomCard extends StatelessWidget {
+  const CustomCard({
     super.key,
     required this.titleFirstPart,
     required this.titleSecondPart,

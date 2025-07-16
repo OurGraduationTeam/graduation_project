@@ -8,7 +8,7 @@ class Bd extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color(0Xff36715A),
-      body: Disinfo(
+      body: DisInfo(
              tx1:"اضطراب ثنائي القطب",
       tx2:"Bipolar Disorder",
       img: 'assets/bd2.png',

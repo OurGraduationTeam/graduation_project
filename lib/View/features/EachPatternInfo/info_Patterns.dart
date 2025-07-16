@@ -1,7 +1,8 @@
+
 import 'package:flutter/material.dart';
 
-class Infopatterns extends StatelessWidget {
-  const Infopatterns(
+class InfoPatterns extends StatelessWidget {
+  const InfoPatterns(
       {super.key,
       required this.text1,
       required this.text2,

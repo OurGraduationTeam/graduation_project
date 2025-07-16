@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Patternsstructure extends StatelessWidget {
-  const Patternsstructure({super.key, required this.childs});
+class PatternsStructure extends StatelessWidget {
+  const PatternsStructure({super.key, required this.childs});
 final List<Widget> childs;
   @override
   Widget build(BuildContext context) {
