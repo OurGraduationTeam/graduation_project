@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:gradution_project/View/widget/loginscreen.dart';
 import 'package:gradution_project/View_Model/users/users/user_cubit.dart';
 import 'package:gradution_project/View/widget/Progress.dart';
@@ -65,11 +66,7 @@ class _CustomRegisterStepWidgetState extends State<CustomRegisterStepWidget> {
     return Column(
 spacing: height * 0.02,
       children: [
-        ProgressIndicatorWidget(currentStep: currentStep), // Progress indicator
-
-       
-
-        // Email label
+        ProgressIndicatorWidget(currentStep: currentStep), 
         Align(
           alignment: Alignment.centerRight,
           child: Text(
@@ -99,7 +96,7 @@ spacing: height * 0.02,
         if (currentStep == 4)
           DropdownButtonFormField<String>(
             value: userCubit.gender,
-            dropdownColor: Colors.white,
+            dropdownColor: secondaryColor,
             onChanged: (String? newValue) {
               if (newValue != null) {
                 userCubit.gender = newValue;
@@ -136,10 +133,6 @@ spacing: height * 0.02,
               ),
             ),
           ),
-
-     
-
-        // Continue button
         SizedBox(
           width: double.infinity,
           child: Padding(
@@ -148,7 +141,7 @@ spacing: height * 0.02,
               
               onPressed: onContinuePressed,
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0Xff4A826C),
+                backgroundColor: primaryColor,
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),
@@ -157,7 +150,7 @@ spacing: height * 0.02,
               child: const Text('متابعة',
                   style: TextStyle(
                     fontSize: 18,
-                    color: Colors.white,
+                    color: secondaryColor,
                   ),
             ),
                     ),

@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:gradution_project/View_Model/chatbot/cubit/chatbot_state.dart';
 import 'package:gradution_project/model/models/api/api_consumer.dart';
 import 'package:gradution_project/View/services/setup_get_it.dart';
@@ -35,10 +36,10 @@ class _ChatPageState extends State<ChatPage> {
         api: getIt<ApiConsumer>(),
       ),
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: secondaryColor,
         appBar: AppBar(
           title: const Text("Chat "),
-          backgroundColor: Colors.white,
+          backgroundColor: secondaryColor,
           centerTitle: true,
         ),
         body: const ChatBotBlocConsumerBody(),
@@ -117,7 +118,7 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               decoration: BoxDecoration(
                 color:
-                    isSendByMe ?   const Color.fromRGBO(54, 113, 90, 1):Colors.white,
+                    isSendByMe ?   primaryColor:secondaryColor,
                 borderRadius: BorderRadius.only(
                   topLeft: const Radius.circular(12),
                   topRight: const Radius.circular(12),
@@ -132,12 +133,12 @@ class _ChatBotBlocConsumerBodyState extends State<ChatBotBlocConsumerBody> {
                 children: [
                   Text(
                     message.text,
-                    style:  TextStyle(fontSize: 16,color:isSendByMe?Colors.white: Colors.black ),
+                    style:  TextStyle(fontSize: 16,color:isSendByMe? secondaryTextColor: primaryTextColor ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     timeString,
-                    style: const TextStyle(fontSize: 11, color: Colors.white,
+                    style: const TextStyle(fontSize: 11, color: secondaryColor,
                     ),
                   ),
                 ],

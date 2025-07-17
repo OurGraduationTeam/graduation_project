@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class Questionbuttondis2 extends StatelessWidget {
  const Questionbuttondis2({super.key, required this.txt,  this.pressed=true, required void Function() onTap, required bool isSelected});
@@ -13,10 +14,10 @@ final bool pressed;
         onPressed: (){
       },
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  color: pressed?Colors.white:const Color(0xff36715A) , 
+                  color: pressed?secondaryColor:primaryColor , 
                   minWidth: 300,
                   child: Text(txt,style: TextStyle(
-                    color: pressed?Colors.black:Colors.white ,
+                    color: pressed?primaryTextColor:secondaryTextColor ,
                     fontSize: 20,fontWeight: FontWeight.bold,
                   ),),
                   

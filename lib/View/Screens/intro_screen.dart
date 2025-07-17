@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/Screens/signup_screen.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -49,16 +50,16 @@ class IntroScreen extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:const Color.fromRGBO(255, 255, 255, 1) ,
+        backgroundColor:secondaryColor ,
       ),
       body: IntroductionScreen(
         pages: pages,
-        globalBackgroundColor:const Color.fromRGBO(255, 255, 255, 1) , 
+        globalBackgroundColor:secondaryColor , 
         dotsDecorator: const DotsDecorator(
           size: Size(15, 15),
           color: Color.fromRGBO(217, 217, 217, 1) ,
           activeSize: Size.square(20),
-          activeColor:Color.fromRGBO(54, 113, 90, 1) ,
+          activeColor:primaryColor ,
          
         ),
         showDoneButton: true,
@@ -66,17 +67,17 @@ class IntroScreen extends StatelessWidget {
           Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => const SignupScreen() ));
         },shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        color:const Color.fromRGBO(54, 113, 90, 1) , 
-        child: const Text('التالي',style: TextStyle(color:Color.fromRGBO(255, 255, 255, 1),fontWeight: FontWeight.bold ,fontSize: 18 ),),),
+        color:primaryColor , 
+        child: const Text('التالي',style: TextStyle(color:secondaryTextColor,fontWeight: FontWeight.bold ,fontSize: 18 ),),),
         showSkipButton: true,
         skip: const Text(
           "تخطي",
-          style: TextStyle(fontSize: 20,color:Color.fromRGBO(54, 113, 90, 1) ),
+          style: TextStyle(fontSize: 20,color:primaryColor, fontWeight: FontWeight.bold),
         ),
         showNextButton: true,
         next: const Icon(
           Icons.arrow_forward,
-          color: Color.fromRGBO(54, 113, 90, 1),
+          color:primaryColor,
           size: 28,
         ),
         onDone: () => onDone(context),

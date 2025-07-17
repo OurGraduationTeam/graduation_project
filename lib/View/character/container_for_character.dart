@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class ContainerForCharachter extends StatelessWidget {
   const ContainerForCharachter({
@@ -41,12 +42,12 @@ class ContainerForCharachter extends StatelessWidget {
               width: 320,
               height: 55,
               decoration: BoxDecoration(
-                  color: const Color(0Xff4A826C),
+                  color: primaryColor,
                   borderRadius: BorderRadius.circular(16)),
               child: const Center(
                   child: Text(
                 'اعرف أكثر',
-                style: TextStyle(color: Colors.white, fontSize: 16),
+                style: TextStyle(color: secondaryTextColor, fontSize: 16),
               )),
             ),
           ),

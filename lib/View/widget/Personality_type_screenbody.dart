@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/Disorder/disorder_Type.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:gradution_project/View/widget/personality_pattern.dart';
 import 'package:gradution_project/View/widget/personality_type_card.dart';
 
@@ -22,7 +23,7 @@ class PersonalityTypeScreenbody extends StatelessWidget {
               'أنواع الشخصيات',
               style: TextStyle(
                 fontSize: 26,
-                color: Colors.white,
+                color: secondaryTextColor,
               ),
             ),
           ),
@@ -30,7 +31,7 @@ class PersonalityTypeScreenbody extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: secondaryColor,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
               ),
               child: ListView(

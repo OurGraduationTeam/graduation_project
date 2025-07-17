@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/View/widget/CustomRegisterStepWidget.dart';
+import 'package:gradution_project/View/widget/constant.dart';
+import 'package:gradution_project/View/widget/custom_register_step_widget.dart';
 import 'package:gradution_project/View/widget/loginscreen.dart';
 
 class Registeritem extends StatelessWidget {
@@ -47,14 +48,14 @@ class Registeritem extends StatelessWidget {
                     children: [
                       Text("لديك حساب",
                           style: TextStyle(
-                              color: Colors.black,
+                              color: primaryTextColor,
                               fontSize: 18,
                               fontWeight: FontWeight.bold)),
                       SizedBox(width: 5),
                       Text(
                         'انضم إلينا',
                         style: TextStyle(
-                          color: Colors.black,
+                          color: primaryTextColor,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.underline,

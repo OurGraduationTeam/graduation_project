@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class ProgressIndicatorWidget extends StatelessWidget {
   final int currentStep;
@@ -35,19 +36,19 @@ class ProgressIndicatorWidget extends StatelessWidget {
                       height: height * 0.041,
                       decoration: BoxDecoration(
                         color: isCompleted
-                            ? const Color(0Xff36715A)
-                            : Colors.transparent,
+                            ?primaryColor
+                            :  Colors.black,
                         shape: BoxShape.circle,
                         border: Border.all(
                           color: isCompleted
-                              ? const Color(0Xff36715A)
-                              : Colors.grey[400]!,
+                              ? primaryColor
+                              :secondaryColor ,
                           width: 2,
                         ),
                       ),
                     ),
                     if (isCompleted)
-                      const Icon(Icons.check, color: Colors.white, size: 20)
+                      const Icon(Icons.check, color: secondaryColor, size: 20)
                     else
                       const SizedBox(),
                   ],
@@ -64,7 +65,7 @@ class ProgressIndicatorWidget extends StatelessWidget {
               child: Container(
                 height: 4,
                 color: (index ~/ 2) < currentStep - 1
-                    ? const Color(0Xff36715A)
+                    ? primaryColor
                     : Colors.grey[400],
               ),
             );

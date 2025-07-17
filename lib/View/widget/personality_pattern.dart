@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:gradution_project/View/widget/personality_pattern_body.dart';
 
 class PersonalityPattern extends StatelessWidget {
@@ -7,7 +8,7 @@ class PersonalityPattern extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0Xff36715A),
+      backgroundColor: primaryColor,
       body: PersonalityPatternBody(),
     );
   }

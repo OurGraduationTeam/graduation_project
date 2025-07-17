@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class PersonaCard extends StatelessWidget {
   const PersonaCard(
@@ -15,7 +16,7 @@ class PersonaCard extends StatelessWidget {
   Widget build(BuildContext context) {
        var height = MediaQuery.of(context).size.height;
     return Card(
-      color: Colors.white,
+      color: secondaryColor,
       elevation: 5,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
@@ -34,15 +35,16 @@ class PersonaCard extends StatelessWidget {
             tex1,
             style: const TextStyle(
                 fontSize: 18,
-                color: Color.fromRGBO(54, 113, 90, 1),
+                color: primaryColor,
                 fontWeight: FontWeight.bold),
           ),
           Text(
             tex2,
             style: const TextStyle(
                 fontSize: 18,
-                color: Colors.white,
-                backgroundColor: Color.fromRGBO(54, 113, 90, 1)),
+                color: secondaryTextColor,
+                backgroundColor: primaryColor,
+                fontWeight: FontWeight.bold),
           ),
           ListTile(
             onTap: () {
@@ -59,7 +61,7 @@ class PersonaCard extends StatelessWidget {
               "معرفة المزيد",
               style: TextStyle(
                   fontSize: 18,
-                  color: Color.fromRGBO(54, 113, 90, 1),
+                  color: primaryColor,
                   fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/View/exams/DisorderExam2/disorder_Exam_Body2.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:gradution_project/View_Model/Assement/assement2/assement2_cubit.dart';
 import 'package:gradution_project/model/models/api/api_consumer.dart';
 import 'package:gradution_project/model/models/depression_result_model.dart';
@@ -24,7 +25,7 @@ class DisorderExam2 extends StatelessWidget {
         ),
       ],
       child: Scaffold(
-        backgroundColor: const Color(0Xff36715A),
+        backgroundColor: primaryColor,
         body: DisorderExamBody2(
           depressionResultModel: depressionResultModel,
         ),

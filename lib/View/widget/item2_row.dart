@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class Item2Row extends StatelessWidget {
   const Item2Row({super.key, required this.firsttext, required this.secondtext, required this.image});
@@ -14,7 +15,7 @@ class Item2Row extends StatelessWidget {
         width: width * 0.268,
         height: height * 0.15,
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: secondaryColor,
             borderRadius: BorderRadius.circular(15),
             border: Border.all(color: Colors.black, width: 1)),
         child: Column(
@@ -24,12 +25,12 @@ class Item2Row extends StatelessWidget {
              Text(
               firsttext
               ,
-              style: const TextStyle(color: Colors.black, fontSize: 14),
+              style: const TextStyle(color: primaryTextColor, fontSize: 14),
             ),
             Text(secondtext
               
               ,
-                style: const TextStyle(color: Colors.black, fontSize: 14))
+                style: const TextStyle(color: primaryTextColor, fontSize: 14))
           ],
         ),
       ),

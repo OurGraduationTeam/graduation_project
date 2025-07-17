@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/Disorder/list_view_disorded%20.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 
 class DisorderBody extends StatelessWidget {
@@ -12,7 +13,7 @@ class DisorderBody extends StatelessWidget {
         child: Column(
       children: [
         Container(
-          color: const Color(0Xff36715A),
+          color: primaryColor,
           padding: const EdgeInsets.only(bottom: 20),
           height: height*0.26,
           alignment: Alignment.center,
@@ -20,7 +21,7 @@ class DisorderBody extends StatelessWidget {
             "أنواع الاضطرابات",
             style: TextStyle(
               fontSize: 26,
-              color: Colors.white,
+              color: secondaryTextColor,
             ),
           ),
         ),
@@ -29,7 +30,7 @@ class DisorderBody extends StatelessWidget {
             padding: const EdgeInsets.only(top: 20),
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
-              color: Colors.white,
+              color: secondaryColor,
             ),
             child: const ListViewDisorded(),
           ),

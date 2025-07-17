@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class Item2CharacterPattern extends StatelessWidget {
   const Item2CharacterPattern({
@@ -63,7 +64,7 @@ class Item2CharacterPattern extends StatelessWidget {
                       (progress / 100) * MediaQuery.of(context).size.width - 40,
                   child: CircleAvatar(
                     radius: 6,
-                    backgroundColor: Colors.white,
+                    backgroundColor:secondaryColor,
                     child: Container(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,

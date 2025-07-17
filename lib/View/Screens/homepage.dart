@@ -4,6 +4,7 @@ import 'package:gradution_project/View/Screens/settingscreen.dart';
 import 'package:gradution_project/View/widget/Chat.dart';
 import 'package:gradution_project/View/Screens/Personality_Screen.dart';
 import 'package:gradution_project/View/widget/Homepage_Items.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -23,7 +24,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: secondaryColor,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (value) {
@@ -31,7 +32,7 @@ class _HomepageState extends State<Homepage> {
             currentIndex = value;
           });
         },
-        selectedItemColor: const Color(0Xff36715a),
+        selectedItemColor: primaryColor,
         unselectedItemColor: const Color(0Xffc5c5c5),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'الرئيسة'),

@@ -4,6 +4,7 @@ import 'package:gradution_project/View/settings/Setting_condition.dart';
 import 'package:gradution_project/View/settings/setting_privacy.dart' ;
 
 import 'package:gradution_project/View/settings/setting_who.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class SettingListview extends StatefulWidget {
   const SettingListview({super.key});
@@ -37,7 +38,7 @@ class _SettingListviewState extends State<SettingListview> {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: [
           Text(context.tr("Account Settings"),
-              style: const TextStyle(color: Color(0xff36715A), fontSize: 19)),
+              style: const TextStyle(color: primaryColor, fontSize: 19)),
           const SizedBox(height: 10),
           ListTile(
             title: Text("Edit Profile".tr()),
@@ -48,9 +49,9 @@ class _SettingListviewState extends State<SettingListview> {
             title: Text("Language".tr()),
             trailing: ToggleButtons(
               borderRadius: BorderRadius.circular(20),
-              selectedColor: Colors.white,
-              fillColor: const Color(0xff36715A),
-              color: Colors.black,
+              selectedColor: secondaryColor,
+              fillColor: primaryColor,
+              color: primaryTextColor,
               isSelected: [isArabic, !isArabic],
               onPressed: (index) {
                 setState(() {
@@ -78,7 +79,7 @@ class _SettingListviewState extends State<SettingListview> {
               "Notification".tr(),
             ),
             trailing: Switch(
-              activeTrackColor: const Color(0xff36715A),
+              activeTrackColor: primaryColor,
               value: isNotificationsEnabled,
               onChanged: (value) {
                 setState(() {
@@ -93,11 +94,11 @@ class _SettingListviewState extends State<SettingListview> {
           const Divider(
             height: 15,
             thickness: 1,
-            color: Color(0xff36715A),
+            color: primaryColor,
           ),
           const SizedBox(height: 20),
           Text("More".tr(),
-              style: const TextStyle(color: Color(0xff36715A), fontSize: 20)),
+              style: const TextStyle(color: primaryColor, fontSize: 20)),
           const SizedBox(height: 10),
           ListTile(
             title: Text("About Us".tr()),
@@ -125,7 +126,7 @@ class _SettingListviewState extends State<SettingListview> {
           ),
           ListTile(
             title: Text("Log out".tr(),
-                style: const TextStyle(color: Color(0xff36715A), fontSize: 20)),
+                style: const TextStyle(color:primaryColor, fontSize: 20)),
             onTap: () {},
           ),
         ],

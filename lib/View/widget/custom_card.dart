@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({
@@ -23,7 +24,7 @@ class CustomCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: isHighlighted ? const Color(0Xff36715A) : Colors.white,
+        color: isHighlighted ? primaryColor : secondaryColor,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.black, width: 1),
       ),
@@ -40,7 +41,7 @@ class CustomCard extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: isHighlighted ? Colors.white : Colors.black,
+                  color: isHighlighted ? secondaryTextColor: primaryTextColor,
                 ),
               ),
               Text(
@@ -48,34 +49,34 @@ class CustomCard extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: isHighlighted ? Colors.white : Colors.black,
+                  color: isHighlighted ?  secondaryTextColor: primaryTextColor,
                 ),
               ),
               Text(
                 descriptionFirstPart,
                 style: TextStyle(
                   fontSize: 16,
-                  color: isHighlighted ? Colors.white : Colors.black54,
+                  color: isHighlighted ?  secondaryTextColor: primaryTextColor,
                 ),
               ),
               Text(
                 descriptionSecondPart,
                 style: TextStyle(
                   fontSize: 16,
-                  color: isHighlighted ? Colors.white : Colors.black54,
+                  color: isHighlighted ? secondaryTextColor: primaryTextColor,
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
                     color:
-                        isHighlighted ? Colors.white : const Color(0Xff36715A),
+                        isHighlighted ? secondaryColor : primaryColor,
                     borderRadius: BorderRadius.circular(12)),
                 height: height * 0.025,
                 width: width * 0.33,
                 child: Text(
                   '  سؤال 60  في اقل من 10 دقائق ',
                   style: TextStyle(
-                      color: isHighlighted ? Colors.black54 : Colors.white),
+                      color: isHighlighted ? primaryTextColor : secondaryTextColor,),
                 ),
               ),
             ],
@@ -89,12 +90,11 @@ class CustomCard extends StatelessWidget {
                 width: width * 0.12,
                 height: height * 0.08,
                 decoration: BoxDecoration(
-                  color: isHighlighted ? const Color(0Xff36715A) : Colors.white,
+                  color: isHighlighted ? primaryColor : secondaryColor,
                   shape: BoxShape.circle,
                   border: Border.all(
                       color: isHighlighted
-                          ? Colors.white
-                          : const Color(0Xff36715A),
+                         ? secondaryColor : primaryColor,
                       width: 4),
                 ),
                 child: Center(
@@ -105,7 +105,7 @@ class CustomCard extends StatelessWidget {
                   child: Text(
                     'ابدأ الآن',
                     style: TextStyle(
-                        color: isHighlighted ? Colors.white : Colors.black54),
+                        color: isHighlighted ? secondaryTextColor: primaryTextColor),
                   ),
                 )),
               ),

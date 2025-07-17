@@ -7,18 +7,19 @@ import 'package:gradution_project/View/exams/PersonalityExam/progress_bar.dart';
 import 'package:gradution_project/View/exams/PersonalityExam/ques_button.dart';
 import 'package:gradution_project/View/exams/PersonalityExam/questions_List.dart';
 import 'package:gradution_project/View/exams/PersonalityExam/answer.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:gradution_project/View_Model/quizez/cubit/quizez_cubit.dart';
 import 'package:gradution_project/View_Model/quizez/cubit/quizez_state.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-class Quesbody extends StatefulWidget {
-  const Quesbody({super.key});
+class QuesBody extends StatefulWidget {
+  const QuesBody({super.key});
 
   @override
-  State<Quesbody> createState() => _QuesbodyState();
+  State<QuesBody> createState() => _QuesbodyState();
 }
 
-class _QuesbodyState extends State<Quesbody> {
+class _QuesbodyState extends State<QuesBody> {
   late double percentage = 0.0;
   late int pagenum = 0;
   late QuizezCubit quizezCubit;
@@ -56,7 +57,7 @@ class _QuesbodyState extends State<Quesbody> {
             child: Column(
               children: [
                 Container(
-                  color: const Color(0Xff36715A),
+                  color: primaryColor,
                   padding: const EdgeInsets.only(bottom: 20),
                   height: height * 0.164,
                   alignment: Alignment.center,
@@ -67,7 +68,7 @@ class _QuesbodyState extends State<Quesbody> {
                               "عدد الأسئلة ${pagenum + 1} من 60",
                               style: const TextStyle(
                                 fontSize: 26,
-                                color: Colors.white,
+                                color: secondaryTextColor,
                               ),
                             ),
                             ProgressBar(
@@ -78,7 +79,7 @@ class _QuesbodyState extends State<Quesbody> {
                               'إختبار نمط الشخصية',
                               style: TextStyle(
                                 fontSize: 26,
-                                color: Colors.white,
+                                color:  secondaryTextColor,
                               ),
                             ),
                           ],
@@ -89,7 +90,7 @@ class _QuesbodyState extends State<Quesbody> {
                             style: TextStyle(
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color:  secondaryTextColor,
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -101,7 +102,7 @@ class _QuesbodyState extends State<Quesbody> {
                     decoration: const BoxDecoration(
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(50)),
-                      color: Colors.white,
+                      color: secondaryColor,
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -146,7 +147,7 @@ class _QuesbodyState extends State<Quesbody> {
                                   ),
                                 ],
                               )
-                            : const SizedBox(), // إخفاء الأزرار
+                            : const SizedBox(), 
 
                         const Spacer(),
                         Row(
@@ -183,12 +184,12 @@ class _QuesbodyState extends State<Quesbody> {
                               },
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25)),
-                              color: const Color(0xff36715A),
+                              color: primaryColor,
                               minWidth: 120,
                               child: Text(
                                 pagenum == 60 ? 'إنهاء' : 'التالى',
                                 style: const TextStyle(
-                                  color: Colors.white,
+                                  color:  secondaryTextColor,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -217,7 +218,7 @@ class _QuesbodyState extends State<Quesbody> {
                               child: const Text(
                                 'السابق',
                                 style: TextStyle(
-                                  color: Color(0xff36715A),
+                                  color: primaryColor,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 ),

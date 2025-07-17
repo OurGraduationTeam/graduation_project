@@ -7,6 +7,7 @@ import 'package:gradution_project/View/exams/DisorderExam/progress_bar2.dart';
 import 'package:gradution_project/View/exams/DisorderExam/question_button_dis.dart';
 import 'package:gradution_project/View/exams/DisorderExam2/disorder_exam2.dart';
 import 'package:gradution_project/View/services/get_current_user_id.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:gradution_project/View_Model/Assement/assesment1/Assement1_Cubit.dart';
 import 'package:gradution_project/View_Model/Assement/assesment1/assement1_state.dart';
 import 'package:gradution_project/model/models/answer.dart';
@@ -77,8 +78,9 @@ class _DisorderExamBodyState extends State<DisorderExamBody> {
             final question = state.questions[currentIndex];
             return Column(
               children: [
+
                 Container(
-                  color: const Color(0xff36715A),
+                  color: primaryColor,
                   padding: const EdgeInsets.only(bottom: 20),
                   height: height * 0.2,
                   alignment: Alignment.center,
@@ -88,7 +90,7 @@ class _DisorderExamBodyState extends State<DisorderExamBody> {
                         'عدد الأسئلة ${currentIndex + 1} من ${state.questions.length} ',
                         style: const TextStyle(
                           fontSize: 26,
-                          color: Colors.white,
+                          color: secondaryTextColor,
                         ),
                       ),
                       const SizedBox(
@@ -108,7 +110,7 @@ class _DisorderExamBodyState extends State<DisorderExamBody> {
                         'اختبار الاضطرابات',
                         style: TextStyle(
                           fontSize: 26,
-                          color: Colors.white,
+                          color: secondaryTextColor,
                         ),
                       ),
                     ],
@@ -121,7 +123,7 @@ class _DisorderExamBodyState extends State<DisorderExamBody> {
                     decoration: const BoxDecoration(
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(50)),
-                      color: Colors.white,
+                      color: secondaryColor,
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -129,7 +131,7 @@ class _DisorderExamBodyState extends State<DisorderExamBody> {
                         Text(
                           question.text,
                           style: const TextStyle(
-                            color: Colors.black,
+                            color: primaryTextColor,
                             fontSize: 25,
                             fontWeight: FontWeight.bold,
                           ),
@@ -195,7 +197,7 @@ class _DisorderExamBodyState extends State<DisorderExamBody> {
                             borderRadius: BorderRadius.circular(25),
                           ),
                           color: selectedScore != null
-                              ? const Color(0xff36715A)
+                              ? primaryColor
                               : Colors.grey,
                           minWidth: 160,
                           height: 50,
@@ -204,7 +206,7 @@ class _DisorderExamBodyState extends State<DisorderExamBody> {
                                 ? 'التالي'
                                 : 'انهاء',
                             style: const TextStyle(
-                              color: Colors.white,
+                              color: secondaryTextColor,
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
