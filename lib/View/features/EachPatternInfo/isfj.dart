@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 
@@ -11,14 +11,14 @@ class Isfj extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'ISFJ',
           text2: 'مدافع',
           text3:
               '''نوع شخصية القنصل فريدة من نوعها تماماً، لأن هناك العديد من الصفات التي تحدد سماتهم الفردية. وعلى الرغم من كون المدافعون من الشخصيات المتفهِّمة المراعية للمشاعر، إلا أنهم قد يكونوا شرسين عندما تضطرهم الظروف لحماية عائلاتهم أو أصدقائهم؛ وعلى الرغم من هدوء المدافعين وتحفُّظهم، عادةً ما يتمتعون بمهارات متقدمة في التعامل مع الناس وعلاقات اجتماعية قوية، وعلى الرغم من أن شخصية المدافع تنشُد الأمن والاستقرار، إلا أنها تتقبل التغيير بشكل ملحوظ ما دامت تشعر بأنها مفهومة ومقدَّرة.''',
-          image: 'assets/images/isfj2.png'),
-      Tabpatterns(tabchilds: [
+          image: 'assets/isfj2.png'),
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

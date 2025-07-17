@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 
@@ -11,14 +11,14 @@ class Esfp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'ESFP',
           text2: 'مسلي',
           text3:
               '''إذا وجدت شخصية ما عفوية في الغناء والرقص، فاعلم أنها من نوع شخصية المسلي. فشخصيات المسليين تستغرقها الإثارة اللحظية، ويريدون من الجميع أن يشاركوهم هذا الشعور أيضًا. ولن تجد نوع شخصية آخر سخي بوقته وطاقته كما تفعل شخصيات المسليين عندما يتعلق الأمر بتشجيع الآخرين، ولن تجد نوع شخصية آخر يفعل ذلك بهذا الأسلوب الذي لا يقاوم.''',
-          image: 'assets/images/esfp2.png'),
-      Tabpatterns(tabchilds: [
+          image: 'assets/esfp2.png'),
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

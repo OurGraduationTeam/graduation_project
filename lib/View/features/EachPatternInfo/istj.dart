@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 
@@ -11,14 +11,14 @@ class Istj extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'ISTJ',
           text2: 'لوجستي',
           text3:
               '''يُعتقَد أن نوع شخصية اللوجستي هو الأكثر وفرة، حيث يشكِّلون حوالي 13٪ من البشر. والخصائص المميزة لهم هي النزاهة والمنطق العملي والتفاني الذي لا يكل في أداء الواجب مما يجعلهم نواة حيوية لكثير من الأسر، فضلاً عن المنظمات التي تدعم التقاليد والقواعد والمعايير، مثل مكاتب المحاماة والهيئات التنظيمية والعسكرية. الناس من نوع شخصية اللوجستي يتمتعون بتحمل المسؤولية عن أفعالهم، ويفخرون بالعمل الذي يقومون به عند تحقيق الهدف، فلا تبخل شخصيات اللوجستي بوقتهم وطاقتهم لاستكمال كل مهمة بدأوها بالدقة والصبر.''',
-          image: 'assets/images/istj2.png'),
-      Tabpatterns(tabchilds: [
+          image: 'assets/istj2.png'),
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

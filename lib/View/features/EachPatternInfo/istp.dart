@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Istp extends StatelessWidget {
@@ -10,14 +10,14 @@ class Istp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'ISTP',
           text2: 'مبدع',
           text3:
               '''شخصيات ISTP تحب استكشاف العالم من حولهم بأيديهم وعيونهم وقدرتهم على اللمس والنظر مستخدمين العقلانية الباردة والفضول الحماسي. الأشخاص الذين يتمتعون بهذا النوع من الشخصية هم صناع الطبيعية، منتقلون من مشروع إلى آخر، يبنون كل شيئ مفيد أو حتى غير ضروري لمجرد المتعة الناجمة من ذلك، وحباً في التعلم من بيئتهم خلال الرحلة.''',
-          image: 'assets/images/istp2.png'),
-      Tabpatterns(tabchilds: [
+          image: 'assets/istp2.png'),
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/View/features/Disorder/Disorder_Body.dart';
+import 'package:gradution_project/View/features/Disorder/disorder_body.dart';
 
 class Disorderstype extends StatelessWidget {
   const Disorderstype({super.key});
@@ -9,7 +9,7 @@ class Disorderstype extends StatelessWidget {
 
     return const Scaffold(
       backgroundColor:Color(0Xff36715A), 
-      body: Disorderbody(),
+      body: DisorderBody(),
     );
   }
 }

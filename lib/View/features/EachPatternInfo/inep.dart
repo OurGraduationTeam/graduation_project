@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Infp extends StatelessWidget {
@@ -10,14 +10,14 @@ class Infp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'INFP',
           text2: 'وسيط',
           text3:
               '''شخصيات الوسطاء مثاليون بصديق، فهم يبحثون دائمًا عن شواهد الخير حتى في أسوأ الناس والأحداث، ساعين لإيجاد سبل لجعل الأمور أفضل. ففي حين أنه قد يُنظَر إلى شخصيات الوسطاء على أنها شخصيات هادئة ومحافِظة، أو حتى خجولة، إلا أنها تتمتع داخليًا بتوهج وعاطفة يمكنهما التألق بحق. ولأن هذا النوع من الشخصية يمثل 4٪ فقط من البشر، فإن الخطرمن أن يساء فهم مشاعرهم مرتفع للأسف، – لكن عندما تجد شخصية الوسيط من يفكر مثلها فإن الانسجام الذي ستشعر به يمكن أن يكون ينبوع الفرح والإلهام لها.''',
-          image: 'assets/images/infp2.png'),
-      Tabpatterns(tabchilds: [
+          image: 'assets/infp2.png'),
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

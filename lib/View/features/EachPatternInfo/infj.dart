@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 class Infj extends StatelessWidget {
@@ -10,14 +10,14 @@ class Infj extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'INFJ',
           text2: 'محاور',
           text3:
               '''نوع شخصية المحامي نادر للغاية، حيث يشكلون أقل من واحد في المئة من البشر، لكنهم مع ذلك يتركون بصماتهم على العالم. ولديهم الحس الفطري من المثالية والأخلاق، ولكن ما يجعلهم مختلفين عن أنواع الشخصيات المثالية الأخرى هو حسمهم وعزمهم – فشخصية المحامي ليست الشخصية الحالمة الخمولة، ولكنها القادرة على اتخاذ خطوات ملموسة لتحقيق أهدافها وتحقيق نتائج دائمة إيجابية.''',
-          image: 'assets/images/infj2.png'),
-      Tabpatterns(tabchilds: [
+          image: 'assets/infj2.png'),
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

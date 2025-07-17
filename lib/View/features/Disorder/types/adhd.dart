@@ -8,7 +8,7 @@ class Adhd extends StatelessWidget {
   Widget build(BuildContext context) {
       return const Scaffold(
       backgroundColor:  Color(0Xff36715A),
-      body:  Disinfo(
+      body:  DisInfo(
       tx1:"اضطراب فرط الحركة ونقص الانتباه",
       tx2:"Attention-Deficit/Hyperactivity Disorder - ADHD",
       img: 'assets/images/adhd2.png',

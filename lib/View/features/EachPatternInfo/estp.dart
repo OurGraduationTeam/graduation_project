@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Info_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tab_Patterns.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/Tabs_Column.dart';
-import 'package:gradution_project/View/features/EachPatternInfo/patternsstructure.dart';
+import 'package:gradution_project/View/features/EachPatternInfo/patterns_structure.dart';
 import 'package:gradution_project/View/features/EachPatternInfo/tabslistview.dart';
 
 
@@ -11,14 +11,14 @@ class Estp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patternsstructure(childs: [
-      Infopatterns(
+    return const PatternsStructure(childs: [
+      InfoPatterns(
           text1: 'ESTP',
           text2: 'رائد أعمال',
           text3:
               '''أنواع شخصية رائد العمل دائمًا لهم تأثير مباشر على محيطهم – أفضل طريقة لاكتشافهم في حفل هو البحث عن دوامة متحركة من الناس لأنهم ينتقلون من مجموعة إلى أخرى، وتنتقل الناس معهم. وتحب شخصيات روَّاد الأعمال الضحك والترفيه بروح من الفكاهة الحادة، لأنهم مولعون بأن يكونوا مركز الاهتمام. وإذا طلب من أحد أفراد الجمهور الحضور على خشبة المسرح، ستتطوع شخصية رائد العمل – أو ستقدِّم هذه الشخصية صديقًا خجولاً كمتطوع.''',
-          image: 'assets/images/estp2.png'),
-      Tabpatterns(tabchilds: [
+          image: 'assets/estp2.png'),
+      TabPatterns(tabchilds: [
         TabsListView(childs: [
           TabsCloumn(
               text1: 'عادات مكان العمل',

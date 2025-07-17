@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/Disorder/dis_INfo_Body.dart';
 
 
-class Disinfo extends StatelessWidget {
-  const Disinfo(
+class DisInfo extends StatelessWidget {
+  const DisInfo(
       {super.key,
       required this.tx1,
       required this.tx2,

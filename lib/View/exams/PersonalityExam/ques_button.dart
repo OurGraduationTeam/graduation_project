@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/exams/PersonalityExam/answer.dart';
 
-class Quesbutton extends StatelessWidget {
-   const Quesbutton({super.key, required this.txt,  this.pressed=true, required this.questionId });
+class QuesButton extends StatelessWidget {
+   const QuesButton({super.key, required this.txt,  this.pressed=true, required this.questionId });
 final String txt;
 final bool pressed;
 final  int questionId;
@@ -14,7 +14,7 @@ final  int questionId;
       child: MaterialButton(
         onPressed: (){
           answers[answers.length-1]=questionId;
-          print(answers);
+         
       },
       
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

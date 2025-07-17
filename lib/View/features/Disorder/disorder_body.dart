@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gradution_project/View/features/Disorder/listview_Disorded%20.dart';
+import 'package:gradution_project/View/features/Disorder/list_view_disorded%20.dart';
 
 
-class Disorderbody extends StatelessWidget {
-  const Disorderbody({super.key});
+class DisorderBody extends StatelessWidget {
+  const DisorderBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class Disorderbody extends StatelessWidget {
               borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
               color: Colors.white,
             ),
-            child: const ListviewDisorded(),
+            child: const ListViewDisorded(),
           ),
         )
       ],

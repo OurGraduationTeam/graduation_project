@@ -8,7 +8,7 @@ class Ptsd extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color(0Xff36715A),
-      body: Disinfo(
+      body: DisInfo(
         tx1: "اضطراب ما بعد الصدمة",
       tx2:"Post-Traumatic Stress Disorder - PTSD",
       img: 'assets/images/ptsd2.png',
