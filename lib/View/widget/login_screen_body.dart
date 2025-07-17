@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/View/Screens/Signup_Screen.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:gradution_project/View_Model/users/users/user_cubit.dart';
 
 class LoginScreenBody extends StatelessWidget {
@@ -22,7 +23,7 @@ class LoginScreenBody extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
   
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: secondaryColor,
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -47,7 +48,7 @@ class LoginScreenBody extends StatelessWidget {
                       'الايميل',
                       style: TextStyle(
                           fontSize: 18,
-                          color: Colors.black,
+                          color: primaryTextColor,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -67,7 +68,7 @@ class LoginScreenBody extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         filled: true,
-                        fillColor: Colors.grey.shade100,
+                        fillColor: Colors.grey.shade200,
                       ),
                       textAlign: TextAlign.right,
                     ),
@@ -78,7 +79,7 @@ class LoginScreenBody extends StatelessWidget {
                       'كلمة السر',
                       style: TextStyle(
                           fontSize: 18,
-                          color: Colors.black,
+                          color: primaryTextColor,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -98,7 +99,7 @@ class LoginScreenBody extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         filled: true,
-                        fillColor: Colors.grey.shade100,
+                        fillColor: Colors.grey.shade200,
                       ),
                       textAlign: TextAlign.right,
                     ),
@@ -120,7 +121,7 @@ class LoginScreenBody extends StatelessWidget {
                           }
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromRGBO(54, 113, 90, 1),
+                          backgroundColor: primaryColor,
                           padding: const EdgeInsets.symmetric(vertical: 14),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
@@ -128,7 +129,7 @@ class LoginScreenBody extends StatelessWidget {
                         ),
                         child: const Text(
                           'تسجيل الدخول',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
+                          style: TextStyle(fontSize: 16, color: secondaryColor),
                         ),
                       ),
                     ),
@@ -147,7 +148,7 @@ class LoginScreenBody extends StatelessWidget {
                         Text(
                           'ليس لديك حساب؟ ',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: primaryTextColor,
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
@@ -155,7 +156,7 @@ class LoginScreenBody extends StatelessWidget {
                         Text(
                           'انضم الينا',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: primaryTextColor,
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),

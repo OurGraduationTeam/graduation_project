@@ -3,6 +3,7 @@ import 'package:gradution_project/View/custom_container_card/Fourth_Pattern.dart
 import 'package:gradution_project/View/custom_container_card/Third_Pattern.dart';
 import 'package:gradution_project/View/custom_container_card/first_pattern.dart';
 import 'package:gradution_project/View/custom_container_card/second_pattern.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'persnonalitypatternitem.dart';
 
 class PersonalitypatternContainer extends StatefulWidget {
@@ -41,7 +42,7 @@ class _PersonalitypatternContainerState
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         decoration: const BoxDecoration(
-          color: Colors.white,
+          color: secondaryColor,
           borderRadius: BorderRadius.vertical(top: Radius.circular(50)),
         ),
         child: DefaultTabController(
@@ -52,8 +53,8 @@ class _PersonalitypatternContainerState
                 height: height * 0.06,
               ),
               TabBar(
-                dividerColor: Colors.white,
-                indicatorColor: const Color.fromRGBO(54, 113, 90, 2),
+                dividerColor: secondaryColor,
+                indicatorColor: primaryColor,
                 labelPadding: const EdgeInsets.all(8),
                 controller: _tabController,
                 tabs: [

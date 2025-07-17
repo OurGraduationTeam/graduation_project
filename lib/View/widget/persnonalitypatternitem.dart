@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class PersonalityPatternItem extends StatelessWidget {
   const PersonalityPatternItem({
@@ -16,7 +17,7 @@ class PersonalityPatternItem extends StatelessWidget {
       onTap: () {},
       child: Container(
         decoration: BoxDecoration(
-          color: isHighlighted?  const Color(0Xff36715A) : Colors.white 
+          color: isHighlighted?  primaryColor : secondaryColor 
 ,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: const Color(0XffB5B5B5)),
@@ -26,7 +27,7 @@ class PersonalityPatternItem extends StatelessWidget {
         child:  Center(
           child: Text(
          text,
-            style: TextStyle(color: isHighlighted?   Colors.white : Colors.black , fontSize: 15),
+            style: TextStyle(color: isHighlighted?   secondaryTextColor : primaryTextColor , fontSize: 15),
           ),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class Progressbar3 extends StatelessWidget {
   const Progressbar3({super.key, required this.progressvalue, required this.width, required this.height});
@@ -20,7 +21,7 @@ final double height;
             width: width*progressvalue,
             height: height,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: secondaryColor,
               borderRadius: BorderRadius.circular(10),
             ),
           ),
@@ -29,7 +30,7 @@ final double height;
             child: Text(
               '${(progressvalue*100).toInt()}%',
               style: const TextStyle(
-                color: Colors.black,
+                color: primaryTextColor,
                 fontWeight: FontWeight.bold
               ),
             ),

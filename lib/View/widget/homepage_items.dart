@@ -23,7 +23,7 @@ class HomepageItems extends StatelessWidget {
             ),
             const Text("أهلاً بك",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-            const Text("fady ibraheem", style: TextStyle(fontSize: 18)),
+            const Text("fouad samy", style: TextStyle(fontSize: 18)),
             SizedBox(height: height * 0.025),
             GestureDetector(
               child: const CustomCard(

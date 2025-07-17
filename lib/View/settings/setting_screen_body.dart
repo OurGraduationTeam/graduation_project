@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gradution_project/View/settings/Custom_Setting_Background.dart';
 import 'package:gradution_project/View/settings/setting_Person.dart';
 import 'package:gradution_project/View/settings/setting_listview.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 class SettingsScreenbody extends StatelessWidget {
   const SettingsScreenbody({super.key});
 
@@ -17,7 +18,7 @@ class SettingsScreenbody extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: const BoxDecoration(
-                  color: Colors.white,
+                  color: secondaryColor,
                   borderRadius:
                       BorderRadius.vertical(top: Radius.circular(50))),
               child: const Column(
@@ -33,7 +34,7 @@ class SettingsScreenbody extends StatelessWidget {
                   Divider(
                     height: 15,
                     thickness: 1,
-                    color: Color(0xff36715A),
+                    color:primaryColor,
                   ),
                   SettingListview(),
                   

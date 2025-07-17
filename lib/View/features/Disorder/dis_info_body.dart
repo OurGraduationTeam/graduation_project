@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class DisINfobody extends StatelessWidget {
   const DisINfobody({
@@ -27,14 +28,14 @@ class DisINfobody extends StatelessWidget {
         children: [
           Text(
             tx1,
-            style: const TextStyle(fontSize: 25, color: Colors.black),
+            style: const TextStyle(fontSize: 25, color: primaryTextColor),
             textAlign: TextAlign.center,
           ),
           Text(
             tx2,
-            style: const TextStyle(fontSize: 20, color: Color(0xff4A826C)),
-            textAlign: TextAlign.center,
-          ),
+            style: const TextStyle(fontSize: 20, color: primaryColor),),
+           
+          
           Image.asset(
             img,
             height: height * 0.26,
@@ -51,7 +52,7 @@ class DisINfobody extends StatelessWidget {
             tx3,
             style: const TextStyle(
                 fontSize: 20,
-                color: Colors.black,
+                color: primaryTextColor,
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
@@ -73,14 +74,14 @@ class DisINfobody extends StatelessWidget {
           ),
           MaterialButton(
             onPressed: () {},
-            color: const Color(0xff4A826C),
+            color: primaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
             minWidth:width *0.44,
             child: const Text(
               'اعرف أكثر',
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(color: secondaryTextColor, fontSize: 20),
             ),
           ),
           MaterialButton(
@@ -92,7 +93,7 @@ class DisINfobody extends StatelessWidget {
             child: const Text(
               'رجوع',
               style: TextStyle(
-                  color: Color(0xff4A826C),
+                  color: primaryColor,
                   fontSize: 15,
                   fontWeight: FontWeight.bold),
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/widget/Personalitypattern_container.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class PersonalityPatternBody extends StatelessWidget {
   const PersonalityPatternBody({
@@ -19,7 +20,7 @@ class PersonalityPatternBody extends StatelessWidget {
           'انواع الأنماط',
           style: TextStyle(
             fontSize: 26,
-            color: Colors.white,
+            color: secondaryColor,
           ),
         ),
       ),

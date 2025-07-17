@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/settings/setting_screen_body.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -8,7 +9,7 @@ class SettingScreen extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor:Color(0xff36715A) ,
+      backgroundColor: primaryColor,
       body:  SettingsScreenbody(),
     );
   }

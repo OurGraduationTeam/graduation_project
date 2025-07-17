@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class PersonalityTypeCard extends StatelessWidget {
   final String title;
@@ -30,9 +31,9 @@ class PersonalityTypeCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: isHighlighted ?  const Color(0Xff36715A) : Colors.white,
+          color: isHighlighted ?  primaryColor : secondaryColor,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color:  const Color(0Xff36715A)),
+          border: Border.all(color: isHighlighted ? secondaryColor : primaryColor, width: 2),
           boxShadow: const [
             BoxShadow(
               color: Colors.black,
@@ -43,7 +44,7 @@ class PersonalityTypeCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Icon(Icons.arrow_back_ios_new, color:  isHighlighted ?    Colors.white :const Color(0XFF36715A)  , size: 18),
+            Icon(Icons.arrow_back_ios_new, color:  isHighlighted ?   secondaryColor : primaryColor  , size: 18),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +55,7 @@ class PersonalityTypeCard extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: isHighlighted ? Colors.white :const Color(0XFF36715A) ,   
+                      color: isHighlighted ? secondaryColor :primaryColor ,   
                     ),     textAlign: TextAlign.right
                   ),
                   const SizedBox(height: 8),
@@ -62,7 +63,7 @@ class PersonalityTypeCard extends StatelessWidget {
                     description,
                     style: TextStyle(
                       fontSize: 17,
-                      color: isHighlighted ? Colors.white: Colors.black ,
+                      color: isHighlighted ?secondaryTextColor: primaryTextColor ,
                     ),     textAlign: TextAlign.right
                   ),
                 ],

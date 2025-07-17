@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/exams/PersonalityExam/answer.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class QuesButton extends StatelessWidget {
    const QuesButton({super.key, required this.txt,  this.pressed=true, required this.questionId });
@@ -18,10 +19,10 @@ final  int questionId;
       },
       
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  color: pressed?Colors.white:const Color(0xff36715A) , 
+                  color: pressed?secondaryColor:primaryColor , 
                   minWidth: 300,
                   child: Text(txt,style: TextStyle(
-                    color: pressed?Colors.black:Colors.white ,
+                    color: pressed?primaryColor:secondaryTextColor ,
                     fontSize: 20,fontWeight: FontWeight.bold,
                   ),),
                   ),

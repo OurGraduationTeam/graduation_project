@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/features/Disorder/Dis_Info.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class Shizo extends StatelessWidget {
   const Shizo({super.key});
@@ -7,7 +8,7 @@ class Shizo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0Xff36715A),
+      backgroundColor: primaryColor,
       body: DisInfo(
          tx1:"الفصام",
       tx2:"Schizophrenia",

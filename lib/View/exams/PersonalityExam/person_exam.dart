@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gradution_project/View/exams/PersonalityExam/quesbody.dart';
+import 'package:gradution_project/View/exams/PersonalityExam/ques_body.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:gradution_project/model/models/api/api_consumer.dart';
 import 'package:gradution_project/View/services/setup_get_it.dart';
 import 'package:gradution_project/View_Model/quizez/cubit/quizez_cubit.dart';
@@ -20,8 +21,8 @@ class _PersonexamState extends State<Personexam> {
         getIt<ApiConsumer>(),
       ),
       child: const Scaffold(
-        backgroundColor: Color(0Xff36715A),
-        body: Quesbody(),
+        backgroundColor: primaryColor,
+        body: QuesBody(),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/Screens/homepage.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class Buildcontainar extends StatelessWidget {
   const Buildcontainar({
@@ -40,7 +41,7 @@ class Buildcontainar extends StatelessWidget {
                   style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: secondaryTextColor),
                 ),
               ))
             ],

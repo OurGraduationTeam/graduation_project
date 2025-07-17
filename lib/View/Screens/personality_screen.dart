@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 import '../widget/Personality_Type_Screenbody.dart';
 
@@ -8,7 +9,7 @@ class PersonalityTypeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0Xff36715A),
+      backgroundColor: primaryColor,
       body: PersonalityTypeScreenbody(),
     );
   }

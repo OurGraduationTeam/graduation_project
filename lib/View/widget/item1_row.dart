@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class Item1Row extends StatelessWidget {
   const Item1Row({super.key});
@@ -28,8 +29,8 @@ class Item1Row extends StatelessWidget {
                   child: const CircularProgressIndicator(
                     value: 0.0,
                     strokeWidth: 4,
-                    backgroundColor: Colors.white,
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
+                    backgroundColor: secondaryColor,
+                    valueColor: AlwaysStoppedAnimation<Color>(primaryTextColor),
                   ),
                 ),
                 const Text(
@@ -37,7 +38,7 @@ class Item1Row extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: secondaryColor,
                   ),
                 ),
               ],
@@ -48,7 +49,7 @@ class Item1Row extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14,
-                color: Colors.white,
+                color: secondaryTextColor,
                 fontWeight: FontWeight.bold,
               ),
             ),

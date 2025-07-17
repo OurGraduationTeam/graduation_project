@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({super.key});
@@ -13,7 +14,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      backgroundColor: Colors.white,
+      backgroundColor: secondaryColor,
       selectedItemColor: Colors.black,
       unselectedItemColor: Colors.grey,
       showUnselectedLabels: true,

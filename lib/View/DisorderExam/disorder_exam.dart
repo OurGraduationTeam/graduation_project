@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gradution_project/View/exams/DisorderExam/Disorder_Exam_Body.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:gradution_project/model/models/api/api_consumer.dart';
 import 'package:gradution_project/View/services/setup_get_it.dart';
 import 'package:gradution_project/View_Model/Assement/assesment1/Assement1_Cubit.dart';
@@ -25,7 +26,7 @@ class _DisorderExamState extends State<DisorderExam> {
         ),
       ],
       child: const Scaffold(
-        backgroundColor: Color(0Xff36715A),
+        backgroundColor: primaryColor,
         body: DisorderExamBody(),
       ),
     );
