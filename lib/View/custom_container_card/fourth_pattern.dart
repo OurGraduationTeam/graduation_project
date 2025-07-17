@@ -13,10 +13,10 @@ class FourthPattern extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Patterns(card1: PersonaCard(imgname: 'assets/intp.png',tex1: 'منطقي',tex2: 'INTP', nav2: Intp(),),
-     card2:  PersonaCard(imgname: 'assets/intj.png',tex1: 'مهندس',tex2: 'INTJ', nav2: Intj(),),
-      card3:PersonaCard(imgname: 'assets/entp.png',tex1: 'محاور',tex2: 'ENTP', nav2: Entp(),), 
-      card4: PersonaCard(imgname: 'assets/entj.png',tex1: ' قائد',tex2: 'ENTJ', nav2: Entj(),),
+    return const Patterns(card1: PersonaCard(imgname: 'assets/images/intp.png',tex1: 'منطقي',tex2: 'INTP', nav2: Intp(),),
+     card2:  PersonaCard(imgname: 'assets/images/intj.png',tex1: 'مهندس',tex2: 'INTJ', nav2: Intj(),),
+      card3:PersonaCard(imgname: 'assets/images/entp.png',tex1: 'محاور',tex2: 'ENTP', nav2: Entp(),), 
+      card4: PersonaCard(imgname: 'assets/images/entj.png',tex1: ' قائد',tex2: 'ENTJ', nav2: Entj(),),
 
     );
   }
