@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/settings/Custom_Setting_Background.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 import 'package:gradution_project/View/widget/custom_bottom_navigationbar.dart';
 
 class EditProfileBody extends StatelessWidget {
@@ -17,7 +18,7 @@ class EditProfileBody extends StatelessWidget {
             Expanded(
                 child: Container(
                     decoration: const BoxDecoration(
-                        color: Colors.white,
+                        color: secondaryColor,
                         borderRadius:
                             BorderRadius.vertical(top: Radius.circular(50))),
                     child: Expanded(
@@ -36,7 +37,7 @@ class EditProfileBody extends StatelessWidget {
                                       child: Text(
                                     "تعديل الحساب ",
                                     style: TextStyle(
-                                        fontSize: 24, color: Colors.black),
+                                        fontSize: 24, color: primaryTextColor),
                                   )),
                                   Spacer(),
                                   Icon(Icons.arrow_forward_ios, size: 16)
@@ -62,13 +63,13 @@ class EditProfileBody extends StatelessWidget {
                                   "تعديل الصوره",
                                   style: TextStyle(
                                       fontSize: 18,
-                                      color: const Color(0xff36715A)),
+                                      color: primaryColor),
                                 )), const SizedBox(height: 15,),
                                 const Divider(
                                   height: 15,
                                   thickness: 1,color:Color(0xff36715A) ,
                                 ),const SizedBox(height: 15,),
-                                Card(color: Colors.white,
+                                Card(color: secondaryColor,
                   
                     margin: const EdgeInsets.symmetric(vertical: 14),
                     child: Padding(

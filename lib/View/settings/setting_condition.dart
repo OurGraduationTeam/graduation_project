@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradution_project/View/settings/Custom_Setting_Background.dart';
 import 'package:gradution_project/View/settings/info_Column.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class SettingCondition extends StatelessWidget {
   const SettingCondition({super.key});
@@ -8,7 +9,7 @@ class SettingCondition extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xff36715A),
+        backgroundColor: primaryColor,
         body: SafeArea(
             child: Column(children: [
           const CustomSettingBackdround(),
@@ -18,7 +19,7 @@ class SettingCondition extends StatelessWidget {
           Expanded(
               child: Container(
                   decoration: const BoxDecoration(
-                      color: Colors.white,
+                      color: secondaryColor,
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(50))),
                   child: ListView(children: const [
@@ -38,7 +39,7 @@ class SettingCondition extends StatelessWidget {
                               "الشروط والاحكام ",
                               style: TextStyle(
                                   fontSize: 24,
-                                  color: Colors.black,
+                                  color: primaryTextColor,
                                   fontWeight: FontWeight.bold),
                             )),
                             Spacer(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradution_project/View/widget/constant.dart';
 
 class Infocolumn extends StatelessWidget {
   const Infocolumn({super.key, required this.txt1, required this.txt2, });
@@ -11,12 +12,12 @@ final String txt2;
         children: [
           Text( txt1
           ,style: const TextStyle(
-            color: Colors.black,fontSize: 30,
+            color:primaryTextColor,fontSize: 30,
             fontWeight: FontWeight.bold
           ),
           textAlign: TextAlign.center,),
           Text(txt2,style: const TextStyle(
-            color: Colors.black,fontSize: 22,
+            color: primaryTextColor,fontSize: 22,
           ),
           textAlign: TextAlign.start,),
         ],
